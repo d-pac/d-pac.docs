@@ -57,3 +57,39 @@ Next we need to define what `role` a `user` has in an `assessment`. Any user can
 1. Clicking the `Create`-button will take you to the `Persona` editor. To create another `Persona`, use the shortcut:
 
   ![Create another Persona](https://www.evernote.com/shard/s59/sh/feebb548-cafe-4a5d-8913-765908480d5e/4e5ef0b2b503e0064f883094768e733f/res/7e2d98b9-9984-44e7-8756-5edb841b4487/skitch.png)
+  
+#### Creating Representations
+
+Creating a `representation` for an assessee is a two-phased process:
+
+##### Create the `representation`
+
+1. Click on `Users`>`Representations`>`Create Representation`
+ 
+  ![Creating representations](https://www.evernote.com/shard/s59/sh/32a22366-93d6-4be7-b2f8-474a10e32014/40b442164577d15d7077ed1112bbef36/res/cb246d95-705c-42d2-9dcd-4cec2e91f8db/skitch.png)
+
+1. In-place link it to a `User` and `Assessment`:
+ 
+  ![Creating representations: fill out details](https://www.evernote.com/shard/s59/sh/fb9fa913-c647-4dc3-87a1-2bef28744e78/8cf1933793f318f7d0577f1872ac342b/res/87e21430-ade5-4dfe-b206-f299735a45dc/skitch.png)
+
+##### Upload the file
+
+> **PLEASE DO NOT FORGET THIS STEP**
+
+1. Clicking the `Create`-button will take you to the `Representation` editor. Here we need to upload the representation file:
+
+  ![Upload the representation file](https://www.evernote.com/shard/s59/sh/798a832d-af1d-40eb-a467-52b18821588c/907ff28e49554b5a4bab70aece68cc38/res/71ae6588-9015-41a3-baed-135654b791d8/skitch.png)
+  
+  Clicking `Upload` will open an operating system specific file browse dialog. E.g. on Mac OS X:
+  
+  ![OS-specific file browser](https://www.evernote.com/shard/s59/sh/468f1e02-27a1-4a4b-9547-d1696260f624/98669607397bc8ae933f224a1186ceb7/res/8629d619-9432-4ed9-a319-bd9f201458d4/skitch.png)
+
+1. Select the file on your file system you wish to upload and click `open` (or a similar button, depending on your operating system)
+
+1. This will take you back to the `Representation` editor. **We still need to confirm the upload of the file by clicking the `Save`-button!!**:
+
+  ![Upload the file](https://www.evernote.com/shard/s59/sh/798a832d-af1d-40eb-a467-52b18821588c/907ff28e49554b5a4bab70aece68cc38/res/c79dcdf4-70a7-458d-af57-f2481bdfabc0/skitch.png)
+  
+1. To create another `Representation`, use the shortcut:
+
+  ![Create another representation](https://www.evernote.com/shard/s59/sh/798a832d-af1d-40eb-a467-52b18821588c/907ff28e49554b5a4bab70aece68cc38/res/e716af11-62bf-4aad-ae39-7dcb25f899c0/skitch.png)
