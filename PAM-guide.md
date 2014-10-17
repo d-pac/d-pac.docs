@@ -4,6 +4,41 @@ Guide for assessment and user management through the backend.
 
 ## Atomic operations
 
+### In general
+
+#### Overview
+
+* Clicking any of the secondary menu items will take you to an overview page of the selected item type. E.g. clicking `Assessments`>`Assessments`
+
+  ![Menu](https://www.evernote.com/shard/s59/sh/b5059791-0ccb-4498-9f9b-2bb835dd28dd/15c5aa576ca81e78acababfe7eff0ae4/res/f3776cee-2d74-4eb0-9cae-8d0756dcb622/skitch.png)
+
+  Will show you an overview of all existing assessments.
+  
+  ![Assessment overview](https://www.evernote.com/shard/s59/sh/bdcf0ffe-c3b2-4a57-8a65-c78000e286a4/4093079cbcde669cc1b50fffb96523cd/res/c13f8734-0a9c-4d83-8ea6-4cc2afc71ea0/skitch.png)
+
+* Item deletion: **Coming soon**
+* Item editing: click on the value in the first column of the overview:
+
+  ![Editing items](https://www.evernote.com/shard/s59/sh/bdcf0ffe-c3b2-4a57-8a65-c78000e286a4/4093079cbcde669cc1b50fffb96523cd/res/a978fe21-a7ff-4cfd-87d8-5f685c814f8d/skitch.png)
+  
+  Will take you to the item specific editor:
+  
+  ![Item editor](https://www.evernote.com/shard/s59/sh/a323ebee-6677-4d30-883e-24235175eab3/684284666fcb310ec7027ae7d50aa24f/res/f2c7e1d0-1aea-4acb-bf25-cd2c5ce6bfcd/skitch.png)
+  
+#### Interface elements
+
+Most interface elements are common in both outlook and behaviour, however there's some tips and tricks:
+
+* I you want to remove a value from a selection box, click the small `x`-mark:
+
+  ![Removing a value from a selection box](https://www.evernote.com/shard/s59/sh/7b0abd2f-38a5-4695-96e7-021ea7434da1/655f1b7e1b4dbfe923d73e717b923bf7/res/c6046cb7-e04d-4686-90b4-919eff3aef29/skitch.png)
+
+* If you have selected a value in a drop-down list, but you want to deselect it (without selecting another one) click the small `x`-mark:
+
+  ![Removing a value from a drop-down list](https://www.evernote.com/shard/s59/sh/ca573119-ec79-4915-8809-018d4c2ebd99/c391e1a3b46b5676711a166a4c14fac5/res/067b45d7-c2bb-4088-bbda-3d46a59e3daa/skitch.png)
+  
+  If no `x`-mark is shown, it means a value **is required**.
+
 ### Adding Assessees and their representations
 
 #### Create Organisations
