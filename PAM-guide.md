@@ -6,7 +6,7 @@ Guide for assessment and user management through the backend.
 
 ### Adding Assessees and their representations
 
-#### Create organisations
+#### Create Organisations
 
 First of all we need to make sure the necessary `Organisation`s are added:
 
@@ -20,7 +20,7 @@ First of all we need to make sure the necessary `Organisation`s are added:
 
 1. Clicking the `Create`-button will take you to the `Organisation` editor. To create another `Organisation`, use the shortcut:
   
-#### Creating the users
+#### Creating Users
 
 Next we need to **create a `user` for _each_ assessee**:
 
@@ -37,3 +37,23 @@ Next we need to **create a `user` for _each_ assessee**:
 1. Clicking the `Create`-button will take you to the `User` editor. To create another `User`, use the shortcut:
 
   ![Create another user](https://www.evernote.com/shard/s59/sh/4bb2421c-d0c4-468a-9fd0-07c9b2ff16d9/265bd955a81d35a500efe0c67a79fc29/res/b8c47a3e-854b-4215-ac1c-959e897c3f1b/skitch.png)
+
+#### Creating Personas
+
+Next we need to define what `role` a `user` has in an `assessment`. Any user can perform different roles in different assessments, hence we need to explicitly declare this.
+
+**Create a `persona` for _each_ assessee`**
+
+1. Click on `Users`>`Personas`>`Create Persona`
+
+  ![Creating personas](https://www.evernote.com/shard/s59/sh/28d4979c-cdec-47ad-a82e-437a950d3ecf/f77000f4d5605e0220a313bdc654c679/res/631b8801-e272-4fec-a48c-3c25ba3308f8/skitch.png)
+  
+1. In-place provide the details:
+  
+  ![Creating Personas: fill out details](https://www.evernote.com/shard/s59/sh/5c699d11-2514-449f-9fbc-e9890ed27d5b/4393dbc453e590709b2369830bf5e4d8/res/1fc5ee34-04d2-4372-bdcc-e526b2bb4cc5/skitch.png)
+
+  **All fields are mandatory**
+  
+1. Clicking the `Create`-button will take you to the `Persona` editor. To create another `Persona`, use the shortcut:
+
+  ![Create another Persona](https://www.evernote.com/shard/s59/sh/feebb548-cafe-4a5d-8913-765908480d5e/4e5ef0b2b503e0064f883094768e733f/res/7e2d98b9-9984-44e7-8756-5edb841b4487/skitch.png)
