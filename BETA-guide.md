@@ -44,7 +44,11 @@ The tool logs all of its actions to the console. These output logs are **really*
 	```
 
 	**Now refresh the page.**
-1. You'll notice that the tool starts logging all kinds of stuff to the console. When you encounter a bug, please dump the full contents of the errors with `ctrl+alt+d`. (Make sure the tab of the d-pac tool has focus, not the console!)
+1. You'll notice that the tool starts logging all kinds of stuff to the console. It should look something like this:
+	
+	![Console log](https://www.evernote.com/shard/s59/sh/e8ee868e-12e3-497a-b2c1-bcbc41a3a6d9/db621ff7137e9d0fb0b507bb5b477907/res/60f11d17-e23b-446e-b9ea-e567609a3350/skitch.png)
+
+2. When you encounter a bug, please dump the full contents of the errors with `ctrl+alt+d`. (Make sure the tab of the d-pac tool has focus, not the console!)
 1. Select all text in the console and copy it with `cmd+c`
 
 You can temporarily toggle the continuous time logging (e.g. the `PUT http://boil.iminds.be:3020/api/timelogs/543fa94508483aba6202ac7b` messages polluting the console) by typing `ctrl+alt+s` (again, focus should be on the webpage, not the console!) Type it again to re-enable.
