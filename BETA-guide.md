@@ -1,5 +1,11 @@
 # D-pac beta-testers guide
 
+Welcome to the D-pac beta test.
+
+If you don't have a Github account already create one on http://github.com
+
+You won't be able to report bugs or other feedback without an account.
+
 ## URL
 
 http://tool.d-pac.be/assessors
@@ -9,6 +15,7 @@ http://tool.d-pac.be/assessors
 How to provide useful feedback:
 
 ### Assessors
+
 
 1. Use the `report issue`-button on the application:
 
