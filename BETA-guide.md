@@ -30,6 +30,25 @@ How to provide useful feedback:
 	![Paste details](https://www.evernote.com/shard/s59/sh/88b63347-2ac2-448a-8b86-175a4e71dc75/b8961ecdefc63e900355763e8f472dd5/res/61718c67-cc5e-4ce4-a899-ae26b5615174/skitch.png)
 	
 	Pasting the data can be achieved by clicking in the "Leave a comment" area and subsequently pressing `cmd+v` [Mac] or `ctrl+v` [Windows].
+	
+1. **Actions description** A concise, but comprehensive description of your actions leading to the bug.
+	E.g. 
+
+	> Immediately after logging in I clicked on "tutorial" in the menu.
+
+	Make sure to provide a context when refererring to user interface elements. "I clicked the button" is rather unclear, "I clicked on 'tutorial' in the menu" describes the user element the action was taken on and also it's place in the user interface layout.
+
+1. **Problem description** A concise, but comprehensive description of what went wrong.
+	What user interface reaction were you expecting and what reaction did you get instead?
+
+	E.g.
+
+	> The page turned white and showed me the text "Not permitted! Your session may have expired."
+
+	Or
+
+	> Nothing happened. I expected to see a "tutorial page", but the screen contents did not change.
+
 
 1. **A screenshot** Providing visual feedback is very useful, especially when it concerns scrambled layout, incorrect colours, hard-to-read text, et cetera.
 
