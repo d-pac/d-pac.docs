@@ -38,6 +38,35 @@ Most interface elements are common in both outlook and behaviour, however there'
   ![Removing a value from a drop-down list](https://www.evernote.com/shard/s59/sh/ca573119-ec79-4915-8809-018d4c2ebd99/c391e1a3b46b5676711a166a4c14fac5/res/067b45d7-c2bb-4088-bbda-3d46a59e3daa/skitch.png)
   
   If no `x`-mark is shown, it means a value **is required**.
+  
+### Adding Assessments
+
+#### Create Assessments
+
+1. Click on `Assessments`>`Assessments`>`Create Assessment`
+
+  ![Creating assessments](https://www.evernote.com/shard/s59/sh/7e68c405-5090-4095-a3a1-5cc4374a928b/fe3610c3fd079d09b0ae8eef5906701f/res/5b8adfa4-6c9f-4ecc-a39f-f45a3717caf1/skitch.png?resizeSmall&width=832)
+
+1. This will allow you to create the assessment and add essential details in-place:
+
+  ![Creating an assessment: details](https://www.evernote.com/shard/s59/sh/89183d6b-1f9d-4027-a50c-9ac98ac15efb/a6d86086a131ee8af4c915755e1b92b7/res/8058a574-97c7-4f0b-8ba3-7bdc07733ae8/skitch.png)
+  
+1. However, it's not over yet. This simply created the `Assessment`, but if you wish to fill in more of its fields, you'll have to do this in the `Assessment` editor:
+
+  ![Assessment Editor](https://www.evernote.com/shard/s59/sh/8655cd08-78d0-483b-b5a6-b3896b3b8b82/73ebee1535141edee585e5cc5be12ae9/res/e5e83778-f064-407a-982c-0501b6e82932/skitch.png)
+  
+  * __Description__: Please fill out a clear and concise description of the assessment. This will appear in the tool as:
+    
+    ![Assessment description](https://www.evernote.com/shard/s59/sh/7a31d5aa-4ff1-449e-8b7e-f5e2c4405f51/46541bd202bee35fa76a2f98b9acbb9f/res/92d78b6f-5f8e-4d50-ad2a-9095be36fc59/skitch.png)  
+
+  * __Phases__: These define the various steps the assessor will need to perform in one comparison. At the moment, all phases should be included, **in the exact same order as below**:
+  
+    ![Assessment phases](https://www.evernote.com/shard/s59/sh/8655cd08-78d0-483b-b5a6-b3896b3b8b82/73ebee1535141edee585e5cc5be12ae9/res/3443631a-cc14-46f2-b69d-19f9bd5abb40/skitch.png)
+
+  * __Comparisons Num__: Define the number of comparisons each assessor needs to make in an assessment.
+  * __State__: By default an `Assessment` is in a "draft" state. This means that assessors **will not** be able to select this assessment for comparisons. It is useful to allow the PAM to create an assessment up-front and fill in the details over a period of time, without showing up in the assessment selection screen of the tool. **Select "published" once you're done with an assessment and want to enable it in the tool**:
+  
+    ![Assessesment states](https://www.evernote.com/shard/s59/sh/8655cd08-78d0-483b-b5a6-b3896b3b8b82/73ebee1535141edee585e5cc5be12ae9/res/b18c5247-e752-4f20-8729-104c1efdf271/skitch.png)
 
 ### Adding Assessees and their representations
 
