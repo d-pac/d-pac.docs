@@ -2,11 +2,9 @@
 
 Guide for assessment and user management through the backend.
 
-## Atomic operations
+## In general
 
-### In general
-
-#### Overview
+### Overview
 
 * Clicking any of the secondary menu items will take you to an overview page of the selected item type. E.g. clicking `Assessments`>`Assessments`
 
@@ -25,7 +23,7 @@ Guide for assessment and user management through the backend.
   
   ![Item editor](https://www.evernote.com/shard/s59/sh/a323ebee-6677-4d30-883e-24235175eab3/684284666fcb310ec7027ae7d50aa24f/res/f2c7e1d0-1aea-4acb-bf25-cd2c5ce6bfcd/skitch.png)
   
-#### Interface elements
+### Interface elements
 
 Most interface elements are common in both outlook and behaviour, however there's some tips and tricks:
 
@@ -39,9 +37,9 @@ Most interface elements are common in both outlook and behaviour, however there'
   
   If no `x`-mark is shown, it means a value **is required**.
   
-### Adding Assessments
+## Adding Assessments
 
-#### Create Assessments
+### Create Assessments
 
 1. Click on `Assessments`>`Assessments`>`Create Assessment`
 
@@ -68,9 +66,9 @@ Most interface elements are common in both outlook and behaviour, however there'
   
     ![Assessesment states](https://www.evernote.com/shard/s59/sh/8655cd08-78d0-483b-b5a6-b3896b3b8b82/73ebee1535141edee585e5cc5be12ae9/res/b18c5247-e752-4f20-8729-104c1efdf271/skitch.png)
 
-### Adding Assessees and their representations
+## Adding Assessees and their representations
 
-#### Create Organisations
+### Create Organisations
 
 First of all we need to make sure the necessary `Organisation`s are added:
 
@@ -84,7 +82,7 @@ First of all we need to make sure the necessary `Organisation`s are added:
 
 1. Clicking the `Create`-button will take you to the `Organisation` editor. To create another `Organisation`, use the shortcut:
   
-#### Creating Users
+### Creating Users
 
 Next we need to **create a `user` for _each_ assessee**:
 
@@ -102,7 +100,7 @@ Next we need to **create a `user` for _each_ assessee**:
 
   ![Create another user](https://www.evernote.com/shard/s59/sh/4bb2421c-d0c4-468a-9fd0-07c9b2ff16d9/265bd955a81d35a500efe0c67a79fc29/res/b8c47a3e-854b-4215-ac1c-959e897c3f1b/skitch.png)
 
-#### Creating Personas
+### Creating Personas
 
 Next we need to define what `role` a `user` has in an `assessment`. Any user can perform different roles in different assessments, hence we need to explicitly declare this.
 
@@ -122,11 +120,11 @@ Next we need to define what `role` a `user` has in an `assessment`. Any user can
 
   ![Create another Persona](https://www.evernote.com/shard/s59/sh/feebb548-cafe-4a5d-8913-765908480d5e/4e5ef0b2b503e0064f883094768e733f/res/7e2d98b9-9984-44e7-8756-5edb841b4487/skitch.png)
   
-#### Creating Representations
+### Creating Representations
 
 Creating a `representation` for an assessee is a two-phased process:
 
-##### Create the `representation`
+#### Create the `representation`
 
 1. Click on `Users`>`Representations`>`Create Representation`
  
@@ -136,7 +134,7 @@ Creating a `representation` for an assessee is a two-phased process:
  
   ![Creating representations: fill out details](https://www.evernote.com/shard/s59/sh/fb9fa913-c647-4dc3-87a1-2bef28744e78/8cf1933793f318f7d0577f1872ac342b/res/87e21430-ade5-4dfe-b206-f299735a45dc/skitch.png)
 
-##### Upload the file
+#### Upload the file
 
 > **PLEASE DO NOT FORGET THIS STEP**
 
