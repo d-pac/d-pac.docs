@@ -34,13 +34,12 @@
 
 Your selection algorithm **must** expose a function called `select` (or provide the correct name as a value for `options.entry` in the manifest:
 
-	```js
-	function select(items, n){
-		//here be magical stuff
-
-		return selection;
-	}
-	```
+```js
+function select(items, n){
+	//here be magical stuff
+	return selection;
+}
+```
 
 * `items` will receive an Array of objects with following (minimal) structure:
 
