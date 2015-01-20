@@ -57,11 +57,13 @@ function select(items, n){
 //index.js
 var _ = require("underscore");
 module.exports = {
-	manifest: {
+	manifest: [{
 		name : "Name of the plugin",
 		description : "Description of the plugin",
-		
-	},
+		options : {
+			type: "select"
+		}
+	}],
 	select : function(items, n){
 		return _.first(items, n);
 	}
