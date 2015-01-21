@@ -2,29 +2,26 @@
 
 ## Mandatory configuration
 
-1. Package name *must* be prefixed with `d-pac.` 
+Your `package.json` manifest file **must** include:
 
-	**N.B.: ending in `.`** (a "dot")
+1. a `d-pac` object as follows:
 
-1. The `index.js` *must* expose a manifest object as follows:
-
-	```js
+	```json
+	//file: package.json
 	{
-		manifest: [ {
-			name : "Name of the plugin",
-			description : "Description of the plugin",
-			options : {
-				type : "select"
-				entry : "select"
-				n : 2
-			}
+		"d-pac": [ {
+			"name" : "Name of the plugin",
+			"description" : "Description of the plugin",
+			"type" : "select",
+			"entry" : "select"
 		} ]
 	}
 	```
 
-	* `options.type`: {`String`} _**(required)**_ The type of your algorithm.
-	* `options.entry`: {`String`} _(optional)_ The main function name of your algorithm, by default the same value as `type` is assumed.
-	* `options.n`: {`Number`} _(optional)_ The number of items your algorithm will return. If left `falsy` (i.e. also `undefined`) it's assumed the algorithm will return any number of requested items.
+	* `name`: {`String`} _**(required)**_ The name of the algorithm.
+	* `description`: {`String`} _**(required)**_ A description of the algorithm.
+	* `type`: {`String`} _**(required)**_ The type of the algorithm.
+	* `entry`: {`String`} _(optional)_ The main access point to your algorithm, by default the same value as `type` is assumed.
 
 ## Mandatory API
 
@@ -32,7 +29,7 @@
 
 #### `select`
 
-Your selection algorithm **must** expose a function called `select` (or provide the correct name as a value for `options.entry` in the manifest:
+Your selection algorithm **must** expose a function called `select` (or provide the correct name as a value for `entry` in the manifest:
 
 ```js
 function select(items, n){
@@ -45,11 +42,10 @@ function select(items, n){
 
 	* `_id`: {`String`} unique object identifier
 	* `compared`: {`String[]`} Array of `_id`s
-	* `comparedNum`: {`Number`} _(optional)_ Number of comparisons, equals `compared.length` can be provided for speed reasons.
 
 * `n` is the number of items that will be returned by your algorithm, only of interest in case your algorithm allows selecting a range of items. Should be ignored otherwise.
 
-* `selection` should contain a selection of `items` in a range of `[0;n]`, where `n` is either the input parameter or the `options.n` manifest value.
+* `selection` should contain a selection of `items` in a range of `[0;n]`, where `n` is either the input parameter or as defined by your algorithm.
 
 ##### Example
 
