@@ -6,27 +6,35 @@
 
 ## API calls by resulting resource type
 
-### sessions
+### authorization
 
 #### retrieve session (2)
-GET 	/api/session
 GET 	/api/users/:userId/session/
+GET 	/api/user/session
 
 #### create session (0)
-POST 	/api/session				
+POST 	/api/user/session				
 	? password={string} && password_confirm={string} && email={string}
 
 #### remove session (2)
-DELETE 	/api/session
+DELETE 	/api/user/session
 
-### accounts
+### users
+
+### list accounts (4)
+GET /api/users
 
 #### retrieve account (2)
-GET 	/api/users/:userId/account
+GET 	/api/users/:userId
+
+#### retrieve current user account (2)
+GET 	/api/user
 
 #### update account (2)
-PUT 	/api/users/:userId/account
-PATCH 	/api/users/:userId/account
+PATCH 	/api/users/:userId
+
+#### update current user account (2)
+PATCH 	/api/user
 
 ### mementos
 
