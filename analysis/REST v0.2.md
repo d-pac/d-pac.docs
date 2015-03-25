@@ -9,204 +9,1278 @@
 ### authorization
 
 #### retrieve session (2)
-GET 	/api/users/:userId/session/
-GET 	/api/user/session
+
+##### Request
+
+```
+GET 	/api/session
+```
+
+##### Response
+
+```
+200 OK
+```
+```json
+{
+    "_id": "55113f1742ff1a0877242a39",
+    "name": {
+        "first": "Admin",
+        "last": "User",
+        "full": "Admin User"
+    },
+    "organization": {
+        "_id": "5512857ab22121c7cbd0af46",
+        "name": "d-pac"
+    },
+    "email": "user@keystonejs.com",
+    "assessments": [
+        "5511410927f4401a785dff0b"
+    ]
+}
+```
 
 #### create session (0)
-POST 	/api/user/session				
-	? password={string} && password_confirm={string} && email={string}
+
+##### Request
+
+```
+POST 	/api/session	
+```
+```json
+{
+	"password": "test",
+	"password_confirm": "test",
+	"email": "user@keystonejs.org"
+}
+```
+
+##### Response
+
+```
+200 OK
+```
+```json
+{
+    "_id": "55113f1742ff1a0877242a39",
+    "name": {
+        "first": "Admin",
+        "last": "User",
+        "full": "Admin User"
+    },
+    "organization": {
+        "_id": "5512857ab22121c7cbd0af46",
+        "name": "d-pac"
+    },
+    "email": "user@keystonejs.com",
+    "assessments": [
+        "5511410927f4401a785dff0b"
+    ]
+}
+```
 
 #### remove session (2)
-DELETE 	/api/user/session
+
+##### Request
+
+```
+DELETE 	/api/session
+```
+
+##### Response
+
+```
+204 No content
+```
 
 ### users
 
-### list accounts (4)
+#### list users (4)
+
+##### Request
+
+```
 GET /api/users
+```
 
-#### retrieve account (2)
-GET 	/api/users/:userId
+##### Response
 
-#### retrieve current user account (2)
+```
+200 OK
+```
+```json
+[{
+    "_id": "55113f1742ff1a0877242a39",
+    "name": {
+        "first": "Admin",
+        "last": "User",
+        "full": "Admin User"
+    },
+    "organization": {
+        "_id": "5512857ab22121c7cbd0af46",
+        "name": "d-pac"
+    },
+    "email": "user@keystonejs.com",
+    "assessments": [
+        "5511410927f4401a785dff0b"
+    ]
+}]
+```
+
+#### create user (4)
+
+##### Request
+
+```
+POST /api/user
+```
+```json
+{
+    "name": {
+        "first": "Admin",
+        "last": "User"
+    },
+    "organization": "5512857ab22121c7cbd0af46",
+    "email": "user@keystonejs.com",
+    "assessments": [
+        "5511410927f4401a785dff0b"
+    ],
+    "password": "test",
+    "password_confirm": "test"
+}
+```
+
+##### Response
+
+```
+200 OK
+```
+```json
+{
+    "_id": "55113f1742ff1a0877242a39",
+    "name": {
+        "first": "Admin",
+        "last": "User",
+        "full": "Admin User"
+    },
+    "organization": {
+        "_id": "5512857ab22121c7cbd0af46",
+        "name": "d-pac"
+    },
+    "email": "user@keystonejs.com",
+    "assessments": [
+        "5511410927f4401a785dff0b"
+    ]
+}
+```
+
+#### retrieve user (4)
+
+##### Request
+
+```
+GET 	/api/users/:id
+```
+
+##### Response
+
+```
+200 OK
+```
+```json
+{
+    "_id": "55113f1742ff1a0877242a39",
+    "name": {
+        "first": "Admin",
+        "last": "User",
+        "full": "Admin User"
+    },
+    "organization": {
+        "_id": "5512857ab22121c7cbd0af46",
+        "name": "d-pac"
+    },
+    "email": "user@keystonejs.com",
+    "assessments": [
+        "5511410927f4401a785dff0b"
+    ]
+}
+```
+
+#### update user (4)
+
+##### Request
+
+```
+PATCH /api/users/:id
+```
+```json
+{
+    "name": {
+        "first": "Admin",
+        "last": "User"
+    },
+    "organization": "5512857ab22121c7cbd0af46",
+    "email": "user@keystonejs.com",
+    "assessments": [
+        "5511410927f4401a785dff0b"
+    ],
+    "password": "test",
+    "password_confirm": "test"
+}
+```
+
+##### Response
+
+
+```
+200 OK
+```
+```json
+{
+    "_id": "55113f1742ff1a0877242a39",
+    "name": {
+        "first": "Admin",
+        "last": "User",
+        "full": "Admin User"
+    },
+    "organization": {
+        "_id": "5512857ab22121c7cbd0af46",
+        "name": "d-pac"
+    },
+    "email": "user@keystonejs.com",
+    "assessments": [
+        "5511410927f4401a785dff0b"
+    ]
+}
+```
+
+#### remove user (4)
+
+##### Request
+
+```
+DELETE 	/api/users/:id
+```
+
+##### Response
+
+```
+200 OK
+```
+```json
+{
+    "_id": "55113f1742ff1a0877242a39",
+    "name": {
+        "first": "Admin",
+        "last": "User",
+        "full": "Admin User"
+    },
+    "organization": {
+        "_id": "5512857ab22121c7cbd0af46",
+        "name": "d-pac"
+    },
+    "email": "user@keystonejs.com",
+    "assessments": [
+        "5511410927f4401a785dff0b"
+    ]
+}
+```
+
+#### retrieve user details for current user (2)
+
+##### Request
+
+```
 GET 	/api/user
+```
 
-#### update account (2)
-PATCH 	/api/users/:userId
+##### Response
 
-#### update current user account (2)
-PATCH 	/api/user
+```
+200 OK
+```
+```json
+{
+    "_id": "55113f1742ff1a0877242a39",
+    "name": {
+        "first": "Admin",
+        "last": "User",
+        "full": "Admin User"
+    },
+    "organization": {
+        "_id": "5512857ab22121c7cbd0af46",
+        "name": "d-pac"
+    },
+    "email": "user@keystonejs.com",
+    "assessments": [
+        "5511410927f4401a785dff0b"
+    ]
+}
+```
+
+#### update user details for current user (2)
+
+##### Request
+
+```
+PATCH /api/user
+```
+```json
+{
+    "name": {
+        "first": "Admin",
+        "last": "User"
+    },
+    "organization": "5512857ab22121c7cbd0af46",
+    "email": "user@keystonejs.com",
+    "assessments": [
+        "5511410927f4401a785dff0b"
+    ],
+    "password": "test",
+    "password_confirm": "test"
+}
+```
+
+##### Response
+
+```
+200 OK
+```
+```json
+{
+    "_id": "55113f1742ff1a0877242a39",
+    "name": {
+        "first": "Admin",
+        "last": "User",
+        "full": "Admin User"
+    },
+    "organization": {
+        "_id": "5512857ab22121c7cbd0af46",
+        "name": "d-pac"
+    },
+    "email": "user@keystonejs.com",
+    "assessments": [
+        "5511410927f4401a785dff0b"
+    ]
+}
+```
 
 ### mementos
 
-#### retrieve mementos list (2)
-GET 	/api/mementos				
-	? [user=:userId || assessment=:assessmentId]
-GET 	/api/users/:userId/mementos
-	? [assessment=:assessmentId]
-GET 	/api/assessments/:assessmentId/mementos
-	? [user=:userId]
+#### create memento (4)
 
-#### create memento (2)
-POST 	/api/mementos				
-	? user=:userId && assessment=:assessmentId
---??
-POST 	/api/users/:userId/mementos
-	? assessment=:assessmentId
-POST 	/api/assessments/:assessmentId/mementos
-	? user=:userId
---??
+##### Request
+
+```
+POST /api/mementos
+```
+```json
+{
+	"assessment": "5511410927f4401a785dff0b"
+}
+```
+
+##### Response
+
+```
+200 OK
+```
+```json
+{
+    "assessor": "55113f1742ff1a0877242a39",
+    "assessment": {
+        "_id": "5511410927f4401a785dff0b",
+        "algorithm": "comparative-selection",
+        "title": "Test Assessment",
+        "description": "",
+        "order": 0,
+        "state": "published",
+        "comparisonsNum": 20,
+        "phases": [
+            "5423f87677177065a0887b99"
+        ]
+    },
+    "comparison": {
+        "_id": "55114689eeaee2b17c331b2b",
+        "_rid": 1,
+        "assessor": "55113f1742ff1a0877242a39",
+        "assessment": "5511410927f4401a785dff0b",
+        "phase": "5423f87677177065a0887b99",
+        "completed": false,
+        "representations": [
+            "551141561d13789d78fff006",
+            "5511417f494157b8783984c5"
+        ]
+    },
+    "representations": [
+        {
+            "_id": "551141561d13789d78fff006",
+            "document": "55113f4642ff1a0877242a3f",
+            "assessment": "5511410927f4401a785dff0b",
+            "type": "to rank",
+            "ability": null,
+            "compared": [
+                "5511417f494157b8783984c5"
+            ],
+            "comparedNum": 3,
+            "name": "Test Assessment - D-pac logo"
+        },
+        {
+            "_id": "5511417f494157b8783984c5",
+            "document": "55113f2c42ff1a0877242a3e",
+            "assessment": "5511410927f4401a785dff0b",
+            "type": "to rank",
+            "ability": null,
+            "compared": [
+                "551141561d13789d78fff006"
+            ],
+            "comparedNum": 3,
+            "name": "Test Assessment - Screen shot 2011-05-04 at 10.59.13.png"
+        }
+    ],
+    "progress": {
+        "completedNum": 0,
+        "comparisonsNum": 20
+    },
+    "phases": [
+        {
+            "_id": "5423f87677177065a0887b99",
+            "type": "select",
+            "label": "Select best"
+        }
+    ]
+}
+```
+
+#### list mementos for current user (2)
+
+##### Request
+
+```
+GET /api/user/mementos
+```
+
+##### Response
+
+```
+200 OK
+```
+```json
+[
+    {
+        "assessor": "55113f1742ff1a0877242a39",
+        "assessment": {
+            "_id": "5511410927f4401a785dff0b",
+            "algorithm": "comparative-selection",
+            "title": "Test Assessment",
+            "description": "",
+            "order": 0,
+            "state": "published",
+            "comparisonsNum": 20,
+            "phases": [
+                "5423f87677177065a0887b99"
+            ]
+        },
+        "comparison": {
+            "_id": "55114689eeaee2b17c331b2b",
+            "_rid": 1,
+            "assessor": "55113f1742ff1a0877242a39",
+            "assessment": "5511410927f4401a785dff0b",
+            "phase": "5423f87677177065a0887b99",
+            "completed": false,
+            "representations": [
+                "551141561d13789d78fff006",
+                "5511417f494157b8783984c5"
+            ]
+        },
+        "representations": [
+            {
+                "_id": "551141561d13789d78fff006",
+                "document": "55113f4642ff1a0877242a3f",
+                "assessment": "5511410927f4401a785dff0b",
+                "type": "to rank",
+                "ability": null,
+                "compared": [
+                    "5511417f494157b8783984c5",
+                    "5511417f494157b8783984c5",
+                    "5511417f494157b8783984c5"
+                ],
+                "comparedNum": 3,
+                "name": "Test Assessment - D-pac logo"
+            },
+            {
+                "_id": "5511417f494157b8783984c5",
+                "document": "55113f2c42ff1a0877242a3e",
+                "assessment": "5511410927f4401a785dff0b",
+                "type": "to rank",
+                "ability": null,
+                "compared": [
+                    "551141561d13789d78fff006",
+                    "551141561d13789d78fff006",
+                    "551141561d13789d78fff006"
+                ],
+                "comparedNum": 3,
+                "name": "Test Assessment - Screen shot 2011-05-04 at 10.59.13.png"
+            }
+        ],
+        "progress": {
+            "completedNum": 0,
+            "comparisonsNum": 20
+        },
+        "phases": [
+            {
+                "_id": "5423f87677177065a0887b99",
+                "type": "select",
+                "label": "Select best"
+            }
+        ]
+    }
+]
+```
 
 ### assessments
 
-#### retrieve assessments list (2)
-GET 	/api/assessments			
-	? [user=:userId]
-GET 	/api/users/:userId/assessments
+#### list assessments (4)
 
+##### Request
+
+```
+GET 	/api/assessments
+```
+
+##### Response
+
+```json
+200 OK
+```
+```json
+[
+    {
+        "_id": "5511410927f4401a785dff0b",
+        "algorithm": "comparative-selection",
+        "title": "Test Assessment",
+        "description": "",
+        "order": 0,
+        "state": "published",
+        "comparisonsNum": 20,
+        "phases": [
+            {
+                "_id": "5423f87677177065a0887b99",
+                "type": "select",
+                "label": "Select best",
+                "__v": 0
+            }
+        ]
+    }
+]
+```
+
+#### create assessment (4)
+
+##### Request
+
+```
+POST 	/api/assessments
+```
+```json
+{
+    "_id": "5511410927f4401a785dff0b",
+    "algorithm": "comparative-selection",
+    "title": "Test Assessment",
+    "description": "",
+    "order": 0,
+    "state": "published",
+    "comparisonsNum": 20,
+    "phases": [
+		"5423f87677177065a0887b99"
+    ]
+}
+```
+##### Response
+
+```json
+200 OK
+```
+```json
+{
+    "_id": "5511410927f4401a785dff0b",
+    "algorithm": "comparative-selection",
+    "title": "Test Assessment",
+    "description": "",
+    "order": 0,
+    "state": "published",
+    "comparisonsNum": 20,
+    "phases": [
+        {
+            "_id": "5423f87677177065a0887b99",
+            "type": "select",
+            "label": "Select best"
+        }
+    ]
+}
+```
+
+#### retrieve assessment (4)
+
+##### Request
+
+```
+GET 	/api/assessments/:id
+```
+
+##### Response
+
+
+```json
+200 OK
+```
+```json
+{
+    "_id": "5511410927f4401a785dff0b",
+    "algorithm": "comparative-selection",
+    "title": "Test Assessment",
+    "description": "",
+    "order": 0,
+    "state": "published",
+    "comparisonsNum": 20,
+    "phases": [
+        {
+            "_id": "5423f87677177065a0887b99",
+            "type": "select",
+            "label": "Select best"
+        }
+    ]
+}
+```
+
+#### update assessment (4)
+
+##### Request
+
+```
+PATCH 	/api/assessments/:id
+```
+```json
+{
+    "algorithm": "comparative-selection",
+    "title": "Test Assessment",
+    "description": "",
+    "order": 0,
+    "state": "published",
+    "comparisonsNum": 20,
+    "phases": [
+		"5423f87677177065a0887b99"
+    ]
+}
+```
+##### Response
+
+```json
+200 OK
+```
+```json
+{
+    "_id": "5511410927f4401a785dff0b",
+    "algorithm": "comparative-selection",
+    "title": "Test Assessment",
+    "description": "",
+    "order": 0,
+    "state": "published",
+    "comparisonsNum": 20,
+    "phases": [
+        {
+            "_id": "5423f87677177065a0887b99",
+            "type": "select",
+            "label": "Select best"
+        }
+    ]
+}
+```
+
+#### remove assessment (4)
+
+##### Request
+
+```
+DELETE 	/api/assessments/:id
+```
+
+##### Response
+
+```json
+200 OK
+```
+```json
+{
+    "_id": "5511410927f4401a785dff0b",
+    "algorithm": "comparative-selection",
+    "title": "Test Assessment",
+    "description": "",
+    "order": 0,
+    "state": "published",
+    "comparisonsNum": 20,
+    "phases": [
+        {
+            "_id": "5423f87677177065a0887b99",
+            "type": "select",
+            "label": "Select best"
+        }
+    ]
+}
+```
 
 ### comparisons
 
-#### retrieve comparisons list (2)
-GET 	/api/comparisons			
-	? [user=:userId || assessment=assessmentId]
-GET 	/api/users/:userId/comparisons
-	? [assessment=:assessmentId]
-GET 	/api/assessments/:assessmentId/comparisons
-	? [user=:userId]
+#### list comparisons (4)
+
+##### Request
+
+```
+GET /api/comparisons
+```
+
+##### Response
+
+```
+200 OK
+```
+```json
+[
+    {
+        "_id": "55114689eeaee2b17c331b2b",
+        "_rid": 1,
+        "assessor": "55113f1742ff1a0877242a39",
+        "assessment": {
+            "_id": "5511410927f4401a785dff0b",
+            "algorithm": "comparative-selection",
+            "title": "Test Assessment",
+            "description": "",
+            "order": 0,
+            "state": "published",
+            "comparisonsNum": 20,
+            "phases": [
+                "5423f87677177065a0887b99"
+            ]
+        },
+        "phase": "5423f87677177065a0887b99",
+        "completed": false,
+        "representations": [
+            {
+                "_id": "551141561d13789d78fff006",
+                "document": "55113f4642ff1a0877242a3f",
+                "assessment": "5511410927f4401a785dff0b",
+                "type": "to rank",
+                "ability": null,
+                "compared": [
+                    "5511417f494157b8783984c5"
+                ],
+                "comparedNum": 3,
+                "name": "Test Assessment - D-pac logo"
+            },
+            {
+                "_id": "5511417f494157b8783984c5",
+                "document": "55113f2c42ff1a0877242a3e",
+                "assessment": "5511410927f4401a785dff0b",
+                "type": "to rank",
+                "ability": null,
+                "compared": [
+                    "551141561d13789d78fff006"
+                ],
+                "comparedNum": 3,
+                "name": "Test Assessment - Screen shot 2011-05-04 at 10.59.13.png"
+            }
+        ]
+    }
+]
+```
+
+#### create comparison (4)
+
+##### Request
+
+```
+POST /api/comparisons
+```
+```json
+{
+    "assessor": "55113f1742ff1a0877242a39",
+    "assessment": "5511410927f4401a785dff0b",
+    "phase": "5423f87677177065a0887b99",
+    "completed": false,
+    "representations": [ "551141561d13789d78fff006", "5511417f494157b8783984c5"]
+}
+```
+
+##### Response
+
+```
+200 OK
+```
+```json
+{
+    "_id": "55114689eeaee2b17c331b2b",
+    "_rid": 1,
+    "assessor": "55113f1742ff1a0877242a39",
+    "assessment": {
+        "_id": "5511410927f4401a785dff0b",
+        "algorithm": "comparative-selection",
+        "title": "Test Assessment",
+        "description": "",
+        "order": 0,
+        "state": "published",
+        "comparisonsNum": 20,
+        "phases": [
+            "5423f87677177065a0887b99"
+        ]
+    },
+    "phase": "5423f87677177065a0887b99",
+    "completed": false,
+    "representations": [
+        {
+            "_id": "551141561d13789d78fff006",
+            "document": "55113f4642ff1a0877242a3f",
+            "assessment": "5511410927f4401a785dff0b",
+            "type": "to rank",
+            "ability": null,
+            "compared": [
+                "5511417f494157b8783984c5"
+            ],
+            "comparedNum": 3,
+            "name": "Test Assessment - D-pac logo"
+        },
+        {
+            "_id": "5511417f494157b8783984c5",
+            "document": "55113f2c42ff1a0877242a3e",
+            "assessment": "5511410927f4401a785dff0b",
+            "type": "to rank",
+            "ability": null,
+            "compared": [
+                "551141561d13789d78fff006"
+            ],
+            "comparedNum": 3,
+            "name": "Test Assessment - Screen shot 2011-05-04 at 10.59.13.png"
+        }
+    ]
+}
+```
 
 #### retrieve comparison (4)
-GET 	/api/comparisons/:comparisonId
 
-#### update comparison (2)
-PATCH 	/api/comparisons/:comparisonId
-PUT 	/api/comparisons/:comparisonId
+##### Request
 
-#### report comparisons (4)
+```
+GET /api/comparisons/:id
+```
 
-GET 	/api/comparisons/actions/report
+##### Response
 
-### judgements
+```
+200 OK
+```
+```json
+{
+    "_id": "55114689eeaee2b17c331b2b",
+    "_rid": 1,
+    "assessor": "55113f1742ff1a0877242a39",
+    "assessment": {
+        "_id": "5511410927f4401a785dff0b",
+        "algorithm": "comparative-selection",
+        "title": "Test Assessment",
+        "description": "",
+        "order": 0,
+        "state": "published",
+        "comparisonsNum": 20,
+        "phases": [
+            "5423f87677177065a0887b99"
+        ]
+    },
+    "phase": "5423f87677177065a0887b99",
+    "completed": false,
+    "representations": [
+        {
+            "_id": "551141561d13789d78fff006",
+            "document": "55113f4642ff1a0877242a3f",
+            "assessment": "5511410927f4401a785dff0b",
+            "type": "to rank",
+            "ability": null,
+            "compared": [
+                "5511417f494157b8783984c5"
+            ],
+            "comparedNum": 3,
+            "name": "Test Assessment - D-pac logo"
+        },
+        {
+            "_id": "5511417f494157b8783984c5",
+            "document": "55113f2c42ff1a0877242a3e",
+            "assessment": "5511410927f4401a785dff0b",
+            "type": "to rank",
+            "ability": null,
+            "compared": [
+                "551141561d13789d78fff006"
+            ],
+            "comparedNum": 3,
+            "name": "Test Assessment - Screen shot 2011-05-04 at 10.59.13.png"
+        }
+    ]
+}
+```
 
-#### retrieve judgements list (4)
-GET 	/api/judgements				
-	? [user=:userId || comparison=:comparisonId]
-GET 	/api/users/:userId/judgements
-	? [comparison=:comparisonId]
-GET 	/api/comparisons/:comparisonId/judgements
-	? [user=:userId]
+#### update comparison (4)
 
-#### update judgement (2)
-PUT 	/api/judgements/:judgementId
-PATCH 	/api/judgements/:judgementId
+##### Request
 
-### seqs
+```
+PATCH /api/comparisons/:id
+```
+```json
+{
+    "assessor": "55113f1742ff1a0877242a39",
+    "assessment": "5511410927f4401a785dff0b",
+    "phase": "5423f87677177065a0887b99",
+    "completed": false,
+    "representations": [ "551141561d13789d78fff006", "5511417f494157b8783984c5"]
+}
+```
 
-#### create seq (2)
+##### Response
 
-POST 	/api/seqs
+```
+200 OK
+```
+```json
+{
+    "_id": "55114689eeaee2b17c331b2b",
+    "_rid": 1,
+    "assessor": "55113f1742ff1a0877242a39",
+    "assessment": {
+        "_id": "5511410927f4401a785dff0b",
+        "algorithm": "comparative-selection",
+        "title": "Test Assessment",
+        "description": "",
+        "order": 0,
+        "state": "published",
+        "comparisonsNum": 20,
+        "phases": [
+            "5423f87677177065a0887b99"
+        ]
+    },
+    "phase": "5423f87677177065a0887b99",
+    "completed": false,
+    "representations": [
+        {
+            "_id": "551141561d13789d78fff006",
+            "document": "55113f4642ff1a0877242a3f",
+            "assessment": "5511410927f4401a785dff0b",
+            "type": "to rank",
+            "ability": null,
+            "compared": [
+                "5511417f494157b8783984c5"
+            ],
+            "comparedNum": 3,
+            "name": "Test Assessment - D-pac logo"
+        },
+        {
+            "_id": "5511417f494157b8783984c5",
+            "document": "55113f2c42ff1a0877242a3e",
+            "assessment": "5511410927f4401a785dff0b",
+            "type": "to rank",
+            "ability": null,
+            "compared": [
+                "551141561d13789d78fff006"
+            ],
+            "comparedNum": 3,
+            "name": "Test Assessment - Screen shot 2011-05-04 at 10.59.13.png"
+        }
+    ]
+}
+```
 
-### update seq (2)
+#### remove comparison (4)
 
-PATCH 	/api/seqs/:seqId
-PUT 	/api/seqs/:seqId
+##### Request
+
+```
+DELETE /api/comparisons/:id
+```
+
+##### Response
+
+```
+200 OK
+```
+```json
+{
+    "_id": "55114689eeaee2b17c331b2b",
+    "_rid": 1,
+    "assessor": "55113f1742ff1a0877242a39",
+    "assessment": {
+        "_id": "5511410927f4401a785dff0b",
+        "algorithm": "comparative-selection",
+        "title": "Test Assessment",
+        "description": "",
+        "order": 0,
+        "state": "published",
+        "comparisonsNum": 20,
+        "phases": [
+            "5423f87677177065a0887b99"
+        ]
+    },
+    "phase": "5423f87677177065a0887b99",
+    "completed": false,
+    "representations": [
+        {
+            "_id": "551141561d13789d78fff006",
+            "document": "55113f4642ff1a0877242a3f",
+            "assessment": "5511410927f4401a785dff0b",
+            "type": "to rank",
+            "ability": null,
+            "compared": [
+                "5511417f494157b8783984c5"
+            ],
+            "comparedNum": 3,
+            "name": "Test Assessment - D-pac logo"
+        },
+        {
+            "_id": "5511417f494157b8783984c5",
+            "document": "55113f2c42ff1a0877242a3e",
+            "assessment": "5511410927f4401a785dff0b",
+            "type": "to rank",
+            "ability": null,
+            "compared": [
+                "551141561d13789d78fff006"
+            ],
+            "comparedNum": 3,
+            "name": "Test Assessment - Screen shot 2011-05-04 at 10.59.13.png"
+        }
+    ]
+}
+```
 
 ### timelogs
 
-#### get timelogs list (2)
+#### list timelogs (4)
 
-GET 	/api/timelogs
-	? [user=:userId || comparison=:comparisonId || begin={date} || end={date}]
-GET 	/api/users/:userId/timelogs
-	? [comparison=:comparisonId || begin={date} || end={date}]
-GET 	/api/comparisons/:comparisonId/timelogs
-	? [user=:userId || begin={date} || end={date}]
+##### Request
 
-#### update timelog (2)
+```
+GET /api/timelogs
+```
 
-PATCH 	/api/timelogs/:timelogId
-PUT 	/api/timelogs/:timelogId
+##### Response
 
-#### representations
+```
+200 OK
+```
+```json
+[
+    {
+        "_id": "55126ba6cffa5eb9c484b7f9",
+        "end": "2015-03-25T08:02:45.000Z",
+        "begin": "2015-03-25T08:02:44.000Z",
+        "comparison": "55114689eeaee2b17c331b2b",
+        "phase": "5423f87677177065a0887b99",
+    }
+]
+```
 
-#### retrieve representation list (4)
+#### create timelog (4)
 
-GET 	/api/representations
-	? [assessee=:userId || assessment=:assessmentId ]
-GET 	/api/users/:userId/representations
-	? [assessment=:assessmentId ]
-GET 	/api/assessments/:assessmentId/representations
-	? [user=:userId]
+##### Request
 
-GET 	/api/representations/actions/find
-	? q=[duplicates || pair]
+```
+POST /api/timelogs
+```
+```json
+{
+    "end": "2015-03-25T08:02:45.000Z",
+    "begin": "2015-03-25T08:02:44.000Z",
+    "comparison": "55114689eeaee2b17c331b2b",
+    "phase": "5423f87677177065a0887b99"
+}
+```
 
-#### retrieve representation (0)
+##### Response
 
-GET 	/api/representations/:representationId.:format
-	? [format=:format]
+```
+200 OK
+```
+```json
+[
+    {
+        "_id": "55126ba6cffa5eb9c484b7f9",
+        "end": "2015-03-25T08:02:45.000Z",
+        "begin": "2015-03-25T08:02:44.000Z",
+        "comparison": "55114689eeaee2b17c331b2b",
+        "phase": "5423f87677177065a0887b99"
+    }
+]
+```
 
-### sessions
+#### retrieve timelog (4)
 
-GET 	/api/sessions/:sessionId						(2)
-POST 	/api/sessions									(0)
-DELETE 	/api/sessions/:sessionId						(2)
+##### Request
 
-### users
+```
+GET /api/timelogs/:id
+```
 
-GET 	/api/users/:userId/session/						(2)
-GET 	/api/users/:userId/account						(2)
-PUT 	/api/users/:userId/account						(2)
-PATCH 	/api/users/:userId/account						(2)
-GET 	/api/users/:userId/mementos						(2)
-GET 	/api/users/:userId/assessments					(2)
-GET 	/api/users/:userId/comparisons					(2)
-GET 	/api/users/:userId/judgements					(4)
-GET 	/api/users/:userId/timelogs						(2)
-GET 	/api/users/:userId/representations				(2)
+##### Response
 
-### mementos
+```
+200 OK
+```
+```json
+[
+    {
+        "_id": "55126ba6cffa5eb9c484b7f9",
+        "end": "2015-03-25T08:02:45.000Z",
+        "begin": "2015-03-25T08:02:44.000Z",
+        "comparison": "55114689eeaee2b17c331b2b",
+        "phase": "5423f87677177065a0887b99"
+    }
+]
+```
 
-GET 	/api/mementos									(2)
-POST 	/api/mementos									(2)
+#### update timelog (4)
 
-### assessments 
+##### Request
 
-GET 	/api/assessments/:assessmentId/mementos			(2)
-GET 	/api/assessments								(2)
-GET 	/api/assessments/:assessmentId/comparisons		(2)
-GET 	/api/assessments/:assessmentId/representations	(4)
+```
+PATCH /api/timelogs/:id
+```
+```json
+{
+    "end": "2015-03-25T08:02:45.000Z",
+    "begin": "2015-03-25T08:02:44.000Z",
+    "comparison": "55114689eeaee2b17c331b2b",
+    "phase": "5423f87677177065a0887b99"
+}
+```
 
-### comparisons
+##### Response
 
-GET 	/api/comparisons								(2)
-GET 	/api/comparisons/:comparisonId					(4)
-PATCH 	/api/comparisons/:comparisonId					(2)
-PUT 	/api/comparisons/:comparisonId					(2)
-GET 	/api/comparisons/:comparisonId/judgements		(4)
-GET 	/api/comparisons/:comparisonId/timelogs			(2)
-GET 	/api/comparisons/actions/report					(4)
+```
+200 OK
+```
+```json
+[
+    {
+        "_id": "55126ba6cffa5eb9c484b7f9",
+        "end": "2015-03-25T08:02:45.000Z",
+        "begin": "2015-03-25T08:02:44.000Z",
+        "comparison": "55114689eeaee2b17c331b2b",
+        "phase": "5423f87677177065a0887b99"
+    }
+]
+```
 
-### judgements
+#### remove timelog (4)
 
-GET 	/api/judgements									(4)
-PUT 	/api/judgements/:judgementId					(2)
-PATCH 	/api/judgements/:judgementId					(2)
+##### Request
 
-### seqs
+```
+DELETE /api/timelogs/:id
+```
 
-POST 	/api/seqs										(2)
-PATCH 	/api/seqs/:seqId								(2)
-PUT 	/api/seqs/:seqId								(2)
+##### Response
 
-### timelogs
-
-GET 	/api/timelogs									(2)
-PATCH 	/api/timelogs/:timelogId						(2)
-PUT 	/api/timelogs/:timelogId						(2)
+```
+200 OK
+```
+```json
+[
+    {
+        "_id": "55126ba6cffa5eb9c484b7f9",
+        "end": "2015-03-25T08:02:45.000Z",
+        "begin": "2015-03-25T08:02:44.000Z",
+        "comparison": "55114689eeaee2b17c331b2b",
+        "phase": "5423f87677177065a0887b99"
+    }
+]
+```
 
 ### representations
 
-GET 	/api/representations							(4)
-GET 	/api/representations/actions/find				(4)
-GET 	/api/representations/:representationId.:format	(0)
+#### list representations (4)
+
+##### Request
+
+```
+GET /api/representations
+```
+
+##### Response
+
+```
+200 OK
+```
+```json
+[
+    {
+        "_id": "551141561d13789d78fff006",
+        "document": {
+            "href": "http://d-pac.be/images/be72540e.d-pac-logo_colour.png"
+        },
+        "assessment": "5511410927f4401a785dff0b",
+        "type": "to rank",
+        "ability": null,
+        "compared": [
+            "5511417f494157b8783984c5"
+        ],
+        "comparedNum": 3,
+        "name": "Test Assessment - D-pac logo"
+    },
+    {
+        "_id": "5511417f494157b8783984c5",
+        "document": {
+            "href": "/uploads/Screen shot 2011-05-04 at 10.59.13-1427193661242.png"
+        },
+        "assessment": "5511410927f4401a785dff0b",
+        "type": "to rank",
+        "ability": null,
+        "compared": [
+            "551141561d13789d78fff006"
+        ],
+        "comparedNum": 3,
+        "name": "Test Assessment - Screen shot 2011-05-04 at 10.59.13.png"
+    }
+]
+```
+
+#### retrieve representation (4)
+
+##### Request
+
+```
+GET /api/representations/:id
+```
+
+##### Response
+
+```
+200 OK
+```
+```json
+{
+    "_id": "551141561d13789d78fff006",
+    "document": {
+        "_id": "55113f4642ff1a0877242a3f",
+        "_rid": 2,
+        "owner": "55113f1742ff1a0877242a39",
+        "link": "http://d-pac.be/images/be72540e.d-pac-logo_colour.png",
+        "type": "link",
+        "title": "D-pac logo",
+        "name": "D-pac logo"
+    },
+    "assessment": "5511410927f4401a785dff0b",
+    "type": "to rank",
+    "ability": null,
+    "compared": [
+        "5511417f494157b8783984c5"
+    ],
+    "comparedNum": 3,
+    "name": "Test Assessment - D-pac logo"
+}
+```
+
 
