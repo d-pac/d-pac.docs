@@ -85,9 +85,7 @@ assessment: &lt;Assessment&gt;
 state : &lt;Phase&gt;
 completed : &lt;Boolean&gt;
 representations :  &lt;Representation[]&gt;
-data : {
-  &lt;Phase&gt;: *
-}</y:AttributeLabel>
+selected: &lt;Representation&gt;</y:AttributeLabel>
             <y:MethodLabel/>
           </y:UML>
         </y:UMLClassNode>
@@ -174,7 +172,7 @@ value: &lt;String&gt; </y:AttributeLabel>
       <data key="d4"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="133.56332562747684" width="213.0" x="43.5" y="58.21833718626158"/>
+          <y:Geometry height="165.92275281862203" width="213.0" x="43.5" y="58.21833718626158"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.310546875" modelName="custom" textColor="#000000" visible="true" width="105.47998046875" x="53.760009765625" y="3.0">Representation<y:LabelModel>
@@ -189,9 +187,10 @@ value: &lt;String&gt; </y:AttributeLabel>
 assessment : &lt;Assessment&gt;
 document : &lt;Document&gt;
 type : &lt;"to rank" | "ranked" | "benchmark"&gt;
-ability : &lt;Number | undefined&gt;
+ability : &lt;Number | null&gt;
 compared: &lt;Representation[]&gt;
-comparedNum: &lt;Number&gt;</y:AttributeLabel>
+comparedNum: &lt;Number&gt;
+closeTo: &lt;Representation&gt;</y:AttributeLabel>
             <y:MethodLabel/>
           </y:UML>
         </y:UMLClassNode>
@@ -288,7 +287,7 @@ comparedNum: &lt;Number&gt;</y:AttributeLabel>
     <edge id="e8" source="n6" target="n0">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="66.78166281373842" tx="0.0" ty="1.718423782246873"/>
+          <y:Path sx="0.0" sy="82.96137640931101" tx="0.0" ty="1.718423782246873"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="crows_foot_many_optional" target="crows_foot_one_mandatory"/>
           <y:BendStyle smoothed="false"/>
@@ -298,7 +297,10 @@ comparedNum: &lt;Number&gt;</y:AttributeLabel>
     <edge id="e9" source="n6" target="n3">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="106.5" sy="0.0" tx="-106.5" ty="0.0"/>
+          <y:Path sx="106.5" sy="0.0" tx="-106.5" ty="0.0">
+            <y:Point x="287.5" y="141.1797135955726"/>
+            <y:Point x="287.5" y="125.0"/>
+          </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="crows_foot_many_optional" target="crows_foot_one_mandatory"/>
           <y:BendStyle smoothed="false"/>
@@ -308,8 +310,8 @@ comparedNum: &lt;Number&gt;</y:AttributeLabel>
     <edge id="e10" source="n6" target="n6">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="-106.5" sy="0.0" tx="-60.0" ty="-66.78166281373842">
-            <y:Point x="0.0" y="125.0"/>
+          <y:Path sx="-106.5" sy="0.0" tx="-60.0" ty="-82.96137640931101">
+            <y:Point x="0.0" y="141.1797135955726"/>
             <y:Point x="0.0" y="25.0"/>
             <y:Point x="90.0" y="25.0"/>
           </y:Path>
