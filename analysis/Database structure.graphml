@@ -68,7 +68,7 @@ assessments: &lt;Assessment[]&gt;</y:AttributeLabel>
       <data key="d4"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="250.48877582028234" width="255.0" x="952.5" y="256.2956239845731"/>
+          <y:Geometry height="276.98018128034306" width="255.0" x="952.5" y="256.2956239845731"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.310546875" modelName="custom" textColor="#000000" visible="true" width="84.7548828125" x="85.12255859375" y="3.0">Comparison<y:LabelModel>
@@ -88,12 +88,15 @@ representations :  {
   a: &lt;Representation&gt;,
   b: &lt;Representation&gt;
 }
-selected: &lt;Representation&gt;,
-passed : {
-  a : &lt;Boolean&gt;
-  b: &lt;Boolean&gt;
-},
-comparative : &lt;String&gt;</y:AttributeLabel>
+data : {
+  selection : &lt;Representation&gt;
+  passfail : {
+    a : &lt;Boolean&gt;
+    b: &lt;Boolean&gt;
+  },
+  comparative : &lt;String&gt;
+}
+</y:AttributeLabel>
             <y:MethodLabel/>
           </y:UML>
         </y:UMLClassNode>
@@ -234,7 +237,7 @@ closeTo: &lt;Representation&gt;</y:AttributeLabel>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="-65.0" ty="41.59680268642103">
-            <y:Point x="720.0" y="381.5400118947143"/>
+            <y:Point x="720.0" y="394.7857146247446"/>
             <y:Point x="720.0" y="354.3863212981521"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
@@ -246,8 +249,8 @@ closeTo: &lt;Representation&gt;</y:AttributeLabel>
     <edge id="e3" source="n2" target="n3">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="127.5" sy="-78.71880520583633" tx="0.0" ty="-76.9055316091954">
-            <y:Point x="1260.0" y="302.82120668887796"/>
+          <y:Path sx="127.5" sy="-87.04401570363339" tx="0.0" ty="-76.9055316091954">
+            <y:Point x="1260.0" y="307.74169892111127"/>
             <y:Point x="1260.0" y="0.0"/>
             <y:Point x="425.0" y="0.0"/>
           </y:Path>
@@ -260,7 +263,7 @@ closeTo: &lt;Representation&gt;</y:AttributeLabel>
     <edge id="e4" source="n2" target="n4">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="-125.24438791014117" tx="0.0" ty="52.5"/>
+          <y:Path sx="0.0" sy="-138.49009064017156" tx="0.0" ty="52.5"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="crows_foot_one_mandatory" target="crows_foot_many_optional"/>
           <y:BendStyle smoothed="false"/>
@@ -270,8 +273,8 @@ closeTo: &lt;Representation&gt;</y:AttributeLabel>
     <edge id="e5" source="n2" target="n5">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="-23.499480789200334" sy="-57.66926367926251" tx="-95.0" ty="38.876436781609186">
-            <y:Point x="630.0" y="323.87074821545184"/>
+          <y:Path sx="-23.499480789200334" sy="-63.76829882248426" tx="-95.0" ty="38.876436781609186">
+            <y:Point x="630.0" y="331.01741580226036"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="crows_foot_many_optional" target="crows_foot_one_mandatory"/>
@@ -339,8 +342,8 @@ closeTo: &lt;Representation&gt;</y:AttributeLabel>
     <edge id="e11" source="n2" target="n6">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="-37.863442438246366" tx="0.0" ty="0.0">
-            <y:Point x="1290.0" y="343.676569456468"/>
+          <y:Path sx="0.0" sy="-41.867836656951475" tx="0.0" ty="0.0">
+            <y:Point x="1290.0" y="352.9178779677932"/>
             <y:Point x="1290.0" y="-30.0"/>
             <y:Point x="150.0" y="-30.0"/>
           </y:Path>
