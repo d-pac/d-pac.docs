@@ -1,0 +1,29 @@
+{
+  "name": "d-pac.docs",
+  "private": true,
+  "version": "0.1.0",
+  "description": "d-pac.docs",
+  "scripts": {
+    "build": "gitbook build; grunt gh-pages"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/d-pac/d-pac.docs.git"
+  },
+  "author": "d-pac",
+  "license": "GPL v3",
+  "bugs": {
+    "url": "https://github.com/d-pac/d-pac.docs/issues"
+  },
+  "homepage": "https://github.com/d-pac/d-pac.docs",
+  "keywords": [
+    "d-pac"
+  ],
+  "devDependencies": {
+    "gitbook-cli": "^0.3.3",
+    "grunt": "^0.4.5",
+    "grunt-gh-pages": "^0.10.0",
+    "jit-grunt": "^0.9.1",
+    "load-grunt-configs": "^0.4.2"
+  }
+}

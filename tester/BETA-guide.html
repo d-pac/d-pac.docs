@@ -1,0 +1,341 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        <title>Tester guide | d-pac.docs</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.0.1">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    
+    <link rel="prev" href="../analysis/REST v0.2.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+    
+
+        
+    <div class="book" data-level="3" data-basepath=".." data-revision="Wed Apr 08 2015 16:29:50 GMT+0200 (CEST)">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        
+        
+        
+
+        
+
+        
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="user/PAM-guide.html">
+            
+                
+                    <a href="../user/PAM-guide.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        User guide
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="developer/index.html">
+            
+                
+                    <a href="../developer/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Developer guide
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="analysis/plugin specification.html">
+            
+                
+                    <a href="../analysis/plugin specification.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        D-pac keystone plugin specification
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="analysis/REST v0.2.html">
+            
+                
+                    <a href="../analysis/REST v0.2.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        REST API
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="3" data-path="tester/BETA-guide.html">
+            
+                
+                    <a href="../tester/BETA-guide.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Tester guide
+                    </a>
+                
+            
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Share on Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Share on Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Share on Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Share on Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Share on Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >d-pac.docs</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="d-pac-beta-testers-guide">D-pac beta-testers guide</h1>
+<p>Welcome to the D-pac beta test.</p>
+<p>If you don&apos;t have a Github account already create one on <a href="http://github.com" target="_blank">http://github.com</a></p>
+<p>You won&apos;t be able to report bugs or other feedback without an account.</p>
+<h2 id="url">URL</h2>
+<p><a href="http://tool.d-pac.be/assessors" target="_blank">http://tool.d-pac.be/assessors</a></p>
+<h2 id="feedback">Feedback</h2>
+<p>How to provide useful feedback:</p>
+<h3 id="assessors">Assessors</h3>
+<ol>
+<li><p>Use the <code>report issue</code>-button on the application:</p>
+<p> <img src="https://www.evernote.com/shard/s59/sh/8502495f-c0a0-4e99-bc52-e20af35fd9ce/988c480e546ba2ce42e4e7a60bda55e8/res/9e0127a1-9aef-4c53-a936-c04407d09eab/skitch.png" alt="Report issue"></p>
+<p> Clicking the button will open the <code>create issue</code> page on Github:</p>
+<p> <img src="https://www.evernote.com/shard/s59/sh/5328c0ac-8ecd-42f0-9704-5f96c79b1d61/e86a6f6c1825f4fb75ff8753425aa0e2/res/3920c864-b009-47b4-b786-00bfb5f14266/skitch.png" alt="Create issue"></p>
+<p> <strong>VERY IMPORTANT</strong>: automatically some relevant debugging information will be copied to your clipboard. Please paste this into the &quot;Leave a comment&quot;-area of the new issue:</p>
+<p> <img src="https://www.evernote.com/shard/s59/sh/88b63347-2ac2-448a-8b86-175a4e71dc75/b8961ecdefc63e900355763e8f472dd5/res/61718c67-cc5e-4ce4-a899-ae26b5615174/skitch.png" alt="Paste details"></p>
+<p> Pasting the data can be achieved by clicking in the &quot;Leave a comment&quot; area and subsequently pressing <code>cmd+v</code> [Mac] or <code>ctrl+v</code> [Windows].</p>
+</li>
+<li><p><strong>Actions description</strong> A concise, but comprehensive description of your actions leading to the bug.
+ E.g. </p>
+<blockquote>
+<p>Immediately after logging in I clicked on &quot;tutorial&quot; in the menu.</p>
+</blockquote>
+<p> Make sure to provide a context when refererring to user interface elements. &quot;I clicked the button&quot; is rather unclear, &quot;I clicked on &apos;tutorial&apos; in the menu&quot; describes the user element the action was taken on and also it&apos;s place in the user interface layout.</p>
+</li>
+<li><p><strong>Problem description</strong> A concise, but comprehensive description of what went wrong.
+ What user interface reaction were you expecting and what reaction did you get instead?</p>
+<p> E.g.</p>
+<blockquote>
+<p>The page turned white and showed me the text &quot;Not permitted! Your session may have expired.&quot;</p>
+</blockquote>
+<p> Or</p>
+<blockquote>
+<p>Nothing happened. I expected to see a &quot;tutorial page&quot;, but the screen contents did not change.</p>
+</blockquote>
+</li>
+</ol>
+<ol>
+<li><p><strong>A screenshot</strong> Providing visual feedback is very useful, especially when it concerns scrambled layout, incorrect colours, hard-to-read text, et cetera.</p>
+<p> See <a href="http://www.take-a-screenshot.org/" target="_blank">http://www.take-a-screenshot.org/</a> for a clear overview on how to take a screenshot.</p>
+<p> You can either paste it into the &quot;Leave comment&quot; area, or drag-and-drop a file from Finder/Explorer to said area.</p>
+</li>
+</ol>
+<h3 id="developers">Developers</h3>
+<p>The tool logs all of its actions to the console. These output logs are <strong>really</strong> useful to me, please provide them if you encounter a bug.</p>
+<h4 id="step-by-step">Step-by-step</h4>
+<ol>
+<li>Logging is optimized for <strong><a href="https://www.google.com/chrome" target="_blank">Chrome</a></strong>, please use it.</li>
+<li><p><strong>Immediately after opening the tool</strong>, open the console (<code>alt+cmd+i</code>) please type the following into the console:</p>
+<pre><code class="lang-js"> localStorage.debug = <span class="hljs-literal">true</span>
+</code></pre>
+<p> <strong>Now refresh the page.</strong></p>
+</li>
+<li><p>You&apos;ll notice that the tool starts logging all kinds of stuff to the console. It should look something like this:</p>
+<p> <img src="https://www.evernote.com/shard/s59/sh/e8ee868e-12e3-497a-b2c1-bcbc41a3a6d9/db621ff7137e9d0fb0b507bb5b477907/res/60f11d17-e23b-446e-b9ea-e567609a3350/skitch.png" alt="Console log"></p>
+</li>
+<li><p>When you encounter a bug, please dump the full contents of the errors with <code>ctrl+alt+d</code>. (Make sure the tab of the d-pac tool has focus, not the console!)</p>
+</li>
+<li>Select all text in the console and copy it with <code>cmd+c</code></li>
+</ol>
+<p>You can temporarily toggle the continuous time logging (e.g. the <code>PUT http://boil.iminds.be:3020/api/timelogs/543fa94508483aba6202ac7b</code> messages polluting the console) by typing <code>ctrl+alt+s</code> (again, focus should be on the webpage, not the console!) Type it again to re-enable.</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../analysis/REST v0.2.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: REST API"><i class="fa fa-angle-left"></i></a>
+        
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
