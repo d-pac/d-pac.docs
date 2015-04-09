@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "description": "d-pac.docs",
   "scripts": {
-    "build": "gitbook build; grunt gh-pages"
+    "publish": "gitbook build src; grunt gh-pages"
   },
   "repository": {
     "type": "git",

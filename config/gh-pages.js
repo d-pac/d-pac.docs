@@ -4,7 +4,7 @@ module.exports = function( grunt,
                            opts ){
   return {
     options : {
-      base : "_book"
+      base : "dist"
     },
     src     : [ "**" ]
   };
