@@ -1,6 +1,6 @@
 ## Architecture
 
-![Architecture](assets/architecture.png)
+![Architecture](assets/Architecture.png)
 
 ## Database
 
