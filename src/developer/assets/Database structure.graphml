@@ -18,7 +18,7 @@
       <data key="d4"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="119.6875" width="213.0" x="43.5" y="332.78951861173107"/>
+          <y:Geometry height="219.03027047522755" width="213.0" x="43.5" y="332.78951861173107"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.310546875" modelName="custom" textColor="#000000" visible="true" width="72.09765625" x="70.451171875" y="3.0">Document<y:LabelModel>
@@ -30,9 +30,18 @@
           </y:NodeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
             <y:AttributeLabel>_id
+name : &lt;String&gt;
+title : &lt;String&gt;
 owner: &lt;User&gt;
-file: &lt;File&gt;
-url: &lt;String&gt;</y:AttributeLabel>
+host : ["local"|"remote"]
+file: {
+  filename:&lt;String&gt;
+  originalname: &lt;String&gt;
+  path : &lt;String&gt;
+  size: &lt;Number&gt;
+  filetype: &lt;String&gt;
+}
+link: &lt;String&gt;</y:AttributeLabel>
             <y:MethodLabel/>
           </y:UML>
         </y:UMLClassNode>
@@ -106,7 +115,7 @@ data : {
       <data key="d4"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="171.0304767674303" width="213.0" x="318.5" y="48.09446839080459"/>
+          <y:Geometry height="184.2761794974606" width="213.0" x="318.5" y="48.09446839080459"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.310546875" modelName="custom" textColor="#000000" visible="true" width="84.62158203125" x="64.189208984375" y="3.0">Assessment<y:LabelModel>
@@ -119,13 +128,14 @@ data : {
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
             <y:AttributeLabel>_id
 title: &lt;String&gt;
-description: &lt;String&gt;
-workflow: &lt;Phase[]&gt;
 algorithm: &lt;String&gt;
+description: &lt;String&gt;
+phases: &lt;Phase[]&gt;
 comparisonsNum: &lt;Number&gt;
 state: &lt;"draft" | "published" | "archived"&gt;
 order: &lt;Number&gt;
-stage: &lt;Number&gt;</y:AttributeLabel>
+stage: &lt;Number&gt;
+UI texts: &lt;JSON&gt;</y:AttributeLabel>
             <y:MethodLabel/>
           </y:UML>
         </y:UMLClassNode>
@@ -147,8 +157,8 @@ stage: &lt;Number&gt;</y:AttributeLabel>
           </y:NodeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
             <y:AttributeLabel>_id
-comparison: &lt;Comparison&gt;
 phase: &lt;Phase&gt;
+comparison: &lt;Comparison&gt;
 begin: &lt;DateTime&gt;
 end: &lt;DateTime&gt;</y:AttributeLabel>
             <y:MethodLabel/>
@@ -173,7 +183,7 @@ end: &lt;DateTime&gt;</y:AttributeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
             <y:AttributeLabel>_id
 label: &lt;String&gt;
-value: &lt;String&gt; </y:AttributeLabel>
+type: &lt;String&gt; </y:AttributeLabel>
             <y:MethodLabel/>
           </y:UML>
         </y:UMLClassNode>
@@ -195,15 +205,16 @@ value: &lt;String&gt; </y:AttributeLabel>
           </y:NodeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
             <y:AttributeLabel>_id
+name : &lt;String&gt;
 assessment : &lt;Assessment&gt;
 document : &lt;Document&gt;
-type : &lt;"to rank" | "ranked" | "benchmark"&gt;
+comparedNum: &lt;Number&gt;
+compared: &lt;Representation[]&gt;
 ability : {
   value: &lt;Number | null&gt;,
   se: &lt;Number | null&gt;
 }
-compared: &lt;Representation[]&gt;
-comparedNum: &lt;Number&gt;
+type : &lt;"to rank" | "ranked" | "benchmark"&gt;
 closeTo: &lt;Representation&gt;</y:AttributeLabel>
             <y:MethodLabel/>
           </y:UML>
@@ -213,7 +224,7 @@ closeTo: &lt;Representation&gt;</y:AttributeLabel>
     <edge id="e0" source="n3" target="n1">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="85.51523838371514" tx="0.0" ty="-7.057521852731161"/>
+          <y:Path sx="0.0" sy="92.13808974873031" tx="0.0" ty="-7.057521852731161"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="crows_foot_many_optional" target="crows_foot_one_mandatory"/>
           <y:BendStyle smoothed="false"/>
@@ -224,7 +235,7 @@ closeTo: &lt;Representation&gt;</y:AttributeLabel>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="106.5" sy="0.0" tx="-106.5" ty="0.0">
-            <y:Point x="287.5" y="392.63326861173107"/>
+            <y:Point x="287.5" y="442.30465384934485"/>
             <y:Point x="287.5" y="360.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
@@ -249,7 +260,7 @@ closeTo: &lt;Representation&gt;</y:AttributeLabel>
     <edge id="e3" source="n2" target="n3">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="127.5" sy="-87.04401570363339" tx="0.0" ty="-85.51523838371514">
+          <y:Path sx="127.5" sy="-87.04401570363339" tx="0.0" ty="-92.13808974873031">
             <y:Point x="1260.0" y="307.74169892111127"/>
             <y:Point x="1260.0" y="0.0"/>
             <y:Point x="425.0" y="0.0"/>
@@ -286,7 +297,7 @@ closeTo: &lt;Representation&gt;</y:AttributeLabel>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="106.5" sy="0.0" tx="-127.5" ty="0.0">
-            <y:Point x="564.5" y="133.60970677451974"/>
+            <y:Point x="564.5" y="140.2325581395349"/>
             <y:Point x="564.5" y="125.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
@@ -308,7 +319,7 @@ closeTo: &lt;Representation&gt;</y:AttributeLabel>
     <edge id="e8" source="n6" target="n0">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="113.42649268838072" tx="0.0" ty="1.718423782246873"/>
+          <y:Path sx="0.0" sy="113.42649268838072" tx="0.0" ty="3.144746325360595"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="crows_foot_many_optional" target="crows_foot_one_mandatory"/>
           <y:BendStyle smoothed="false"/>
@@ -320,7 +331,7 @@ closeTo: &lt;Representation&gt;</y:AttributeLabel>
         <y:PolyLineEdge>
           <y:Path sx="106.5" sy="0.0" tx="-106.5" ty="0.0">
             <y:Point x="287.5" y="171.6448298746423"/>
-            <y:Point x="287.5" y="133.60970677451974"/>
+            <y:Point x="287.5" y="140.2325581395349"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="crows_foot_many_optional" target="crows_foot_one_mandatory"/>
