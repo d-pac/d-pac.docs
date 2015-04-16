@@ -42,7 +42,7 @@ url: &lt;String&gt;</y:AttributeLabel>
       <data key="d4"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="133.56332562747684" width="213.0" x="318.5" y="246.00785579799265"/>
+          <y:Geometry height="133.56332562747684" width="213.0" x="318.5" y="293.2183371862616"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.310546875" modelName="custom" textColor="#000000" visible="true" width="34.44970703125" x="89.275146484375" y="3.0">User<y:LabelModel>
@@ -106,7 +106,7 @@ data : {
       <data key="d4"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="153.8110632183908" width="213.0" x="318.5" y="48.09446839080459"/>
+          <y:Geometry height="171.0304767674303" width="213.0" x="318.5" y="48.09446839080459"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.310546875" modelName="custom" textColor="#000000" visible="true" width="84.62158203125" x="64.189208984375" y="3.0">Assessment<y:LabelModel>
@@ -125,7 +125,7 @@ algorithm: &lt;String&gt;
 comparisonsNum: &lt;Number&gt;
 state: &lt;"draft" | "published" | "archived"&gt;
 order: &lt;Number&gt;
-</y:AttributeLabel>
+stage: &lt;Number&gt;</y:AttributeLabel>
             <y:MethodLabel/>
           </y:UML>
         </y:UMLClassNode>
@@ -204,8 +204,7 @@ ability : {
 }
 compared: &lt;Representation[]&gt;
 comparedNum: &lt;Number&gt;
-closeTo: &lt;Representation&gt;
-stage: &lt;Number&gt;</y:AttributeLabel>
+closeTo: &lt;Representation&gt;</y:AttributeLabel>
             <y:MethodLabel/>
           </y:UML>
         </y:UMLClassNode>
@@ -214,7 +213,7 @@ stage: &lt;Number&gt;</y:AttributeLabel>
     <edge id="e0" source="n3" target="n1">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="76.9055316091954" tx="0.0" ty="-7.057521852731161"/>
+          <y:Path sx="0.0" sy="85.51523838371514" tx="0.0" ty="-7.057521852731161"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="crows_foot_many_optional" target="crows_foot_one_mandatory"/>
           <y:BendStyle smoothed="false"/>
@@ -226,7 +225,7 @@ stage: &lt;Number&gt;</y:AttributeLabel>
         <y:PolyLineEdge>
           <y:Path sx="106.5" sy="0.0" tx="-106.5" ty="0.0">
             <y:Point x="287.5" y="392.63326861173107"/>
-            <y:Point x="287.5" y="312.78951861173107"/>
+            <y:Point x="287.5" y="360.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="crows_foot_many_optional" target="crows_foot_one_mandatory"/>
@@ -239,7 +238,7 @@ stage: &lt;Number&gt;</y:AttributeLabel>
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="-65.0" ty="41.59680268642103">
             <y:Point x="720.0" y="394.7857146247446"/>
-            <y:Point x="720.0" y="354.3863212981521"/>
+            <y:Point x="720.0" y="401.59680268642103"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="crows_foot_many_optional" target="crows_foot_one_mandatory"/>
@@ -250,7 +249,7 @@ stage: &lt;Number&gt;</y:AttributeLabel>
     <edge id="e3" source="n2" target="n3">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="127.5" sy="-87.04401570363339" tx="0.0" ty="-76.9055316091954">
+          <y:Path sx="127.5" sy="-87.04401570363339" tx="0.0" ty="-85.51523838371514">
             <y:Point x="1260.0" y="307.74169892111127"/>
             <y:Point x="1260.0" y="0.0"/>
             <y:Point x="425.0" y="0.0"/>
@@ -286,7 +285,10 @@ stage: &lt;Number&gt;</y:AttributeLabel>
     <edge id="e6" source="n3" target="n5">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="106.5" sy="0.0" tx="-127.5" ty="0.0"/>
+          <y:Path sx="106.5" sy="0.0" tx="-127.5" ty="0.0">
+            <y:Point x="564.5" y="133.60970677451974"/>
+            <y:Point x="564.5" y="125.0"/>
+          </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="crows_foot_many_optional" target="crows_foot_many_optional"/>
           <y:BendStyle smoothed="false"/>
@@ -318,7 +320,7 @@ stage: &lt;Number&gt;</y:AttributeLabel>
         <y:PolyLineEdge>
           <y:Path sx="106.5" sy="0.0" tx="-106.5" ty="0.0">
             <y:Point x="287.5" y="171.6448298746423"/>
-            <y:Point x="287.5" y="125.0"/>
+            <y:Point x="287.5" y="133.60970677451974"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="crows_foot_many_optional" target="crows_foot_one_mandatory"/>
