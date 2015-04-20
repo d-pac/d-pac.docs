@@ -1,0 +1,834 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        <title>restful-keystone | d-pac.docs</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.0.1">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    <link rel="next" href="../developer/plugin specification.html" />
+    
+    
+    <link rel="prev" href="../developer/REST v0.2.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+    
+
+        
+    <div class="book" data-level="2.4" data-basepath=".." data-revision="Mon Apr 20 2015 13:29:07 GMT+0200 (CEST)">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        
+        
+        
+
+        
+
+        
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="user/PAM-guide.html">
+            
+                
+                    <a href="../user/PAM-guide.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        User guide
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="developer/index.html">
+            
+                
+                    <a href="../developer/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Developer guide
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="developer/cms.html">
+            
+                
+                    <a href="../developer/cms.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        CMS
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="developer/webclient.html">
+            
+                
+                    <a href="../developer/webclient.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Webclient
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="developer/REST v0.2.html">
+            
+                
+                    <a href="../developer/REST v0.2.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        REST API
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.4" data-path="developer/restful keystone.html">
+            
+                
+                    <a href="../developer/restful keystone.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        restful-keystone
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" >
+            
+            <span><b>2.5.</b> Plugins</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="developer/plugin specification.html">
+            
+                
+                    <a href="../developer/plugin specification.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.1.</b>
+                        
+                        Specification
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="developer/comparative selection.html">
+            
+                
+                    <a href="../developer/comparative selection.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.2.</b>
+                        
+                        comparative-selection
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="developer/benchmarked comparative selection.html">
+            
+                
+                    <a href="../developer/benchmarked comparative selection.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.3.</b>
+                        
+                        benchmarked-comparative-selection
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.4" data-path="developer/keystone dpac plugins.html">
+            
+                
+                    <a href="../developer/keystone dpac plugins.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.4.</b>
+                        
+                        keystone-dpac-plugins
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.5" data-path="developer/plugins parser.html">
+            
+                
+                    <a href="../developer/plugins parser.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.5.</b>
+                        
+                        plugins-parser
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="tester/BETA-guide.html">
+            
+                
+                    <a href="../tester/BETA-guide.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Tester guide
+                    </a>
+                
+            
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Share on Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Share on Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Share on Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Share on Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Share on Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >d-pac.docs</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="-restful-keystone-https-github-com-d-pac-restful-keystone"><a href="https://github.com/d-pac/restful-keystone" target="_blank">restful-keystone</a></h1>
+<h1 id="-npm-version-npm-image-npm-url-build-status-travis-image-travis-url-dependency-status-daviddm-url-daviddm-image"><a href="https://npmjs.org/package/restful-keystone" target="_blank"><img src="https://badge.fury.io/js/restful-keystone.svg" alt="NPM version"></a> <a href="https://travis-ci.org/d-pac/restful-keystone" target="_blank"><img src="https://travis-ci.org/d-pac/restful-keystone.svg?branch=master" alt="Build Status"></a> <a href="https://david-dm.org/d-pac/restful-keystone" target="_blank"><img src="https://david-dm.org/d-pac/restful-keystone.svg?theme=shields.io" alt="Dependency Status"></a></h1>
+<blockquote>
+<p>Automatic RESTful API enabler for KeystoneJS</p>
+</blockquote>
+<p>This module allows you to easily expose your keystone models through a REST API.
+It allows for very granular control of editable fields, population, filters and more through configuration.</p>
+<h4 id="features">Features</h4>
+<ul>
+<li>Extremely easy setup</li>
+<li>Granular control/configuration</li>
+<li>Route configuration by keystone list, instead of path</li>
+<li>Versatile API</li>
+</ul>
+<h2 id="install">Install</h2>
+<pre><code class="lang-sh">$ npm install --save restful-keystone
+</code></pre>
+<h2 id="usage">Usage</h2>
+<h3 id="basic-example">Basic Example</h3>
+<p>Let&apos;s assume we&apos;ve got an <code>Article</code> list set up in <code>models</code>. We only need a few lines to expose it in a REST API.</p>
+<h4 id="setup">Setup</h4>
+<pre><code class="lang-js"><span class="hljs-comment">// file: routes/index.js</span>
+<span class="hljs-keyword">var</span> keystone = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;keystone&apos;</span>);
+
+<span class="hljs-comment">// Pass your keystone instance to the module</span>
+<span class="hljs-keyword">var</span> restful = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;restful-keystone&apos;</span>)(keystone);
+
+<span class="hljs-comment">// ...</span>
+
+exports = <span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">( app )</span></span>{
+  <span class="hljs-comment">//Explicitly define which lists we want exposed</span>
+  restful.expose({
+    Article : <span class="hljs-literal">true</span>
+  }).start();
+}
+</code></pre>
+<p>Yep. That&apos;s it.</p>
+<h4 id="request">Request</h4>
+<pre><code class="lang-sh">GET /api/articles
+</code></pre>
+<h4 id="response">Response</h4>
+<pre><code class="lang-sh">Status: <span class="hljs-number">200</span> OK
+{
+    <span class="hljs-string">&quot;articles&quot;</span>: [
+        {
+            <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;54e2f3d7a21780d7a097ce8d&quot;</span>,
+            <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;Lorem Ipsum&quot;</span>,
+            <span class="hljs-string">&quot;author&quot;</span>: null,
+            <span class="hljs-string">&quot;categories&quot;</span>: [],
+            <span class="hljs-string">&quot;content&quot;</span>: {
+                <span class="hljs-string">&quot;brief&quot;</span>: <span class="hljs-string">&quot;&lt;p&gt;Lorem Ipsum&lt;/p&gt;&quot;</span>,
+                <span class="hljs-string">&quot;extended&quot;</span>: <span class="hljs-string">&quot;&lt;p&gt;Dolor sit amet&lt;/p&gt;&quot;</span>
+            },
+            <span class="hljs-string">&quot;state&quot;</span>: <span class="hljs-string">&quot;draft&quot;</span>
+        },
+        {
+            <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;54e2f411a21780d7a097ce8e&quot;</span>,
+            <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;Just a small Test&quot;</span>,
+            <span class="hljs-string">&quot;publishedDate&quot;</span>: <span class="hljs-string">&quot;2015-02-16T23:00:00.000Z&quot;</span>,
+            <span class="hljs-string">&quot;author&quot;</span>: null,
+            <span class="hljs-string">&quot;categories&quot;</span>: [],
+            <span class="hljs-string">&quot;content&quot;</span>: {
+                <span class="hljs-string">&quot;brief&quot;</span>: <span class="hljs-string">&quot;&lt;p&gt;This is a test&lt;/p&gt;&quot;</span>,
+                <span class="hljs-string">&quot;extended&quot;</span>: <span class="hljs-string">&quot;&lt;p&gt;To make sure restful-keystone is functioning correctly&lt;/p&gt;&quot;</span>
+            },
+            <span class="hljs-string">&quot;state&quot;</span>: <span class="hljs-string">&quot;published&quot;</span>
+        }
+    ]
+}
+</code></pre>
+<p>By default it will setup these routes:</p>
+<ul>
+<li><code>GET /api/&lt;collection&gt;</code>: a <strong><code>list</code></strong> operation; returns all of the resources</li>
+<li><code>POST /api/&lt;collection&gt;</code>: a <strong><code>create</code></strong> operation; creates a new resource in the collection</li>
+<li><code>GET /api/&lt;collection&gt;/:id</code>: a <strong><code>retrieve</code></strong> operation; retrieves a single resource from the collection</li>
+<li><code>PATCH /api/&lt;collection&gt;/:id</code>: an <strong><code>update</code></strong> operation; updates the state of the resource with the values from the payload</li>
+<li><code>DELETE /api/&lt;collection&gt;/:id</code>: a <strong><code>remove</code></strong> operation; removes the resource from the collection</li>
+</ul>
+<h3 id="api">API</h3>
+<h4 id="module">module</h4>
+<p>The module itself requires a <code>keystone</code> instance to be passed to it:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> restful = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;restful-keystone&quot;</span>)(keystone);
+</code></pre>
+<p>However, you can declare the <code>root</code> of your api here as well:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> restful = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;restful-keystone&quot;</span>)(keystone, {
+    root: <span class="hljs-string">&quot;/api/v1&quot;</span>
+});
+</code></pre>
+<p>Will host your REST API at <code>/api/v1</code>. Default value is a plain <code>/api</code>.</p>
+<h4 id="-expose"><code>expose</code></h4>
+<p>Allows you to fully configure your exposed lists. You <strong>have</strong> to pass a truthy entry for each list you want exposed:</p>
+<pre><code class="lang-js">restful.expose({
+    Article: <span class="hljs-literal">true</span>,
+    User: <span class="hljs-literal">true</span>
+});
+</code></pre>
+<p>By default lists aren&apos;t exposed for security reasons, which is why you need to tell restful-keystone explicitly you want a list enabled in the REST API.
+You have to use the list name as the identifier, i.e. it&apos;s the value you passed to <code>keystone.list</code>, e.g.</p>
+<pre><code class="lang-js"><span class="hljs-comment">// file: models/articles.js</span>
+<span class="hljs-comment">// ...</span>
+<span class="hljs-keyword">var</span> Article = <span class="hljs-keyword">new</span> keystone.list(<span class="hljs-string">&quot;Article&quot;</span>, {
+    <span class="hljs-comment">//...</span>
+});
+</code></pre>
+<p>There&apos;s a number of options you can pass to <code>expose</code> for further configuration:</p>
+<h5 id="-methods"><code>methods</code></h5>
+<p><strong>{Boolean|String|String[]}</strong> default: <code>true</code></p>
+<p>Allows you to configure which methods are allowed to be used on the resource, by default it&apos;s the full range.
+You can supply the methods as a single string, e.g. <code>&quot;retrieve list&quot;</code> or as an array of strings, e.g. <code>[&quot;retrieve&quot;, &quot;list&quot;]</code>. When provided with a boolean value it sets all methods on or off.</p>
+<pre><code class="lang-js">restful.expose({
+    Article : {
+        methods: [<span class="hljs-string">&quot;retrieve&quot;</span>, <span class="hljs-string">&quot;update&quot;</span>, <span class="hljs-string">&quot;remove&quot;</span>]
+    }
+});
+</code></pre>
+<pre><code class="lang-js">restful.expose({
+    Article : {
+        methods: <span class="hljs-literal">false</span> <span class="hljs-comment">// no methods allowed</span>
+    }
+});
+</code></pre>
+<p>Possible values:</p>
+<ul>
+<li><code>&quot;create&quot;</code>: allows a <code>POST</code> on a collection of resources, e.g. <code>POST /api/posts</code>. Creates a resource in the collection.</li>
+<li><code>&quot;list&quot;</code>: allows a <code>GET</code> on a collection of resources, e.g. <code>GET /api/posts</code>. Retrieves a list of resources from a collection.</li>
+<li><code>&quot;retrieve&quot;</code>: allows a <code>GET</code> on a specific resource, e.g. <code>GET /api/posts/54e2f3d7a21780d7a097ce8d</code>. Retrieves a specific resource from a collection.</li>
+<li><code>&quot;update&quot;</code>: allows a <code>PATCH</code> on a specific resource, e.g. <code>PATCH /api/posts/54e2f3d7a21780d7a097ce8d</code>. Updates the state of a specific resource in a collection.</li>
+<li><code>&quot;remove&quot;</code>: allows a <code>DELETE</code> on a specific resource, e.g. <code>DELETE /api/posts/54e2f3d7a21780d7a097ce8d</code>. Removes a specific resource from a collection.</li>
+</ul>
+<h5 id="-show"><code>show</code></h5>
+<p><strong>{Boolean|String|String[]}</strong> default: <code>true</code></p>
+<p>Configures which fields of the resource will be shown, by default all fields declared in the schema (except virtuals) are shown. Again, provide them as a single space-delimited string, an array of strings or toggle them all on or off with a boolean.</p>
+<pre><code class="lang-js">restful.expose({
+    Article : {
+        show : <span class="hljs-string">&quot;title content&quot;</span>
+    }
+});
+</code></pre>
+<pre><code class="lang-js">restful.expose({
+    Article : {
+        show : [<span class="hljs-string">&quot;title&quot;</span>, <span class="hljs-string">&quot;author&quot;</span>, <span class="hljs-string">&quot;publishedDate&quot;</span>, <span class="hljs-string">&quot;content.brief&quot;</span>]
+    }
+});
+</code></pre>
+<h5 id="-edit"><code>edit</code></h5>
+<p><strong>{Boolean|String|String[]}</strong> default: <code>&quot;true&quot;</code></p>
+<p>Idem to <code>show</code>, except it configures which fields are editable. All fields passed to a request that are not listed in <code>edit</code> will simply be ignored, even if they exist in the schema.</p>
+<h5 id="-envelop"><code>envelop</code></h5>
+<p><strong>{Boolean|String}</strong> default: <code>&quot;&lt;%=name%&gt;&quot;</code></p>
+<p>Used for enveloping the results (which is definitely best practice, <em>especially</em> when multiple resources are returned).
+<strong>By default this will be the singular or plural version of the list name</strong>, e.g. <code>&quot;articles&quot;</code> or <code>&quot;article&quot;</code>.</p>
+<pre><code class="lang-sh">GET /api/articles
+
+Status: <span class="hljs-number">200</span> OK
+{
+    <span class="hljs-string">&quot;articles&quot;</span>: []
+}
+</code></pre>
+<pre><code class="lang-sh">GET /api/articles/<span class="hljs-number">54</span>e2f411a21780d7a097ce8e
+
+Status: <span class="hljs-number">200</span> OK
+{
+    <span class="hljs-string">&quot;article&quot;</span>: {
+        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;54e2f411a21780d7a097ce8e&quot;</span>,
+        <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;Just a small Test&quot;</span>,
+        <span class="hljs-string">&quot;publishedDate&quot;</span>: <span class="hljs-string">&quot;2015-02-16T23:00:00.000Z&quot;</span>,
+        <span class="hljs-string">&quot;author&quot;</span>: null,
+        <span class="hljs-string">&quot;categories&quot;</span>: [],
+        <span class="hljs-string">&quot;content&quot;</span>: {
+            <span class="hljs-string">&quot;brief&quot;</span>: <span class="hljs-string">&quot;&lt;p&gt;This is a test&lt;/p&gt;&quot;</span>,
+            <span class="hljs-string">&quot;extended&quot;</span>: <span class="hljs-string">&quot;&lt;p&gt;To make sure restful-keystone is functioning correctly&lt;/p&gt;&quot;</span>
+        },
+        <span class="hljs-string">&quot;state&quot;</span>: <span class="hljs-string">&quot;published&quot;</span>
+    }
+}
+</code></pre>
+<p>When you pass it a <strong>plain string</strong> it will be used as-is:</p>
+<pre><code class="lang-js">restful.expose({
+    Article : {
+        envelop: <span class="hljs-string">&quot;results&quot;</span>
+    }
+});
+</code></pre>
+<p>Will envelop all request results in <code>&quot;results&quot;</code>:</p>
+<pre><code class="lang-sh">GET /api/articles
+
+Status: <span class="hljs-number">200</span> OK
+{
+    results: [
+        // articles
+    ]
+}
+</code></pre>
+<p>If however, you pass it an ERB-style interpolate delimiter string it will be substituted with whatever list or configuration value you want. E.g.</p>
+<pre><code class="lang-js">restful.expose({
+    Article : {
+        envelop: <span class="hljs-string">&quot;&lt;%=path%&gt;&quot;</span>
+    }
+});
+</code></pre>
+<p>Will envelop all results (even those of requests on single resources) in a field with the same name as the <code>path</code> value of the list, e.g. <code>&quot;articles&quot;</code>:</p>
+<pre><code class="lang-sh">GET /api/articles/<span class="hljs-number">54</span>e2f411a21780d7a097ce8e
+
+Status: <span class="hljs-number">200</span> OK
+{
+    <span class="hljs-string">&quot;articles&quot;</span>: {
+        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;54e2f411a21780d7a097ce8e&quot;</span>,
+        <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;Just a small Test&quot;</span>,
+        <span class="hljs-string">&quot;publishedDate&quot;</span>: <span class="hljs-string">&quot;2015-02-16T23:00:00.000Z&quot;</span>,
+        <span class="hljs-string">&quot;author&quot;</span>: null,
+        <span class="hljs-string">&quot;categories&quot;</span>: [],
+        <span class="hljs-string">&quot;content&quot;</span>: {
+            <span class="hljs-string">&quot;brief&quot;</span>: <span class="hljs-string">&quot;&lt;p&gt;This is a test&lt;/p&gt;&quot;</span>,
+            <span class="hljs-string">&quot;extended&quot;</span>: <span class="hljs-string">&quot;&lt;p&gt;To make sure restful-keystone is functioning correctly&lt;/p&gt;&quot;</span>
+        },
+        <span class="hljs-string">&quot;state&quot;</span>: <span class="hljs-string">&quot;published&quot;</span>
+    }
+}
+</code></pre>
+<p><strong>You can turn enveloping off altogether by passing it a boolean <code>false</code>.</strong></p>
+<h5 id="-filter"><code>filter</code></h5>
+<p><strong>{Object}</strong></p>
+<p>You can set permanent filtering on a collection with <code>filter</code>. Pass it any key/value pair to automatically restrict all operations to documents that pass the condition.</p>
+<pre><code class="lang-js">restful.expose({
+    Article : {
+        filter : {
+            state: <span class="hljs-string">&quot;published&quot;</span>
+        }
+    }
+});
+</code></pre>
+<p>Will only operate on Article documents that have a <code>&quot;published&quot;</code> value in <code>&quot;state&quot;</code>.</p>
+<h5 id="-populate"><code>populate</code></h5>
+<p><strong>{Boolean|String|String[]}</strong> default: <code>false</code></p>
+<p>Allows automatic population of relationship fields.</p>
+<pre><code class="lang-js">restful.expose({
+    Article : {
+        populate : <span class="hljs-string">&quot;author&quot;</span>
+    }
+});
+</code></pre>
+<pre><code class="lang-sh">GET /api/articles/<span class="hljs-number">54</span>e2f411a21780d7a097ce8e
+
+Status: <span class="hljs-number">200</span> OK
+{
+    <span class="hljs-string">&quot;article&quot;</span>: {
+        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;54e2f3d7a21780d7a097ce8d&quot;</span>,
+        <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;Lorem Ipsum&quot;</span>,
+        <span class="hljs-string">&quot;author&quot;</span>: {
+            <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;543f8abd6f0a6bb721653954&quot;</span>,
+            <span class="hljs-string">&quot;name&quot;</span>: {
+                <span class="hljs-string">&quot;last&quot;</span>: <span class="hljs-string">&quot;User&quot;</span>,
+                <span class="hljs-string">&quot;first&quot;</span>: <span class="hljs-string">&quot;Admin&quot;</span>,
+                <span class="hljs-string">&quot;full&quot;</span>: <span class="hljs-string">&quot;Admin User&quot;</span>
+            },
+            <span class="hljs-string">&quot;email&quot;</span>: <span class="hljs-string">&quot;admin@d-pac.be&quot;</span>
+        },
+        <span class="hljs-string">&quot;content&quot;</span>: {
+            <span class="hljs-string">&quot;brief&quot;</span>: <span class="hljs-string">&quot;&lt;p&gt;Lorem Ipsum&lt;/p&gt;&quot;</span>,
+            <span class="hljs-string">&quot;extended&quot;</span>: <span class="hljs-string">&quot;&lt;p&gt;Dolor sit amet&lt;/p&gt;&quot;</span>
+        }
+    }
+}
+</code></pre>
+<h5 id="-path"><code>path</code></h5>
+<p><strong>{String}</strong> default: the plural name of the list</p>
+<p>Allows you to configure the path at which the resources will be expose.</p>
+<pre><code class="lang-js">restful.expose({
+    Article : {
+        path : <span class="hljs-string">&quot;news&quot;</span>
+    }
+});
+</code></pre>
+<pre><code class="lang-sh">GET /api/news/<span class="hljs-number">54</span>e2f411a21780d7a097ce8e
+
+Status: <span class="hljs-number">200</span> OK
+{
+    <span class="hljs-string">&quot;article&quot;</span>: {
+        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;54e2f3d7a21780d7a097ce8d&quot;</span>,
+        <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;Lorem Ipsum&quot;</span>,
+        <span class="hljs-string">&quot;author&quot;</span>: {
+            <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;543f8abd6f0a6bb721653954&quot;</span>,
+            <span class="hljs-string">&quot;name&quot;</span>: {
+                <span class="hljs-string">&quot;last&quot;</span>: <span class="hljs-string">&quot;User&quot;</span>,
+                <span class="hljs-string">&quot;first&quot;</span>: <span class="hljs-string">&quot;Admin&quot;</span>,
+                <span class="hljs-string">&quot;full&quot;</span>: <span class="hljs-string">&quot;Admin User&quot;</span>
+            },
+            <span class="hljs-string">&quot;email&quot;</span>: <span class="hljs-string">&quot;admin@d-pac.be&quot;</span>
+        },
+        <span class="hljs-string">&quot;content&quot;</span>: {
+            <span class="hljs-string">&quot;brief&quot;</span>: <span class="hljs-string">&quot;&lt;p&gt;Lorem Ipsum&lt;/p&gt;&quot;</span>,
+            <span class="hljs-string">&quot;extended&quot;</span>: <span class="hljs-string">&quot;&lt;p&gt;Dolor sit amet&lt;/p&gt;&quot;</span>
+        }
+    }
+}
+</code></pre>
+<h4 id="-before-and-after"><code>before</code> and <code>after</code></h4>
+<p><code>before</code> and <code>after</code> allow you to register middleware functions that are executed ... umm ... before and after the response creation.
+Obviously this could be achieved by using the usual <code>app.get(&quot;/api/articles&quot;, someMiddleware)</code> as well, but these methods allow you to configure it by list name instead of path.</p>
+<pre><code class="lang-js">restful.expose({
+    Article: <span class="hljs-literal">true</span>
+}).before({
+    Article: requireAdmin
+});
+</code></pre>
+<p>This will call the <code>requireAdmin</code> middleware function before the response is generated, for any of the methods: &quot;retrieve&quot;, &quot;list&quot;, ...
+Obviously you can configure it to be executed for specific methods only:</p>
+<pre><code class="lang-js">restful.expose({
+    Article: <span class="hljs-literal">true</span>
+}).before({
+    Article: {
+        update: requireAdmin,
+        remove: [requireAdmin, resourceExists],
+        create: [requireAdmin, limitNotReached]
+    }
+});
+</code></pre>
+<p>Either provide the middleware by method as in the above example, but if you want to execute the same middleware on several methods at once you can pass them separately:</p>
+<pre><code class="lang-js">restful.expose({
+    Article: <span class="hljs-literal">true</span>
+}).before(<span class="hljs-string">&quot;update remove create&quot;</span>, {
+    Article:  requireAdmin
+});
+</code></pre>
+<p>This will execute <code>requireAdmin</code> only for the &quot;update&quot;, &quot;remove&quot; and &quot;create&quot; methods (i.e. not for &quot;list&quot; and &quot;retrieve&quot;)</p>
+<p>As you saw in the above examples you can pass a function or an array of functions in all occasions.</p>
+<p>Multiple calls to <code>before</code> (or <code>after</code>) will merge the configurations:</p>
+<pre><code class="lang-js">restful.expose({
+    Article: <span class="hljs-literal">true</span>
+}).before(<span class="hljs-string">&quot;update remove create&quot;</span>, {
+    Article:  requireAdmin
+}).before(<span class="hljs-string">&quot;update&quot;</span>, {
+    Article: requireAllFields
+});
+</code></pre>
+<p>Will execute <code>requireAdmin</code> and <code>requireAllFields</code> for the &quot;update&quot; method.</p>
+<p><strong><code>after</code> behaves identical to <code>before</code> except for one thing:</strong></p>
+<p>By default restful-keystone will send the response, but any method that receives <code>after</code> middleware will have to have additional middleware to send the response. This is to allow maximum flexibility, otherwise you wouldn&apos;t be able to manipulate the results before they&apos;re sent.</p>
+<pre><code class="lang-js">restful.expose({
+    Article: <span class="hljs-literal">true</span>
+}).after(<span class="hljs-string">&quot;create&quot;</span>, {
+    Article:  <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(req, res, next)</span></span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;CREATED:&quot;</span>, res.locals.body);
+        res.send(res.locals.status, res.locals.body);
+    }
+});
+</code></pre>
+<p>As you can see the response and status code are stored in <code>res.locals</code></p>
+<h4 id="start">start</h4>
+<p>This signals to restful-keystone that it should set up the routes et cetera. I.e. you&apos;re finished configuring.</p>
+<pre><code class="lang-js">restful.expose({
+    Article: <span class="hljs-literal">true</span>
+}).after(<span class="hljs-string">&quot;create&quot;</span>, {
+    Article:  <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(req, res, next)</span></span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;CREATED:&quot;</span>, res.locals.body);
+        res.send(res.locals.status, res.locals.body);
+    }
+}).start(); <span class="hljs-comment">// DO NOT FORGET TO START restful-keystone</span>
+</code></pre>
+<p>A <code>start</code> method was added to allow you to configure restful in any order you see fit, i.e. this is all possible:</p>
+<pre><code>restful.before( /* config */ )
+    .expose( /* config */ )
+    .after( /* config */ )
+    .start();
+</code></pre><p>Or</p>
+<pre><code>restful
+    .after( /* config */ )
+    .expose( /* config */ )
+    .before( /* config */ )
+    .start();
+</code></pre><p>Just make sure <code>start</code> is the last method to be called.</p>
+<h3 id="requests">Requests</h3>
+<p>All values can be passed with requests as <code>json</code> bodies or as url encoded json over the query string.</p>
+<pre><code class="lang-sh">PATCH /api/articles/<span class="hljs-number">54</span>e2f411a21780d7a097ce8e
+{
+    <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;Changed my title!&quot;</span>
+}
+
+Status: <span class="hljs-number">200</span> OK
+{
+    <span class="hljs-string">&quot;article&quot;</span>: {
+        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;54e2f3d7a21780d7a097ce8d&quot;</span>,
+        <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;Changed my title!&quot;</span>,
+        <span class="hljs-string">&quot;author&quot;</span>: <span class="hljs-string">&quot;543f8abd6f0a6bb721653954&quot;</span>,
+        <span class="hljs-string">&quot;content&quot;</span>: {
+            <span class="hljs-string">&quot;brief&quot;</span>: <span class="hljs-string">&quot;&lt;p&gt;Lorem Ipsum&lt;/p&gt;&quot;</span>,
+            <span class="hljs-string">&quot;extended&quot;</span>: <span class="hljs-string">&quot;&lt;p&gt;Dolor sit amet&lt;/p&gt;&quot;</span>
+        }
+    }
+}
+</code></pre>
+<p>Is equivalent to:</p>
+<pre><code class="lang-sh">PATCH /api/articles/<span class="hljs-number">54</span>e2f411a21780d7a097ce8e?%<span class="hljs-number">7</span>B%<span class="hljs-number">0</span>D%<span class="hljs-number">0</span>A%<span class="hljs-number">09</span>%<span class="hljs-number">22</span>title%<span class="hljs-number">22</span>%<span class="hljs-number">3</span>A+%<span class="hljs-number">22</span>Changed+my+title%<span class="hljs-number">21</span>%<span class="hljs-number">22</span>%<span class="hljs-number">0</span>D%<span class="hljs-number">0</span>A%<span class="hljs-number">7</span>D
+
+Status: <span class="hljs-number">200</span> OK
+{
+    <span class="hljs-string">&quot;article&quot;</span>: {
+        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;54e2f3d7a21780d7a097ce8d&quot;</span>,
+        <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;Changed my title!&quot;</span>,
+        <span class="hljs-string">&quot;author&quot;</span>: <span class="hljs-string">&quot;543f8abd6f0a6bb721653954&quot;</span>,
+        <span class="hljs-string">&quot;content&quot;</span>: {
+            <span class="hljs-string">&quot;brief&quot;</span>: <span class="hljs-string">&quot;&lt;p&gt;Lorem Ipsum&lt;/p&gt;&quot;</span>,
+            <span class="hljs-string">&quot;extended&quot;</span>: <span class="hljs-string">&quot;&lt;p&gt;Dolor sit amet&lt;/p&gt;&quot;</span>
+        }
+    }
+}
+</code></pre>
+<p><code>list</code> requests allow the passing of a <code>filter</code> value in order to do on-the-fly filtering, see above for an explanation.</p>
+<h3 id="responses">Responses</h3>
+<p>All requests respond with a <code>200 OK</code> status if the request was succesful, except for <code>remove</code> requests which will return <code>204 No Content</code>.</p>
+<p>When something goes wrong appropriate errors are thrown, however restful-keystone does not provide any error handling out of the box, i.e. you need to make sure you have some kind of error handling middleware in place.</p>
+<h3 id="permissions">Permissions</h3>
+<p>restful-keystone does <strong>NOT</strong> provide any security checks, i.e. if you expose a resource it is available to anonymous requests !!
+You need to set up any restrictions you want to see applied to routes yourself.</p>
+<h2 id="roadmap">Roadmap</h2>
+<ul>
+<li>Configuration through <code>json</code> files</li>
+<li>Optional full adherence to jsonapi.org spec</li>
+<li>Pagination</li>
+</ul>
+<h2 id="changelog">Changelog</h2>
+<ul>
+<li><strong>v0.3</strong> make compatible with Keystone v0.3 (i.e. express 4)</li>
+<li><strong>v0.2</strong><ul>
+<li>API improvements</li>
+<li>added <code>before</code> and <code>after</code> hooks</li>
+</ul>
+</li>
+<li><strong>v0.1</strong> initial API</li>
+</ul>
+<h2 id="license">License</h2>
+<p>MIT &#xA9; <a href="http://www.d-pac.be" target="_blank">d-pac</a></p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../developer/REST v0.2.html" class="navigation navigation-prev " aria-label="Previous page: REST API"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../developer/plugin specification.html" class="navigation navigation-next " aria-label="Next page: Specification"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
