@@ -36,7 +36,7 @@
     
 
         
-    <div class="book" data-level="2.1" data-basepath=".." data-revision="Thu Apr 16 2015 09:57:47 GMT+0200 (CEST)">
+    <div class="book" data-level="2.1" data-basepath=".." data-revision="Mon Apr 20 2015 09:33:13 GMT+0200 (CEST)">
     
 
 <div class="book-summary">
@@ -261,7 +261,8 @@
          <span class="hljs-string">&quot;name&quot;</span> : <span class="hljs-string">&quot;Name of the plugin&quot;</span>,
          <span class="hljs-string">&quot;description&quot;</span> : <span class="hljs-string">&quot;Description of the plugin&quot;</span>,
          <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;select&quot;</span>,
-         <span class="hljs-string">&quot;entry&quot;</span> : <span class="hljs-string">&quot;select&quot;</span>
+         <span class="hljs-string">&quot;entry&quot;</span> : <span class="hljs-string">&quot;select&quot;</span>,
+         <span class="hljs-string">&quot;compatibleWith&quot;</span>:<span class="hljs-string">&quot;*&quot;</span>
      } ]
  }
 </code></pre>
@@ -270,6 +271,7 @@
 <li><code>description</code>: {<code>String</code>} <em><strong>(required)</strong></em> A description of the algorithm.</li>
 <li><code>type</code>: {<code>String</code>} <em><strong>(required)</strong></em> The type of the algorithm.</li>
 <li><code>entry</code>: {<code>String</code>} <em>(optional)</em> The main access point to your algorithm, by default the same value as <code>type</code> is assumed.</li>
+<li><code>compatibleWith</code>: {<code>String</code>|<code>Array</code>} <em>(optional)</em> <a href="http://semver.org" target="_blank">Semver</a> version specification of d-pac.cms versions this plugin is compatible with.</li>
 </ul>
 </li>
 </ol>
@@ -277,21 +279,23 @@
 <h3 id="selection-algorithms">Selection algorithms</h3>
 <h4 id="-select"><code>select</code></h4>
 <p>Your selection algorithm <strong>must</strong> expose a function called <code>select</code> (or provide the correct name as a value for <code>entry</code> in the manifest:</p>
-<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">select</span><span class="hljs-params">(items, n)</span></span>{
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">select</span><span class="hljs-params">(representations, comparisons, assessment)</span></span>{
     <span class="hljs-comment">//here be magical stuff</span>
     <span class="hljs-keyword">return</span> selection;
 }
 </code></pre>
 <ul>
-<li><p><code>items</code> will receive an Array of objects with following (minimal) structure:</p>
+<li><p><code>representations</code> will receive an Array of objects with following (minimal) structure:</p>
 <ul>
 <li><code>_id</code>: {<code>String</code>} unique object identifier</li>
 <li><code>compared</code>: {<code>String[]</code>} Array of <code>_id</code>s</li>
 </ul>
 </li>
-<li><p><code>n</code> is the number of items that will be returned by your algorithm, only of interest in case your algorithm allows selecting a range of items. Should be ignored otherwise.</p>
+<li><p><code>comparisons</code> TBD</p>
 </li>
-<li><p><code>selection</code> should contain a selection of <code>items</code> in a range of <code>[0;n]</code>, where <code>n</code> is either the input parameter or as defined by your algorithm.</p>
+<li><p><code>assessment</code> TBD</p>
+</li>
+<li><p><code>selection</code> should contain a selection of <code>representations</code> in a range of <code>[0;n]</code>, where <code>n</code> is defined by your algorithm.</p>
 </li>
 </ul>
 <h5 id="example">Example</h5>
@@ -305,8 +309,8 @@
             type: <span class="hljs-string">&quot;select&quot;</span>
         }
     }],
-    select : <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(items, n)</span></span>{
-        <span class="hljs-keyword">return</span> _.first(items, n);
+    select : <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(items)</span></span>{
+        <span class="hljs-keyword">return</span> _.first(items);
     }
 }
 </code></pre>
