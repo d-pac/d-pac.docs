@@ -13,7 +13,8 @@ Your `package.json` manifest file **must** include:
 			"name" : "Name of the plugin",
 			"description" : "Description of the plugin",
 			"type" : "select",
-			"entry" : "select"
+			"entry" : "select",
+			"compatibleWith":"*"
 		} ]
 	}
 	```
@@ -22,6 +23,7 @@ Your `package.json` manifest file **must** include:
 	* `description`: {`String`} _**(required)**_ A description of the algorithm.
 	* `type`: {`String`} _**(required)**_ The type of the algorithm.
 	* `entry`: {`String`} _(optional)_ The main access point to your algorithm, by default the same value as `type` is assumed.
+	* `compatibleWith`: {`String`|`Array`} _(optional)_ [Semver](http://semver.org) version specification of d-pac.cms versions this plugin is compatible with.
 
 ## Mandatory API
 
@@ -32,20 +34,22 @@ Your `package.json` manifest file **must** include:
 Your selection algorithm **must** expose a function called `select` (or provide the correct name as a value for `entry` in the manifest:
 
 ```js
-function select(items, n){
+function select(representations, comparisons, assessment){
 	//here be magical stuff
 	return selection;
 }
 ```
 
-* `items` will receive an Array of objects with following (minimal) structure:
+* `representations` will receive an Array of objects with following (minimal) structure:
 
 	* `_id`: {`String`} unique object identifier
 	* `compared`: {`String[]`} Array of `_id`s
 
-* `n` is the number of items that will be returned by your algorithm, only of interest in case your algorithm allows selecting a range of items. Should be ignored otherwise.
+* `comparisons` TBD
 
-* `selection` should contain a selection of `items` in a range of `[0;n]`, where `n` is either the input parameter or as defined by your algorithm.
+* `assessment` TBD
+
+* `selection` should contain a selection of `representations` in a range of `[0;n]`, where `n` is defined by your algorithm.
 
 ##### Example
 
@@ -60,8 +64,8 @@ module.exports = {
 			type: "select"
 		}
 	}],
-	select : function(items, n){
-		return _.first(items, n);
+	select : function(items){
+		return _.first(items);
 	}
 }
 ```
