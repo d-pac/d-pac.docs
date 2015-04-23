@@ -36,7 +36,7 @@
     
 
         
-    <div class="book" data-level="2.3" data-basepath=".." data-revision="Thu Apr 23 2015 09:49:10 GMT+0200 (CEST)">
+    <div class="book" data-level="2.3" data-basepath=".." data-revision="Thu Apr 23 2015 15:39:10 GMT+0200 (CEST)">
     
 
 <div class="book-summary">
@@ -376,7 +376,7 @@
 <p>All resources contain a </p>
 <ul>
 <li><code>type</code> field with the name of the collection they&apos;re a part of</li>
-<li><code>links.self</code> field with a reference to their own URL</li>
+<li><code>links.self</code> field with a relative URL of the resource</li>
 </ul>
 <p>e.g.</p>
 <pre><code class="lang-js"> {
@@ -391,7 +391,7 @@
          <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;d-pac&quot;</span>,
          <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;organizations&quot;</span>,
          <span class="hljs-string">&quot;links&quot;</span>: {
-           <span class="hljs-string">&quot;self&quot;</span>: <span class="hljs-string">&quot;http://tool.d-pac.be/api/organizations/5512857ab22121c7cbd0af46&quot;</span>
+           <span class="hljs-string">&quot;self&quot;</span>: <span class="hljs-string">&quot;/api/organizations/5512857ab22121c7cbd0af46&quot;</span>
          }
      },
      <span class="hljs-string">&quot;email&quot;</span>: <span class="hljs-string">&quot;user@keystonejs.com&quot;</span>,
@@ -400,7 +400,7 @@
      ],
      <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;users&quot;</span>,
      <span class="hljs-string">&quot;links&quot;</span>: {
-       <span class="hljs-string">&quot;self&quot;</span>: <span class="hljs-string">&quot;http://tool.d-pac.be/api/users/55113f1742ff1a0877242a39&quot;</span>
+       <span class="hljs-string">&quot;self&quot;</span>: <span class="hljs-string">&quot;/api/users/55113f1742ff1a0877242a39&quot;</span>
      }
  }
 </code></pre>

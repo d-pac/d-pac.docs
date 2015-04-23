@@ -18,7 +18,7 @@
       <data key="d4"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="219.03027047522755" width="213.0" x="43.5" y="332.78951861173107"/>
+          <y:Geometry height="219.03027047522755" width="213.0" x="-25.574823053589512" y="332.78951861173107"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.310546875" modelName="custom" textColor="#000000" visible="true" width="72.09765625" x="70.451171875" y="3.0">Document<y:LabelModel>
@@ -51,7 +51,7 @@ link: &lt;String&gt;</y:AttributeLabel>
       <data key="d4"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="133.56332562747684" width="213.0" x="318.5" y="293.2183371862616"/>
+          <y:Geometry height="133.56332562747684" width="213.0" x="318.5" y="375.5229910356064"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.310546875" modelName="custom" textColor="#000000" visible="true" width="34.44970703125" x="89.275146484375" y="3.0">User<y:LabelModel>
@@ -77,7 +77,7 @@ assessments: &lt;Assessment[]&gt;</y:AttributeLabel>
       <data key="d4"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="276.98018128034306" width="255.0" x="952.5" y="256.2956239845731"/>
+          <y:Geometry height="276.98018128034306" width="255.0" x="1012.5000000000001" y="256.2956239845731"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.310546875" modelName="custom" textColor="#000000" visible="true" width="84.7548828125" x="85.12255859375" y="3.0">Comparison<y:LabelModel>
@@ -115,10 +115,10 @@ data : {
       <data key="d4"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="197.52188222749095" width="213.0" x="318.5" y="48.09446839080459"/>
+          <y:Geometry height="236.97685417221845" width="255.0" x="318.5" y="48.09446839080459"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.310546875" modelName="custom" textColor="#000000" visible="true" width="84.62158203125" x="64.189208984375" y="3.0">Assessment<y:LabelModel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.310546875" modelName="custom" textColor="#000000" visible="true" width="84.62158203125" x="85.189208984375" y="3.0">Assessment<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -129,7 +129,10 @@ data : {
             <y:AttributeLabel>_id
 title: &lt;String&gt;
 algorithm: &lt;String&gt;
-description: &lt;String&gt;
+assignments: {
+  assessor: &lt;String&gt;,
+  assessee: &lt;String&gt;
+}
 phases: &lt;Phase[]&gt;
 comparisonsNum: &lt;Number&gt;
 state: &lt;"draft" | "published" | "archived"&gt;
@@ -146,7 +149,7 @@ allowTimeLogging: &lt;Boolean&gt;</y:AttributeLabel>
       <data key="d4"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="105.0" width="255.0" x="952.5" y="86.12356321839081"/>
+          <y:Geometry height="105.0" width="255.0" x="1012.5000000000001" y="86.12356321839081"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.310546875" modelName="custom" textColor="#000000" visible="true" width="58.5263671875" x="98.23681640625" y="3.0">Timelog<y:LabelModel>
@@ -171,7 +174,7 @@ end: &lt;DateTime&gt;</y:AttributeLabel>
       <data key="d4"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="77.75287356321837" width="255.0" x="597.5" y="86.12356321839081"/>
+          <y:Geometry height="77.75287356321837" width="255.0" x="657.5000000000001" y="86.12356321839081"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.310546875" modelName="custom" textColor="#000000" visible="true" width="43.12060546875" x="105.939697265625" y="3.0">Phase<y:LabelModel>
@@ -194,10 +197,10 @@ type: &lt;String&gt; </y:AttributeLabel>
       <data key="d4"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="226.85298537676147" width="213.0" x="43.5" y="58.21833718626158"/>
+          <y:Geometry height="226.85298537676147" width="291.149646107179" x="-25.574823053589512" y="58.21833718626158"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.310546875" modelName="custom" textColor="#000000" visible="true" width="105.47998046875" x="53.760009765625" y="3.0">Representation<y:LabelModel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.310546875" modelName="custom" textColor="#000000" visible="true" width="105.47998046875" x="92.83483281921451" y="3.0">Representation<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -225,7 +228,10 @@ closeTo: &lt;Representation&gt;</y:AttributeLabel>
     <edge id="e0" source="n3" target="n1">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="98.76094111374549" tx="0.0" ty="-7.057521852731161"/>
+          <y:Path sx="0.0" sy="118.4884270861092" tx="0.0" ty="-7.057521852731161">
+            <y:Point x="446.0" y="360.15922727981837"/>
+            <y:Point x="425.0" y="360.15922727981837"/>
+          </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="crows_foot_many_optional" target="crows_foot_one_mandatory"/>
           <y:BendStyle smoothed="false"/>
@@ -235,10 +241,7 @@ closeTo: &lt;Representation&gt;</y:AttributeLabel>
     <edge id="e1" source="n0" target="n1">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="106.5" sy="0.0" tx="-106.5" ty="0.0">
-            <y:Point x="287.5" y="442.30465384934485"/>
-            <y:Point x="287.5" y="360.0"/>
-          </y:Path>
+          <y:Path sx="106.5" sy="0.0" tx="-106.5" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="crows_foot_many_optional" target="crows_foot_one_mandatory"/>
           <y:BendStyle smoothed="false"/>
@@ -249,8 +252,8 @@ closeTo: &lt;Representation&gt;</y:AttributeLabel>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="-65.0" ty="41.59680268642103">
-            <y:Point x="720.0" y="394.7857146247446"/>
-            <y:Point x="720.0" y="401.59680268642103"/>
+            <y:Point x="780.0000000000001" y="394.7857146247446"/>
+            <y:Point x="780.0000000000001" y="483.9014565357659"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="crows_foot_many_optional" target="crows_foot_one_mandatory"/>
@@ -261,10 +264,9 @@ closeTo: &lt;Representation&gt;</y:AttributeLabel>
     <edge id="e3" source="n2" target="n3">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="127.5" sy="-87.04401570363339" tx="0.0" ty="-98.76094111374549">
-            <y:Point x="1260.0" y="307.74169892111127"/>
+          <y:Path sx="120.0" sy="-87.04401570363336" tx="0.0" ty="-118.4884270861092">
             <y:Point x="1260.0" y="0.0"/>
-            <y:Point x="425.0" y="0.0"/>
+            <y:Point x="446.0" y="0.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="crows_foot_many_optional" target="crows_foot_one_mandatory"/>
@@ -286,7 +288,7 @@ closeTo: &lt;Representation&gt;</y:AttributeLabel>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-23.499480789200334" sy="-63.76829882248426" tx="-95.0" ty="38.876436781609186">
-            <y:Point x="630.0" y="331.01741580226036"/>
+            <y:Point x="690.0000000000001" y="331.01741580226036"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="crows_foot_many_optional" target="crows_foot_one_mandatory"/>
@@ -297,10 +299,7 @@ closeTo: &lt;Representation&gt;</y:AttributeLabel>
     <edge id="e6" source="n3" target="n5">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="106.5" sy="0.0" tx="-127.5" ty="0.0">
-            <y:Point x="564.5" y="146.85540950455007"/>
-            <y:Point x="564.5" y="125.0"/>
-          </y:Path>
+          <y:Path sx="118.5" sy="-41.58289547691382" tx="-127.5" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="crows_foot_many_optional" target="crows_foot_many_optional"/>
           <y:BendStyle smoothed="false"/>
@@ -320,7 +319,7 @@ closeTo: &lt;Representation&gt;</y:AttributeLabel>
     <edge id="e8" source="n6" target="n0">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="113.42649268838072" tx="0.0" ty="3.144746325360595"/>
+          <y:Path sx="0.0" sy="113.42649268838072" tx="39.07482305358951" ty="-77.04429248048064"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="crows_foot_many_optional" target="crows_foot_one_mandatory"/>
           <y:BendStyle smoothed="false"/>
@@ -330,10 +329,7 @@ closeTo: &lt;Representation&gt;</y:AttributeLabel>
     <edge id="e9" source="n6" target="n3">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="106.5" sy="0.0" tx="-106.5" ty="0.0">
-            <y:Point x="287.5" y="171.6448298746423"/>
-            <y:Point x="287.5" y="146.85540950455007"/>
-          </y:Path>
+          <y:Path sx="98.42517694641049" sy="-5.061934397728493" tx="-127.49999999999997" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="crows_foot_many_optional" target="crows_foot_one_mandatory"/>
           <y:BendStyle smoothed="false"/>
@@ -343,10 +339,10 @@ closeTo: &lt;Representation&gt;</y:AttributeLabel>
     <edge id="e10" source="n6" target="n6">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="-106.5" sy="0.0" tx="-60.0" ty="-113.42649268838072">
-            <y:Point x="0.0" y="171.6448298746423"/>
-            <y:Point x="0.0" y="25.0"/>
-            <y:Point x="90.0" y="25.0"/>
+          <y:Path sx="-145.5748230535895" sy="0.0" tx="-82.01398481892369" ty="-113.42649268838072">
+            <y:Point x="-69.07482305358951" y="171.6448298746423"/>
+            <y:Point x="-69.07482305358951" y="25.0"/>
+            <y:Point x="37.98601518107631" y="25.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="crows_foot_one_mandatory" target="crows_foot_many_optional"/>
@@ -360,7 +356,7 @@ closeTo: &lt;Representation&gt;</y:AttributeLabel>
           <y:Path sx="0.0" sy="-41.867836656951475" tx="0.0" ty="0.0">
             <y:Point x="1290.0" y="352.9178779677932"/>
             <y:Point x="1290.0" y="-30.0"/>
-            <y:Point x="150.0" y="-30.0"/>
+            <y:Point x="120.0" y="-30.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="crows_foot_one_mandatory" target="crows_foot_many_optional"/>
