@@ -5,6 +5,7 @@
   "description": "d-pac.docs",
   "scripts": {
     "build": "gitbook build src",
+    "serve": "gitbook serve src",
     "publish": "npm run build; grunt gh-pages"
   },
   "repository": {
