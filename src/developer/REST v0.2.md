@@ -9,7 +9,7 @@
 All resources contain a 
 
 - `type` field with the name of the collection they're a part of
-- `links.self` field with a reference to their own URL
+- `links.self` field with a relative URL of the resource
 
 e.g.
  
@@ -26,7 +26,7 @@ e.g.
          "name": "d-pac",
          "type": "organizations",
          "links": {
-           "self": "http://tool.d-pac.be/api/organizations/5512857ab22121c7cbd0af46"
+           "self": "/api/organizations/5512857ab22121c7cbd0af46"
          }
      },
      "email": "user@keystonejs.com",
@@ -35,7 +35,7 @@ e.g.
      ],
      "type": "users",
      "links": {
-       "self": "http://tool.d-pac.be/api/users/55113f1742ff1a0877242a39"
+       "self": "/api/users/55113f1742ff1a0877242a39"
      }
  }
 ```
