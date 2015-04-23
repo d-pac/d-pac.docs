@@ -6,6 +6,42 @@
 
 ## API calls by resulting resource type
 
+All resources contain a 
+
+- `type` field with the name of the collection they're a part of
+- `links.self` field with a reference to their own URL
+
+e.g.
+ 
+ ```js
+ {
+     "_id": "55113f1742ff1a0877242a39",
+     "name": {
+         "first": "Admin",
+         "last": "User",
+         "full": "Admin User"
+     },
+     "organization": {
+         "_id": "5512857ab22121c7cbd0af46",
+         "name": "d-pac",
+         "type": "organizations",
+         "links": {
+           "self": "http://tool.d-pac.be/api/organizations/5512857ab22121c7cbd0af46"
+         }
+     },
+     "email": "user@keystonejs.com",
+     "assessments": [
+         "5511410927f4401a785dff0b"
+     ],
+     "type": "users",
+     "links": {
+       "self": "http://tool.d-pac.be/api/users/55113f1742ff1a0877242a39"
+     }
+ }
+```
+
+These fields are sometimes omitted from the examples.
+
 ### authorization
 
 #### retrieve session (2)
