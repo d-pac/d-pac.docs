@@ -215,7 +215,7 @@ ability : {
   value: &lt;Number | null&gt;,
   se: &lt;Number | null&gt;
 }
-type : &lt;"to rank" | "ranked" | "benchmark"&gt;
+rankType : &lt;"to rank" | "ranked" | "benchmark"&gt;
 closeTo: &lt;Representation&gt;</y:AttributeLabel>
             <y:MethodLabel/>
           </y:UML>
