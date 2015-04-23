@@ -36,7 +36,7 @@
     
 
         
-    <div class="book" data-level="2.3" data-basepath=".." data-revision="Mon Apr 20 2015 13:29:07 GMT+0200 (CEST)">
+    <div class="book" data-level="2.3" data-basepath=".." data-revision="Thu Apr 23 2015 09:49:10 GMT+0200 (CEST)">
     
 
 <div class="book-summary">
@@ -373,6 +373,38 @@
 (2) logged in, only on self (except when admin)
 (4) admin-only</p>
 <h2 id="api-calls-by-resulting-resource-type">API calls by resulting resource type</h2>
+<p>All resources contain a </p>
+<ul>
+<li><code>type</code> field with the name of the collection they&apos;re a part of</li>
+<li><code>links.self</code> field with a reference to their own URL</li>
+</ul>
+<p>e.g.</p>
+<pre><code class="lang-js"> {
+     <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;55113f1742ff1a0877242a39&quot;</span>,
+     <span class="hljs-string">&quot;name&quot;</span>: {
+         <span class="hljs-string">&quot;first&quot;</span>: <span class="hljs-string">&quot;Admin&quot;</span>,
+         <span class="hljs-string">&quot;last&quot;</span>: <span class="hljs-string">&quot;User&quot;</span>,
+         <span class="hljs-string">&quot;full&quot;</span>: <span class="hljs-string">&quot;Admin User&quot;</span>
+     },
+     <span class="hljs-string">&quot;organization&quot;</span>: {
+         <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;5512857ab22121c7cbd0af46&quot;</span>,
+         <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;d-pac&quot;</span>,
+         <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;organizations&quot;</span>,
+         <span class="hljs-string">&quot;links&quot;</span>: {
+           <span class="hljs-string">&quot;self&quot;</span>: <span class="hljs-string">&quot;http://tool.d-pac.be/api/organizations/5512857ab22121c7cbd0af46&quot;</span>
+         }
+     },
+     <span class="hljs-string">&quot;email&quot;</span>: <span class="hljs-string">&quot;user@keystonejs.com&quot;</span>,
+     <span class="hljs-string">&quot;assessments&quot;</span>: [
+         <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>
+     ],
+     <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;users&quot;</span>,
+     <span class="hljs-string">&quot;links&quot;</span>: {
+       <span class="hljs-string">&quot;self&quot;</span>: <span class="hljs-string">&quot;http://tool.d-pac.be/api/users/55113f1742ff1a0877242a39&quot;</span>
+     }
+ }
+</code></pre>
+<p>These fields are sometimes omitted from the examples.</p>
 <h3 id="authorization">authorization</h3>
 <h4 id="retrieve-session-2">retrieve session (2)</h4>
 <h5 id="request">Request</h5>
