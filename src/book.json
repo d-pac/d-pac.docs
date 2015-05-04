@@ -1,3 +1,4 @@
 {
-	"output": "dist"
+  "output": "dist",
+  "plugins": "toc"
 }
