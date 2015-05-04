@@ -36,7 +36,7 @@
     
 
         
-    <div class="book" data-level="2.3" data-basepath=".." data-revision="Thu Apr 23 2015 15:39:10 GMT+0200 (CEST)">
+    <div class="book" data-level="2.3" data-basepath=".." data-revision="Mon May 04 2015 13:12:17 GMT+0200 (CEST)">
     
 
 <div class="book-summary">
@@ -368,11 +368,84 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h2 id="permission-levels">Permission levels</h2>
-<p>(0) anonymous
-(2) logged in, only on self (except when admin)
-(4) admin-only</p>
-<h2 id="api-calls-by-resulting-resource-type">API calls by resulting resource type</h2>
+                        <h2 id="rest-api">REST API</h2>
+<!-- toc -->
+<ul>
+<li><a href="#intro">Intro</a></li>
+<li><a href="#authorization">authorization</a><ul>
+<li><a href="#retrieve-session">retrieve session</a></li>
+<li><a href="#create-session">create session</a></li>
+<li><a href="#remove-session">remove session</a></li>
+</ul>
+</li>
+<li><a href="#current-ie-logged-in-user">current (i.e. logged-in) user</a><ul>
+<li><a href="#retrieve-user-details">retrieve user details</a></li>
+<li><a href="#update-user-details">update user details</a></li>
+<li><a href="#list-assessments-for-user">list assessments for user</a></li>
+<li><a href="#list-mementos-for-user">list mementos for user</a></li>
+</ul>
+</li>
+<li><a href="#mementos">mementos</a><ul>
+<li><a href="#create-memento">create memento</a></li>
+</ul>
+</li>
+<li><a href="#phases">phases</a><ul>
+<li><a href="#list-phases">list phases</a></li>
+</ul>
+</li>
+<li><a href="#pages">pages</a><ul>
+<li><a href="#list-pages">list pages</a></li>
+<li><a href="#retrieve-pages">retrieve pages</a></li>
+</ul>
+</li>
+<li><a href="#representations">representations</a><ul>
+<li><a href="#list-representations">list representations</a></li>
+<li><a href="#retrieve-representation">retrieve representation</a></li>
+</ul>
+</li>
+<li><a href="#assessments">assessments</a><ul>
+<li><a href="#list-assessments">list assessments</a></li>
+<li><a href="#create-assessment">create assessment</a></li>
+<li><a href="#retrieve-assessment">retrieve assessment</a></li>
+<li><a href="#update-assessment">update assessment</a></li>
+<li><a href="#remove-assessment">remove assessment</a></li>
+</ul>
+</li>
+<li><a href="#users">users</a><ul>
+<li><a href="#list-users">list users</a></li>
+<li><a href="#create-user">create user</a></li>
+<li><a href="#retrieve-user">retrieve user</a></li>
+<li><a href="#update-user">update user</a></li>
+<li><a href="#remove-user">remove user</a></li>
+</ul>
+</li>
+<li><a href="#comparisons">comparisons</a><ul>
+<li><a href="#list-comparisons">list comparisons</a></li>
+<li><a href="#create-comparison">create comparison</a></li>
+<li><a href="#retrieve-comparison">retrieve comparison</a></li>
+<li><a href="#update-comparison">update comparison</a></li>
+<li><a href="#remove-comparison">remove comparison</a></li>
+</ul>
+</li>
+<li><a href="#timelogs">timelogs</a><ul>
+<li><a href="#list-timelogs">list timelogs</a></li>
+<li><a href="#create-timelog">create timelog</a></li>
+<li><a href="#retrieve-timelog">retrieve timelog</a></li>
+<li><a href="#update-timelog">update timelog</a></li>
+<li><a href="#remove-timelog">remove timelog</a></li>
+</ul>
+</li>
+<li><a href="#organizations">organizations</a><ul>
+<li><a href="#list-organizations">list organizations</a></li>
+<li><a href="#create-organization">create organization</a></li>
+<li><a href="#retrieve-organization">retrieve organization</a></li>
+<li><a href="#update-organization">update organization</a></li>
+<li><a href="#remove-organization">remove organization</a></li>
+</ul>
+</li>
+</ul>
+<!-- toc stop -->
+<h3 id="intro">Intro</h3>
 <p>All resources contain a </p>
 <ul>
 <li><code>type</code> field with the name of the collection they&apos;re a part of</li>
@@ -406,7 +479,7 @@
 </code></pre>
 <p>These fields are sometimes omitted from the examples.</p>
 <h3 id="authorization">authorization</h3>
-<h4 id="retrieve-session-2">retrieve session (2)</h4>
+<h4 id="retrieve-session">retrieve session</h4>
 <h5 id="request">Request</h5>
 <pre><code>GET     /api/session
 </code></pre><h5 id="response">Response</h5>
@@ -428,7 +501,7 @@
     ]
 }
 </code></pre>
-<h4 id="create-session-0">create session (0)</h4>
+<h4 id="create-session">create session</h4>
 <h5 id="request">Request</h5>
 <pre><code>POST     /api/session
 </code></pre><pre><code class="lang-json">{
@@ -456,151 +529,13 @@
     ]
 }
 </code></pre>
-<h4 id="remove-session-2">remove session (2)</h4>
+<h4 id="remove-session">remove session</h4>
 <h5 id="request">Request</h5>
 <pre><code>DELETE     /api/session
 </code></pre><h5 id="response">Response</h5>
 <pre><code>204 No content
-</code></pre><h3 id="users">users</h3>
-<h4 id="list-users-4">list users (4)</h4>
-<h5 id="request">Request</h5>
-<pre><code>GET /api/users
-</code></pre><h5 id="response">Response</h5>
-<pre><code>200 OK
-</code></pre><pre><code class="lang-json">[{
-    <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;55113f1742ff1a0877242a39&quot;</span>,
-    <span class="hljs-string">&quot;name&quot;</span>: {
-        <span class="hljs-string">&quot;first&quot;</span>: <span class="hljs-string">&quot;Admin&quot;</span>,
-        <span class="hljs-string">&quot;last&quot;</span>: <span class="hljs-string">&quot;User&quot;</span>,
-        <span class="hljs-string">&quot;full&quot;</span>: <span class="hljs-string">&quot;Admin User&quot;</span>
-    },
-    <span class="hljs-string">&quot;organization&quot;</span>: {
-        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;5512857ab22121c7cbd0af46&quot;</span>,
-        <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;d-pac&quot;</span>
-    },
-    <span class="hljs-string">&quot;email&quot;</span>: <span class="hljs-string">&quot;user@keystonejs.com&quot;</span>,
-    <span class="hljs-string">&quot;assessments&quot;</span>: [
-        <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>
-    ]
-}]
-</code></pre>
-<h4 id="create-user-4">create user (4)</h4>
-<h5 id="request">Request</h5>
-<pre><code>POST /api/user
-</code></pre><pre><code class="lang-json">{
-    <span class="hljs-string">&quot;name&quot;</span>: {
-        <span class="hljs-string">&quot;first&quot;</span>: <span class="hljs-string">&quot;Admin&quot;</span>,
-        <span class="hljs-string">&quot;last&quot;</span>: <span class="hljs-string">&quot;User&quot;</span>
-    },
-    <span class="hljs-string">&quot;organization&quot;</span>: <span class="hljs-string">&quot;5512857ab22121c7cbd0af46&quot;</span>,
-    <span class="hljs-string">&quot;email&quot;</span>: <span class="hljs-string">&quot;user@keystonejs.com&quot;</span>,
-    <span class="hljs-string">&quot;assessments&quot;</span>: [
-        <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>
-    ],
-    <span class="hljs-string">&quot;password&quot;</span>: <span class="hljs-string">&quot;test&quot;</span>,
-    <span class="hljs-string">&quot;password_confirm&quot;</span>: <span class="hljs-string">&quot;test&quot;</span>
-}
-</code></pre>
-<h5 id="response">Response</h5>
-<pre><code>200 OK
-</code></pre><pre><code class="lang-json">{
-    <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;55113f1742ff1a0877242a39&quot;</span>,
-    <span class="hljs-string">&quot;name&quot;</span>: {
-        <span class="hljs-string">&quot;first&quot;</span>: <span class="hljs-string">&quot;Admin&quot;</span>,
-        <span class="hljs-string">&quot;last&quot;</span>: <span class="hljs-string">&quot;User&quot;</span>,
-        <span class="hljs-string">&quot;full&quot;</span>: <span class="hljs-string">&quot;Admin User&quot;</span>
-    },
-    <span class="hljs-string">&quot;organization&quot;</span>: {
-        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;5512857ab22121c7cbd0af46&quot;</span>,
-        <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;d-pac&quot;</span>
-    },
-    <span class="hljs-string">&quot;email&quot;</span>: <span class="hljs-string">&quot;user@keystonejs.com&quot;</span>,
-    <span class="hljs-string">&quot;assessments&quot;</span>: [
-        <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>
-    ]
-}
-</code></pre>
-<h4 id="retrieve-user-4">retrieve user (4)</h4>
-<h5 id="request">Request</h5>
-<pre><code>GET     /api/users/:id
-</code></pre><h5 id="response">Response</h5>
-<pre><code>200 OK
-</code></pre><pre><code class="lang-json">{
-    <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;55113f1742ff1a0877242a39&quot;</span>,
-    <span class="hljs-string">&quot;name&quot;</span>: {
-        <span class="hljs-string">&quot;first&quot;</span>: <span class="hljs-string">&quot;Admin&quot;</span>,
-        <span class="hljs-string">&quot;last&quot;</span>: <span class="hljs-string">&quot;User&quot;</span>,
-        <span class="hljs-string">&quot;full&quot;</span>: <span class="hljs-string">&quot;Admin User&quot;</span>
-    },
-    <span class="hljs-string">&quot;organization&quot;</span>: {
-        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;5512857ab22121c7cbd0af46&quot;</span>,
-        <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;d-pac&quot;</span>
-    },
-    <span class="hljs-string">&quot;email&quot;</span>: <span class="hljs-string">&quot;user@keystonejs.com&quot;</span>,
-    <span class="hljs-string">&quot;assessments&quot;</span>: [
-        <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>
-    ]
-}
-</code></pre>
-<h4 id="update-user-4">update user (4)</h4>
-<h5 id="request">Request</h5>
-<pre><code>PATCH /api/users/:id
-</code></pre><pre><code class="lang-json">{
-    <span class="hljs-string">&quot;name&quot;</span>: {
-        <span class="hljs-string">&quot;first&quot;</span>: <span class="hljs-string">&quot;Admin&quot;</span>,
-        <span class="hljs-string">&quot;last&quot;</span>: <span class="hljs-string">&quot;User&quot;</span>
-    },
-    <span class="hljs-string">&quot;organization&quot;</span>: <span class="hljs-string">&quot;5512857ab22121c7cbd0af46&quot;</span>,
-    <span class="hljs-string">&quot;email&quot;</span>: <span class="hljs-string">&quot;user@keystonejs.com&quot;</span>,
-    <span class="hljs-string">&quot;assessments&quot;</span>: [
-        <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>
-    ],
-    <span class="hljs-string">&quot;password&quot;</span>: <span class="hljs-string">&quot;test&quot;</span>,
-    <span class="hljs-string">&quot;password_confirm&quot;</span>: <span class="hljs-string">&quot;test&quot;</span>
-}
-</code></pre>
-<h5 id="response">Response</h5>
-<pre><code>200 OK
-</code></pre><pre><code class="lang-json">{
-    <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;55113f1742ff1a0877242a39&quot;</span>,
-    <span class="hljs-string">&quot;name&quot;</span>: {
-        <span class="hljs-string">&quot;first&quot;</span>: <span class="hljs-string">&quot;Admin&quot;</span>,
-        <span class="hljs-string">&quot;last&quot;</span>: <span class="hljs-string">&quot;User&quot;</span>,
-        <span class="hljs-string">&quot;full&quot;</span>: <span class="hljs-string">&quot;Admin User&quot;</span>
-    },
-    <span class="hljs-string">&quot;organization&quot;</span>: {
-        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;5512857ab22121c7cbd0af46&quot;</span>,
-        <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;d-pac&quot;</span>
-    },
-    <span class="hljs-string">&quot;email&quot;</span>: <span class="hljs-string">&quot;user@keystonejs.com&quot;</span>,
-    <span class="hljs-string">&quot;assessments&quot;</span>: [
-        <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>
-    ]
-}
-</code></pre>
-<h4 id="remove-user-4">remove user (4)</h4>
-<h5 id="request">Request</h5>
-<pre><code>DELETE     /api/users/:id
-</code></pre><h5 id="response">Response</h5>
-<pre><code>200 OK
-</code></pre><pre><code class="lang-json">{
-    <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;55113f1742ff1a0877242a39&quot;</span>,
-    <span class="hljs-string">&quot;name&quot;</span>: {
-        <span class="hljs-string">&quot;first&quot;</span>: <span class="hljs-string">&quot;Admin&quot;</span>,
-        <span class="hljs-string">&quot;last&quot;</span>: <span class="hljs-string">&quot;User&quot;</span>,
-        <span class="hljs-string">&quot;full&quot;</span>: <span class="hljs-string">&quot;Admin User&quot;</span>
-    },
-    <span class="hljs-string">&quot;organization&quot;</span>: {
-        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;5512857ab22121c7cbd0af46&quot;</span>,
-        <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;d-pac&quot;</span>
-    },
-    <span class="hljs-string">&quot;email&quot;</span>: <span class="hljs-string">&quot;user@keystonejs.com&quot;</span>,
-    <span class="hljs-string">&quot;assessments&quot;</span>: [
-        <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>
-    ]
-}
-</code></pre>
-<h4 id="retrieve-user-details-for-current-user-2">retrieve user details for current user (2)</h4>
+</code></pre><h3 id="current-i-e-logged-in-user">current (i.e. logged-in) user</h3>
+<h4 id="retrieve-user-details">retrieve user details</h4>
 <h5 id="request">Request</h5>
 <pre><code>GET     /api/user
 </code></pre><h5 id="response">Response</h5>
@@ -622,7 +557,7 @@
     ]
 }
 </code></pre>
-<h4 id="update-user-details-for-current-user-2">update user details for current user (2)</h4>
+<h4 id="update-user-details">update user details</h4>
 <h5 id="request">Request</h5>
 <pre><code>PATCH /api/user
 </code></pre><pre><code class="lang-json">{
@@ -638,6 +573,31 @@
     <span class="hljs-string">&quot;password&quot;</span>: <span class="hljs-string">&quot;test&quot;</span>,
     <span class="hljs-string">&quot;password_confirm&quot;</span>: <span class="hljs-string">&quot;test&quot;</span>
 }
+</code></pre>
+<h4 id="list-assessments-for-user">list assessments for user</h4>
+<h5 id="request">Request</h5>
+<pre><code>GET /api/user/assessments
+</code></pre><h5 id="response">Response</h5>
+<pre><code>200 OK
+</code></pre><pre><code class="lang-json">[
+    {
+        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>,
+        <span class="hljs-string">&quot;algorithm&quot;</span>: <span class="hljs-string">&quot;comparative-selection&quot;</span>,
+        <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;Test Assessment&quot;</span>,
+        <span class="hljs-string">&quot;description&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+        <span class="hljs-string">&quot;order&quot;</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-string">&quot;state&quot;</span>: <span class="hljs-string">&quot;published&quot;</span>,
+        <span class="hljs-string">&quot;comparisonsNum&quot;</span>: <span class="hljs-number">20</span>,
+        <span class="hljs-string">&quot;phases&quot;</span>: [
+            {
+                <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;5423f87677177065a0887b99&quot;</span>,
+                <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;select&quot;</span>,
+                <span class="hljs-string">&quot;label&quot;</span>: <span class="hljs-string">&quot;Select best&quot;</span>,
+                <span class="hljs-string">&quot;__v&quot;</span>: <span class="hljs-number">0</span>
+            }
+        ]
+    }
+]
 </code></pre>
 <h5 id="response">Response</h5>
 <pre><code>200 OK
@@ -658,82 +618,7 @@
     ]
 }
 </code></pre>
-<h3 id="mementos">mementos</h3>
-<h4 id="create-memento-4">create memento (4)</h4>
-<h5 id="request">Request</h5>
-<pre><code>POST /api/mementos
-</code></pre><pre><code class="lang-json">{
-    <span class="hljs-string">&quot;assessment&quot;</span>: <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>
-}
-</code></pre>
-<h5 id="response">Response</h5>
-<pre><code>200 OK
-</code></pre><pre><code class="lang-json">{
-    <span class="hljs-string">&quot;assessor&quot;</span>: <span class="hljs-string">&quot;55113f1742ff1a0877242a39&quot;</span>,
-    <span class="hljs-string">&quot;assessment&quot;</span>: {
-        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>,
-        <span class="hljs-string">&quot;algorithm&quot;</span>: <span class="hljs-string">&quot;comparative-selection&quot;</span>,
-        <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;Test Assessment&quot;</span>,
-        <span class="hljs-string">&quot;description&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
-        <span class="hljs-string">&quot;order&quot;</span>: <span class="hljs-number">0</span>,
-        <span class="hljs-string">&quot;state&quot;</span>: <span class="hljs-string">&quot;published&quot;</span>,
-        <span class="hljs-string">&quot;comparisonsNum&quot;</span>: <span class="hljs-number">20</span>,
-        <span class="hljs-string">&quot;phases&quot;</span>: [
-            <span class="hljs-string">&quot;5423f87677177065a0887b99&quot;</span>
-        ]
-    },
-    <span class="hljs-string">&quot;comparison&quot;</span>: {
-        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;55114689eeaee2b17c331b2b&quot;</span>,
-        <span class="hljs-string">&quot;_rid&quot;</span>: <span class="hljs-number">1</span>,
-        <span class="hljs-string">&quot;assessor&quot;</span>: <span class="hljs-string">&quot;55113f1742ff1a0877242a39&quot;</span>,
-        <span class="hljs-string">&quot;assessment&quot;</span>: <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>,
-        <span class="hljs-string">&quot;phase&quot;</span>: <span class="hljs-string">&quot;5423f87677177065a0887b99&quot;</span>,
-        <span class="hljs-string">&quot;completed&quot;</span>: <span class="hljs-literal">false</span>,
-        <span class="hljs-string">&quot;representations&quot;</span>: [
-            <span class="hljs-string">&quot;551141561d13789d78fff006&quot;</span>,
-            <span class="hljs-string">&quot;5511417f494157b8783984c5&quot;</span>
-        ]
-    },
-    <span class="hljs-string">&quot;representations&quot;</span>: [
-        {
-            <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;551141561d13789d78fff006&quot;</span>,
-            <span class="hljs-string">&quot;document&quot;</span>: <span class="hljs-string">&quot;55113f4642ff1a0877242a3f&quot;</span>,
-            <span class="hljs-string">&quot;assessment&quot;</span>: <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>,
-            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;to rank&quot;</span>,
-            <span class="hljs-string">&quot;ability&quot;</span>: <span class="hljs-literal">null</span>,
-            <span class="hljs-string">&quot;compared&quot;</span>: [
-                <span class="hljs-string">&quot;5511417f494157b8783984c5&quot;</span>
-            ],
-            <span class="hljs-string">&quot;comparedNum&quot;</span>: <span class="hljs-number">3</span>,
-            <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Test Assessment - D-pac logo&quot;</span>
-        },
-        {
-            <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;5511417f494157b8783984c5&quot;</span>,
-            <span class="hljs-string">&quot;document&quot;</span>: <span class="hljs-string">&quot;55113f2c42ff1a0877242a3e&quot;</span>,
-            <span class="hljs-string">&quot;assessment&quot;</span>: <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>,
-            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;to rank&quot;</span>,
-            <span class="hljs-string">&quot;ability&quot;</span>: <span class="hljs-literal">null</span>,
-            <span class="hljs-string">&quot;compared&quot;</span>: [
-                <span class="hljs-string">&quot;551141561d13789d78fff006&quot;</span>
-            ],
-            <span class="hljs-string">&quot;comparedNum&quot;</span>: <span class="hljs-number">3</span>,
-            <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Test Assessment - Screen shot 2011-05-04 at 10.59.13.png&quot;</span>
-        }
-    ],
-    <span class="hljs-string">&quot;progress&quot;</span>: {
-        <span class="hljs-string">&quot;completedNum&quot;</span>: <span class="hljs-number">0</span>,
-        <span class="hljs-string">&quot;comparisonsNum&quot;</span>: <span class="hljs-number">20</span>
-    },
-    <span class="hljs-string">&quot;phases&quot;</span>: [
-        {
-            <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;5423f87677177065a0887b99&quot;</span>,
-            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;select&quot;</span>,
-            <span class="hljs-string">&quot;label&quot;</span>: <span class="hljs-string">&quot;Select best&quot;</span>
-        }
-    ]
-}
-</code></pre>
-<h4 id="list-mementos-for-current-user-2">list mementos for current user (2)</h4>
+<h4 id="list-mementos-for-user">list mementos for user</h4>
 <h5 id="request">Request</h5>
 <pre><code>GET /api/user/mementos
 </code></pre><h5 id="response">Response</h5>
@@ -809,8 +694,217 @@
     }
 ]
 </code></pre>
+<h3 id="mementos">mementos</h3>
+<h4 id="create-memento">create memento</h4>
+<h5 id="request">Request</h5>
+<pre><code>POST /api/mementos
+</code></pre><pre><code class="lang-json">{
+    <span class="hljs-string">&quot;assessment&quot;</span>: <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>
+}
+</code></pre>
+<h5 id="response">Response</h5>
+<pre><code>200 OK
+</code></pre><pre><code class="lang-json">{
+    <span class="hljs-string">&quot;assessor&quot;</span>: <span class="hljs-string">&quot;55113f1742ff1a0877242a39&quot;</span>,
+    <span class="hljs-string">&quot;assessment&quot;</span>: {
+        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>,
+        <span class="hljs-string">&quot;algorithm&quot;</span>: <span class="hljs-string">&quot;comparative-selection&quot;</span>,
+        <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;Test Assessment&quot;</span>,
+        <span class="hljs-string">&quot;description&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+        <span class="hljs-string">&quot;order&quot;</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-string">&quot;state&quot;</span>: <span class="hljs-string">&quot;published&quot;</span>,
+        <span class="hljs-string">&quot;comparisonsNum&quot;</span>: <span class="hljs-number">20</span>,
+        <span class="hljs-string">&quot;phases&quot;</span>: [
+            <span class="hljs-string">&quot;5423f87677177065a0887b99&quot;</span>
+        ]
+    },
+    <span class="hljs-string">&quot;comparison&quot;</span>: {
+        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;55114689eeaee2b17c331b2b&quot;</span>,
+        <span class="hljs-string">&quot;_rid&quot;</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-string">&quot;assessor&quot;</span>: <span class="hljs-string">&quot;55113f1742ff1a0877242a39&quot;</span>,
+        <span class="hljs-string">&quot;assessment&quot;</span>: <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>,
+        <span class="hljs-string">&quot;phase&quot;</span>: <span class="hljs-string">&quot;5423f87677177065a0887b99&quot;</span>,
+        <span class="hljs-string">&quot;completed&quot;</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-string">&quot;representations&quot;</span>: [
+            <span class="hljs-string">&quot;551141561d13789d78fff006&quot;</span>,
+            <span class="hljs-string">&quot;5511417f494157b8783984c5&quot;</span>
+        ]
+    },
+    <span class="hljs-string">&quot;representations&quot;</span>: [
+        {
+            <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;551141561d13789d78fff006&quot;</span>,
+            <span class="hljs-string">&quot;document&quot;</span>: <span class="hljs-string">&quot;55113f4642ff1a0877242a3f&quot;</span>,
+            <span class="hljs-string">&quot;assessment&quot;</span>: <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>,
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;to rank&quot;</span>,
+            <span class="hljs-string">&quot;ability&quot;</span>: <span class="hljs-literal">null</span>,
+            <span class="hljs-string">&quot;compared&quot;</span>: [
+                <span class="hljs-string">&quot;5511417f494157b8783984c5&quot;</span>
+            ],
+            <span class="hljs-string">&quot;comparedNum&quot;</span>: <span class="hljs-number">3</span>,
+            <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Test Assessment - D-pac logo&quot;</span>
+        },
+        {
+            <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;5511417f494157b8783984c5&quot;</span>,
+            <span class="hljs-string">&quot;document&quot;</span>: <span class="hljs-string">&quot;55113f2c42ff1a0877242a3e&quot;</span>,
+            <span class="hljs-string">&quot;assessment&quot;</span>: <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>,
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;to rank&quot;</span>,
+            <span class="hljs-string">&quot;ability&quot;</span>: <span class="hljs-literal">null</span>,
+            <span class="hljs-string">&quot;compared&quot;</span>: [
+                <span class="hljs-string">&quot;551141561d13789d78fff006&quot;</span>
+            ],
+            <span class="hljs-string">&quot;comparedNum&quot;</span>: <span class="hljs-number">3</span>,
+            <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Test Assessment - Screen shot 2011-05-04 at 10.59.13.png&quot;</span>
+        }
+    ],
+    <span class="hljs-string">&quot;progress&quot;</span>: {
+        <span class="hljs-string">&quot;completedNum&quot;</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-string">&quot;comparisonsNum&quot;</span>: <span class="hljs-number">20</span>
+    },
+    <span class="hljs-string">&quot;phases&quot;</span>: [
+        {
+            <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;5423f87677177065a0887b99&quot;</span>,
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;select&quot;</span>,
+            <span class="hljs-string">&quot;label&quot;</span>: <span class="hljs-string">&quot;Select best&quot;</span>
+        }
+    ]
+}
+</code></pre>
+<h3 id="phases">phases</h3>
+<h4 id="list-phases">list phases</h4>
+<h5 id="request">Request</h5>
+<pre><code>GET /api/phases
+</code></pre><h5 id="response">Response</h5>
+<pre><code>200 OK
+</code></pre><pre><code class="lang-json">[
+    {
+        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;551d1e1c2266922f78daf483&quot;</span>,
+        <span class="hljs-string">&quot;label&quot;</span>: <span class="hljs-string">&quot;Select best&quot;</span>,
+        <span class="hljs-string">&quot;slug&quot;</span>: <span class="hljs-string">&quot;selection&quot;</span>,
+        <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;phases&quot;</span>,
+        <span class="hljs-string">&quot;links&quot;</span>: {
+            <span class="hljs-string">&quot;self&quot;</span>: <span class="hljs-string">&quot;/api/phases/551d1e1c2266922f78daf483&quot;</span>
+        }
+    },
+    {
+        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;551d1e1c2266922f78daf485&quot;</span>,
+        <span class="hljs-string">&quot;label&quot;</span>: <span class="hljs-string">&quot;Indicate Pass/Fail&quot;</span>,
+        <span class="hljs-string">&quot;slug&quot;</span>: <span class="hljs-string">&quot;passfail&quot;</span>,
+        <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;phases&quot;</span>,
+        <span class="hljs-string">&quot;links&quot;</span>: {
+            <span class="hljs-string">&quot;self&quot;</span>: <span class="hljs-string">&quot;/api/phases/551d1e1c2266922f78daf485&quot;</span>
+        }
+    },
+    {
+        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;551d1e1c2266922f78daf484&quot;</span>,
+        <span class="hljs-string">&quot;label&quot;</span>: <span class="hljs-string">&quot;Provide comparative Feedback&quot;</span>,
+        <span class="hljs-string">&quot;slug&quot;</span>: <span class="hljs-string">&quot;comparative&quot;</span>,
+        <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;phases&quot;</span>,
+        <span class="hljs-string">&quot;links&quot;</span>: {
+            <span class="hljs-string">&quot;self&quot;</span>: <span class="hljs-string">&quot;/api/phases/551d1e1c2266922f78daf484&quot;</span>
+        }
+    }
+]
+</code></pre>
+<h3 id="pages">pages</h3>
+<h4 id="list-pages">list pages</h4>
+<h5 id="request">Request</h5>
+<pre><code>GET /api/pages
+</code></pre><h5 id="response">Response</h5>
+<pre><code>200 OK
+</code></pre><pre><code class="lang-json">[
+    {
+        <span class="hljs-string">&quot;slug&quot;</span>: <span class="hljs-string">&quot;tool-welcome&quot;</span>,
+        <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;Welcome&quot;</span>,
+        <span class="hljs-string">&quot;body&quot;</span>: <span class="hljs-string">&quot;&lt;p&gt;Welcome to d-pac.&lt;/p&gt;&quot;</span>,
+        <span class="hljs-string">&quot;state&quot;</span>: <span class="hljs-string">&quot;published&quot;</span>,
+        <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;pages&quot;</span>,
+        <span class="hljs-string">&quot;links&quot;</span>: {
+            <span class="hljs-string">&quot;self&quot;</span>: <span class="hljs-string">&quot;/api/pages/tool-welcome&quot;</span>
+        }
+    }
+]
+</code></pre>
+<h4 id="retrieve-pages">retrieve pages</h4>
+<h5 id="request">Request</h5>
+<pre><code>GET /api/pages/:slug
+</code></pre><h5 id="response">Response</h5>
+<pre><code>200 OK
+</code></pre><pre><code class="lang-json">{
+    <span class="hljs-string">&quot;slug&quot;</span>: <span class="hljs-string">&quot;tool-welcome&quot;</span>,
+    <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;Welcome&quot;</span>,
+    <span class="hljs-string">&quot;body&quot;</span>: <span class="hljs-string">&quot;&lt;p&gt;Welcome to d-pac.&lt;/p&gt;&quot;</span>,
+    <span class="hljs-string">&quot;state&quot;</span>: <span class="hljs-string">&quot;published&quot;</span>,
+    <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;pages&quot;</span>,
+    <span class="hljs-string">&quot;links&quot;</span>: {
+        <span class="hljs-string">&quot;self&quot;</span>: <span class="hljs-string">&quot;/api/pages/tool-welcome&quot;</span>
+    }
+}
+</code></pre>
+<h3 id="representations">representations</h3>
+<h4 id="list-representations">list representations</h4>
+<h5 id="request">Request</h5>
+<pre><code>GET /api/representations
+</code></pre><h5 id="response">Response</h5>
+<pre><code>200 OK
+</code></pre><pre><code class="lang-json">[
+    {
+        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;551141561d13789d78fff006&quot;</span>,
+        <span class="hljs-string">&quot;document&quot;</span>: {
+            <span class="hljs-string">&quot;href&quot;</span>: <span class="hljs-string">&quot;http://d-pac.be/images/be72540e.d-pac-logo_colour.png&quot;</span>
+        },
+        <span class="hljs-string">&quot;assessment&quot;</span>: <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>,
+        <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;to rank&quot;</span>,
+        <span class="hljs-string">&quot;ability&quot;</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-string">&quot;compared&quot;</span>: [
+            <span class="hljs-string">&quot;5511417f494157b8783984c5&quot;</span>
+        ],
+        <span class="hljs-string">&quot;comparedNum&quot;</span>: <span class="hljs-number">3</span>,
+        <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Test Assessment - D-pac logo&quot;</span>
+    },
+    {
+        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;5511417f494157b8783984c5&quot;</span>,
+        <span class="hljs-string">&quot;document&quot;</span>: {
+            <span class="hljs-string">&quot;href&quot;</span>: <span class="hljs-string">&quot;/uploads/Screen shot 2011-05-04 at 10.59.13-1427193661242.png&quot;</span>
+        },
+        <span class="hljs-string">&quot;assessment&quot;</span>: <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>,
+        <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;to rank&quot;</span>,
+        <span class="hljs-string">&quot;ability&quot;</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-string">&quot;compared&quot;</span>: [
+            <span class="hljs-string">&quot;551141561d13789d78fff006&quot;</span>
+        ],
+        <span class="hljs-string">&quot;comparedNum&quot;</span>: <span class="hljs-number">3</span>,
+        <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Test Assessment - Screen shot 2011-05-04 at 10.59.13.png&quot;</span>
+    }
+]
+</code></pre>
+<h4 id="retrieve-representation">retrieve representation</h4>
+<h5 id="request">Request</h5>
+<pre><code>GET /api/representations/:id
+</code></pre><h5 id="response">Response</h5>
+<pre><code>200 OK
+</code></pre><pre><code class="lang-json">{
+    <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;551141561d13789d78fff006&quot;</span>,
+    <span class="hljs-string">&quot;document&quot;</span>: {
+        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;55113f4642ff1a0877242a3f&quot;</span>,
+        <span class="hljs-string">&quot;_rid&quot;</span>: <span class="hljs-number">2</span>,
+        <span class="hljs-string">&quot;owner&quot;</span>: <span class="hljs-string">&quot;55113f1742ff1a0877242a39&quot;</span>,
+        <span class="hljs-string">&quot;link&quot;</span>: <span class="hljs-string">&quot;http://d-pac.be/images/be72540e.d-pac-logo_colour.png&quot;</span>,
+        <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;link&quot;</span>,
+        <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;D-pac logo&quot;</span>,
+        <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;D-pac logo&quot;</span>
+    },
+    <span class="hljs-string">&quot;assessment&quot;</span>: <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>,
+    <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;to rank&quot;</span>,
+    <span class="hljs-string">&quot;ability&quot;</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-string">&quot;compared&quot;</span>: [
+        <span class="hljs-string">&quot;5511417f494157b8783984c5&quot;</span>
+    ],
+    <span class="hljs-string">&quot;comparedNum&quot;</span>: <span class="hljs-number">3</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Test Assessment - D-pac logo&quot;</span>
+}
+</code></pre>
 <h3 id="assessments">assessments</h3>
-<h4 id="list-assessments-4">list assessments (4)</h4>
+<h4 id="list-assessments">list assessments</h4>
 <h5 id="request">Request</h5>
 <pre><code>GET     /api/assessments
 </code></pre><h5 id="response">Response</h5>
@@ -836,7 +930,7 @@
     }
 ]
 </code></pre>
-<h4 id="create-assessment-4">create assessment (4)</h4>
+<h4 id="create-assessment">create assessment</h4>
 <h5 id="request">Request</h5>
 <pre><code>POST     /api/assessments
 </code></pre><pre><code class="lang-json">{
@@ -872,7 +966,7 @@
     ]
 }
 </code></pre>
-<h4 id="retrieve-assessment-4">retrieve assessment (4)</h4>
+<h4 id="retrieve-assessment">retrieve assessment</h4>
 <h5 id="request">Request</h5>
 <pre><code>GET     /api/assessments/:id
 </code></pre><h5 id="response">Response</h5>
@@ -895,7 +989,7 @@
     ]
 }
 </code></pre>
-<h4 id="update-assessment-4">update assessment (4)</h4>
+<h4 id="update-assessment">update assessment</h4>
 <h5 id="request">Request</h5>
 <pre><code>PATCH     /api/assessments/:id
 </code></pre><pre><code class="lang-json">{
@@ -930,7 +1024,7 @@
     ]
 }
 </code></pre>
-<h4 id="remove-assessment-4">remove assessment (4)</h4>
+<h4 id="remove-assessment">remove assessment</h4>
 <h5 id="request">Request</h5>
 <pre><code>DELETE     /api/assessments/:id
 </code></pre><h5 id="response">Response</h5>
@@ -953,8 +1047,147 @@
     ]
 }
 </code></pre>
+<h3 id="users">users</h3>
+<h4 id="list-users">list users</h4>
+<h5 id="request">Request</h5>
+<pre><code>GET /api/users
+</code></pre><h5 id="response">Response</h5>
+<pre><code>200 OK
+</code></pre><pre><code class="lang-json">[{
+    <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;55113f1742ff1a0877242a39&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: {
+        <span class="hljs-string">&quot;first&quot;</span>: <span class="hljs-string">&quot;Admin&quot;</span>,
+        <span class="hljs-string">&quot;last&quot;</span>: <span class="hljs-string">&quot;User&quot;</span>,
+        <span class="hljs-string">&quot;full&quot;</span>: <span class="hljs-string">&quot;Admin User&quot;</span>
+    },
+    <span class="hljs-string">&quot;organization&quot;</span>: {
+        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;5512857ab22121c7cbd0af46&quot;</span>,
+        <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;d-pac&quot;</span>
+    },
+    <span class="hljs-string">&quot;email&quot;</span>: <span class="hljs-string">&quot;user@keystonejs.com&quot;</span>,
+    <span class="hljs-string">&quot;assessments&quot;</span>: [
+        <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>
+    ]
+}]
+</code></pre>
+<h4 id="create-user">create user</h4>
+<h5 id="request">Request</h5>
+<pre><code>POST /api/user
+</code></pre><pre><code class="lang-json">{
+    <span class="hljs-string">&quot;name&quot;</span>: {
+        <span class="hljs-string">&quot;first&quot;</span>: <span class="hljs-string">&quot;Admin&quot;</span>,
+        <span class="hljs-string">&quot;last&quot;</span>: <span class="hljs-string">&quot;User&quot;</span>
+    },
+    <span class="hljs-string">&quot;organization&quot;</span>: <span class="hljs-string">&quot;5512857ab22121c7cbd0af46&quot;</span>,
+    <span class="hljs-string">&quot;email&quot;</span>: <span class="hljs-string">&quot;user@keystonejs.com&quot;</span>,
+    <span class="hljs-string">&quot;assessments&quot;</span>: [
+        <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>
+    ],
+    <span class="hljs-string">&quot;password&quot;</span>: <span class="hljs-string">&quot;test&quot;</span>,
+    <span class="hljs-string">&quot;password_confirm&quot;</span>: <span class="hljs-string">&quot;test&quot;</span>
+}
+</code></pre>
+<h5 id="response">Response</h5>
+<pre><code>200 OK
+</code></pre><pre><code class="lang-json">{
+    <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;55113f1742ff1a0877242a39&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: {
+        <span class="hljs-string">&quot;first&quot;</span>: <span class="hljs-string">&quot;Admin&quot;</span>,
+        <span class="hljs-string">&quot;last&quot;</span>: <span class="hljs-string">&quot;User&quot;</span>,
+        <span class="hljs-string">&quot;full&quot;</span>: <span class="hljs-string">&quot;Admin User&quot;</span>
+    },
+    <span class="hljs-string">&quot;organization&quot;</span>: {
+        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;5512857ab22121c7cbd0af46&quot;</span>,
+        <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;d-pac&quot;</span>
+    },
+    <span class="hljs-string">&quot;email&quot;</span>: <span class="hljs-string">&quot;user@keystonejs.com&quot;</span>,
+    <span class="hljs-string">&quot;assessments&quot;</span>: [
+        <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>
+    ]
+}
+</code></pre>
+<h4 id="retrieve-user">retrieve user</h4>
+<h5 id="request">Request</h5>
+<pre><code>GET     /api/users/:id
+</code></pre><h5 id="response">Response</h5>
+<pre><code>200 OK
+</code></pre><pre><code class="lang-json">{
+    <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;55113f1742ff1a0877242a39&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: {
+        <span class="hljs-string">&quot;first&quot;</span>: <span class="hljs-string">&quot;Admin&quot;</span>,
+        <span class="hljs-string">&quot;last&quot;</span>: <span class="hljs-string">&quot;User&quot;</span>,
+        <span class="hljs-string">&quot;full&quot;</span>: <span class="hljs-string">&quot;Admin User&quot;</span>
+    },
+    <span class="hljs-string">&quot;organization&quot;</span>: {
+        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;5512857ab22121c7cbd0af46&quot;</span>,
+        <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;d-pac&quot;</span>
+    },
+    <span class="hljs-string">&quot;email&quot;</span>: <span class="hljs-string">&quot;user@keystonejs.com&quot;</span>,
+    <span class="hljs-string">&quot;assessments&quot;</span>: [
+        <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>
+    ]
+}
+</code></pre>
+<h4 id="update-user">update user</h4>
+<h5 id="request">Request</h5>
+<pre><code>PATCH /api/users/:id
+</code></pre><pre><code class="lang-json">{
+    <span class="hljs-string">&quot;name&quot;</span>: {
+        <span class="hljs-string">&quot;first&quot;</span>: <span class="hljs-string">&quot;Admin&quot;</span>,
+        <span class="hljs-string">&quot;last&quot;</span>: <span class="hljs-string">&quot;User&quot;</span>
+    },
+    <span class="hljs-string">&quot;organization&quot;</span>: <span class="hljs-string">&quot;5512857ab22121c7cbd0af46&quot;</span>,
+    <span class="hljs-string">&quot;email&quot;</span>: <span class="hljs-string">&quot;user@keystonejs.com&quot;</span>,
+    <span class="hljs-string">&quot;assessments&quot;</span>: [
+        <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>
+    ],
+    <span class="hljs-string">&quot;password&quot;</span>: <span class="hljs-string">&quot;test&quot;</span>,
+    <span class="hljs-string">&quot;password_confirm&quot;</span>: <span class="hljs-string">&quot;test&quot;</span>
+}
+</code></pre>
+<h5 id="response">Response</h5>
+<pre><code>200 OK
+</code></pre><pre><code class="lang-json">{
+    <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;55113f1742ff1a0877242a39&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: {
+        <span class="hljs-string">&quot;first&quot;</span>: <span class="hljs-string">&quot;Admin&quot;</span>,
+        <span class="hljs-string">&quot;last&quot;</span>: <span class="hljs-string">&quot;User&quot;</span>,
+        <span class="hljs-string">&quot;full&quot;</span>: <span class="hljs-string">&quot;Admin User&quot;</span>
+    },
+    <span class="hljs-string">&quot;organization&quot;</span>: {
+        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;5512857ab22121c7cbd0af46&quot;</span>,
+        <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;d-pac&quot;</span>
+    },
+    <span class="hljs-string">&quot;email&quot;</span>: <span class="hljs-string">&quot;user@keystonejs.com&quot;</span>,
+    <span class="hljs-string">&quot;assessments&quot;</span>: [
+        <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>
+    ]
+}
+</code></pre>
+<h4 id="remove-user">remove user</h4>
+<h5 id="request">Request</h5>
+<pre><code>DELETE     /api/users/:id
+</code></pre><h5 id="response">Response</h5>
+<pre><code>200 OK
+</code></pre><pre><code class="lang-json">{
+    <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;55113f1742ff1a0877242a39&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: {
+        <span class="hljs-string">&quot;first&quot;</span>: <span class="hljs-string">&quot;Admin&quot;</span>,
+        <span class="hljs-string">&quot;last&quot;</span>: <span class="hljs-string">&quot;User&quot;</span>,
+        <span class="hljs-string">&quot;full&quot;</span>: <span class="hljs-string">&quot;Admin User&quot;</span>
+    },
+    <span class="hljs-string">&quot;organization&quot;</span>: {
+        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;5512857ab22121c7cbd0af46&quot;</span>,
+        <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;d-pac&quot;</span>
+    },
+    <span class="hljs-string">&quot;email&quot;</span>: <span class="hljs-string">&quot;user@keystonejs.com&quot;</span>,
+    <span class="hljs-string">&quot;assessments&quot;</span>: [
+        <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>
+    ]
+}
+</code></pre>
 <h3 id="comparisons">comparisons</h3>
-<h4 id="list-comparisons-4">list comparisons (4)</h4>
+<h4 id="list-comparisons">list comparisons</h4>
 <h5 id="request">Request</h5>
 <pre><code>GET /api/comparisons
 </code></pre><h5 id="response">Response</h5>
@@ -1007,7 +1240,7 @@
     }
 ]
 </code></pre>
-<h4 id="create-comparison-4">create comparison (4)</h4>
+<h4 id="create-comparison">create comparison</h4>
 <h5 id="request">Request</h5>
 <pre><code>POST /api/comparisons
 </code></pre><pre><code class="lang-json">{
@@ -1066,7 +1299,7 @@
     ]
 }
 </code></pre>
-<h4 id="retrieve-comparison-4">retrieve comparison (4)</h4>
+<h4 id="retrieve-comparison">retrieve comparison</h4>
 <h5 id="request">Request</h5>
 <pre><code>GET /api/comparisons/:id
 </code></pre><h5 id="response">Response</h5>
@@ -1117,7 +1350,7 @@
     ]
 }
 </code></pre>
-<h4 id="update-comparison-4">update comparison (4)</h4>
+<h4 id="update-comparison">update comparison</h4>
 <h5 id="request">Request</h5>
 <pre><code>PATCH /api/comparisons/:id
 </code></pre><pre><code class="lang-json">{
@@ -1176,7 +1409,7 @@
     ]
 }
 </code></pre>
-<h4 id="remove-comparison-4">remove comparison (4)</h4>
+<h4 id="remove-comparison">remove comparison</h4>
 <h5 id="request">Request</h5>
 <pre><code>DELETE /api/comparisons/:id
 </code></pre><h5 id="response">Response</h5>
@@ -1228,7 +1461,7 @@
 }
 </code></pre>
 <h3 id="timelogs">timelogs</h3>
-<h4 id="list-timelogs-4">list timelogs (4)</h4>
+<h4 id="list-timelogs">list timelogs</h4>
 <h5 id="request">Request</h5>
 <pre><code>GET /api/timelogs
 </code></pre><h5 id="response">Response</h5>
@@ -1243,7 +1476,7 @@
     }
 ]
 </code></pre>
-<h4 id="create-timelog-4">create timelog (4)</h4>
+<h4 id="create-timelog">create timelog</h4>
 <h5 id="request">Request</h5>
 <pre><code>POST /api/timelogs
 </code></pre><pre><code class="lang-json">{
@@ -1265,22 +1498,20 @@
     }
 ]
 </code></pre>
-<h4 id="retrieve-timelog-4">retrieve timelog (4)</h4>
+<h4 id="retrieve-timelog">retrieve timelog</h4>
 <h5 id="request">Request</h5>
 <pre><code>GET /api/timelogs/:id
 </code></pre><h5 id="response">Response</h5>
 <pre><code>200 OK
-</code></pre><pre><code class="lang-json">[
-    {
-        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;55126ba6cffa5eb9c484b7f9&quot;</span>,
-        <span class="hljs-string">&quot;end&quot;</span>: <span class="hljs-string">&quot;2015-03-25T08:02:45.000Z&quot;</span>,
-        <span class="hljs-string">&quot;begin&quot;</span>: <span class="hljs-string">&quot;2015-03-25T08:02:44.000Z&quot;</span>,
-        <span class="hljs-string">&quot;comparison&quot;</span>: <span class="hljs-string">&quot;55114689eeaee2b17c331b2b&quot;</span>,
-        <span class="hljs-string">&quot;phase&quot;</span>: <span class="hljs-string">&quot;5423f87677177065a0887b99&quot;</span>
-    }
-]
+</code></pre><pre><code class="lang-json">{
+    <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;55126ba6cffa5eb9c484b7f9&quot;</span>,
+    <span class="hljs-string">&quot;end&quot;</span>: <span class="hljs-string">&quot;2015-03-25T08:02:45.000Z&quot;</span>,
+    <span class="hljs-string">&quot;begin&quot;</span>: <span class="hljs-string">&quot;2015-03-25T08:02:44.000Z&quot;</span>,
+    <span class="hljs-string">&quot;comparison&quot;</span>: <span class="hljs-string">&quot;55114689eeaee2b17c331b2b&quot;</span>,
+    <span class="hljs-string">&quot;phase&quot;</span>: <span class="hljs-string">&quot;5423f87677177065a0887b99&quot;</span>
+}
 </code></pre>
-<h4 id="update-timelog-4">update timelog (4)</h4>
+<h4 id="update-timelog">update timelog</h4>
 <h5 id="request">Request</h5>
 <pre><code>PATCH /api/timelogs/:id
 </code></pre><pre><code class="lang-json">{
@@ -1292,92 +1523,106 @@
 </code></pre>
 <h5 id="response">Response</h5>
 <pre><code>200 OK
-</code></pre><pre><code class="lang-json">[
-    {
-        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;55126ba6cffa5eb9c484b7f9&quot;</span>,
-        <span class="hljs-string">&quot;end&quot;</span>: <span class="hljs-string">&quot;2015-03-25T08:02:45.000Z&quot;</span>,
-        <span class="hljs-string">&quot;begin&quot;</span>: <span class="hljs-string">&quot;2015-03-25T08:02:44.000Z&quot;</span>,
-        <span class="hljs-string">&quot;comparison&quot;</span>: <span class="hljs-string">&quot;55114689eeaee2b17c331b2b&quot;</span>,
-        <span class="hljs-string">&quot;phase&quot;</span>: <span class="hljs-string">&quot;5423f87677177065a0887b99&quot;</span>
-    }
-]
+</code></pre><pre><code class="lang-json">{
+    <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;55126ba6cffa5eb9c484b7f9&quot;</span>,
+    <span class="hljs-string">&quot;end&quot;</span>: <span class="hljs-string">&quot;2015-03-25T08:02:45.000Z&quot;</span>,
+    <span class="hljs-string">&quot;begin&quot;</span>: <span class="hljs-string">&quot;2015-03-25T08:02:44.000Z&quot;</span>,
+    <span class="hljs-string">&quot;comparison&quot;</span>: <span class="hljs-string">&quot;55114689eeaee2b17c331b2b&quot;</span>,
+    <span class="hljs-string">&quot;phase&quot;</span>: <span class="hljs-string">&quot;5423f87677177065a0887b99&quot;</span>
+}
 </code></pre>
-<h4 id="remove-timelog-4">remove timelog (4)</h4>
+<h4 id="remove-timelog">remove timelog</h4>
 <h5 id="request">Request</h5>
 <pre><code>DELETE /api/timelogs/:id
 </code></pre><h5 id="response">Response</h5>
 <pre><code>200 OK
-</code></pre><pre><code class="lang-json">[
-    {
-        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;55126ba6cffa5eb9c484b7f9&quot;</span>,
-        <span class="hljs-string">&quot;end&quot;</span>: <span class="hljs-string">&quot;2015-03-25T08:02:45.000Z&quot;</span>,
-        <span class="hljs-string">&quot;begin&quot;</span>: <span class="hljs-string">&quot;2015-03-25T08:02:44.000Z&quot;</span>,
-        <span class="hljs-string">&quot;comparison&quot;</span>: <span class="hljs-string">&quot;55114689eeaee2b17c331b2b&quot;</span>,
-        <span class="hljs-string">&quot;phase&quot;</span>: <span class="hljs-string">&quot;5423f87677177065a0887b99&quot;</span>
-    }
-]
+</code></pre><pre><code class="lang-json">{
+    <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;55126ba6cffa5eb9c484b7f9&quot;</span>,
+    <span class="hljs-string">&quot;end&quot;</span>: <span class="hljs-string">&quot;2015-03-25T08:02:45.000Z&quot;</span>,
+    <span class="hljs-string">&quot;begin&quot;</span>: <span class="hljs-string">&quot;2015-03-25T08:02:44.000Z&quot;</span>,
+    <span class="hljs-string">&quot;comparison&quot;</span>: <span class="hljs-string">&quot;55114689eeaee2b17c331b2b&quot;</span>,
+    <span class="hljs-string">&quot;phase&quot;</span>: <span class="hljs-string">&quot;5423f87677177065a0887b99&quot;</span>
+}
 </code></pre>
-<h3 id="representations">representations</h3>
-<h4 id="list-representations-4">list representations (4)</h4>
+<h3 id="organizations">organizations</h3>
+<h4 id="list-organizations">list organizations</h4>
 <h5 id="request">Request</h5>
-<pre><code>GET /api/representations
+<pre><code>GET /api/organizations
 </code></pre><h5 id="response">Response</h5>
 <pre><code>200 OK
 </code></pre><pre><code class="lang-json">[
     {
-        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;551141561d13789d78fff006&quot;</span>,
-        <span class="hljs-string">&quot;document&quot;</span>: {
-            <span class="hljs-string">&quot;href&quot;</span>: <span class="hljs-string">&quot;http://d-pac.be/images/be72540e.d-pac-logo_colour.png&quot;</span>
-        },
-        <span class="hljs-string">&quot;assessment&quot;</span>: <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>,
-        <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;to rank&quot;</span>,
-        <span class="hljs-string">&quot;ability&quot;</span>: <span class="hljs-literal">null</span>,
-        <span class="hljs-string">&quot;compared&quot;</span>: [
-            <span class="hljs-string">&quot;5511417f494157b8783984c5&quot;</span>
-        ],
-        <span class="hljs-string">&quot;comparedNum&quot;</span>: <span class="hljs-number">3</span>,
-        <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Test Assessment - D-pac logo&quot;</span>
-    },
-    {
-        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;5511417f494157b8783984c5&quot;</span>,
-        <span class="hljs-string">&quot;document&quot;</span>: {
-            <span class="hljs-string">&quot;href&quot;</span>: <span class="hljs-string">&quot;/uploads/Screen shot 2011-05-04 at 10.59.13-1427193661242.png&quot;</span>
-        },
-        <span class="hljs-string">&quot;assessment&quot;</span>: <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>,
-        <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;to rank&quot;</span>,
-        <span class="hljs-string">&quot;ability&quot;</span>: <span class="hljs-literal">null</span>,
-        <span class="hljs-string">&quot;compared&quot;</span>: [
-            <span class="hljs-string">&quot;551141561d13789d78fff006&quot;</span>
-        ],
-        <span class="hljs-string">&quot;comparedNum&quot;</span>: <span class="hljs-number">3</span>,
-        <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Test Assessment - Screen shot 2011-05-04 at 10.59.13.png&quot;</span>
+        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;5512857ab22121c7cbd0af46&quot;</span>,
+        <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;d-pac&quot;</span>,
+        <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;organizations&quot;</span>,
+        <span class="hljs-string">&quot;links&quot;</span>: {
+            <span class="hljs-string">&quot;self&quot;</span>: <span class="hljs-string">&quot;/api/organizations/5512857ab22121c7cbd0af46&quot;</span>
+        }
     }
 ]
 </code></pre>
-<h4 id="retrieve-representation-4">retrieve representation (4)</h4>
+<h4 id="create-organization">create organization</h4>
 <h5 id="request">Request</h5>
-<pre><code>GET /api/representations/:id
+<pre><code>POST /api/organizations
+</code></pre><pre><code class="lang-json">{
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;d-pac&quot;</span>
+}
+</code></pre>
+<h5 id="response">Response</h5>
+<pre><code>200 OK
+</code></pre><pre><code class="lang-json">{
+    <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;5512857ab22121c7cbd0af46&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;d-pac&quot;</span>,
+    <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;organizations&quot;</span>,
+    <span class="hljs-string">&quot;links&quot;</span>: {
+        <span class="hljs-string">&quot;self&quot;</span>: <span class="hljs-string">&quot;/api/organizations/5512857ab22121c7cbd0af46&quot;</span>
+    }
+}
+</code></pre>
+<h4 id="retrieve-organization">retrieve organization</h4>
+<h5 id="request">Request</h5>
+<pre><code>GET /api/organizations/:id
 </code></pre><h5 id="response">Response</h5>
 <pre><code>200 OK
 </code></pre><pre><code class="lang-json">{
-    <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;551141561d13789d78fff006&quot;</span>,
-    <span class="hljs-string">&quot;document&quot;</span>: {
-        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;55113f4642ff1a0877242a3f&quot;</span>,
-        <span class="hljs-string">&quot;_rid&quot;</span>: <span class="hljs-number">2</span>,
-        <span class="hljs-string">&quot;owner&quot;</span>: <span class="hljs-string">&quot;55113f1742ff1a0877242a39&quot;</span>,
-        <span class="hljs-string">&quot;link&quot;</span>: <span class="hljs-string">&quot;http://d-pac.be/images/be72540e.d-pac-logo_colour.png&quot;</span>,
-        <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;link&quot;</span>,
-        <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;D-pac logo&quot;</span>,
-        <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;D-pac logo&quot;</span>
-    },
-    <span class="hljs-string">&quot;assessment&quot;</span>: <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>,
-    <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;to rank&quot;</span>,
-    <span class="hljs-string">&quot;ability&quot;</span>: <span class="hljs-literal">null</span>,
-    <span class="hljs-string">&quot;compared&quot;</span>: [
-        <span class="hljs-string">&quot;5511417f494157b8783984c5&quot;</span>
-    ],
-    <span class="hljs-string">&quot;comparedNum&quot;</span>: <span class="hljs-number">3</span>,
-    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Test Assessment - D-pac logo&quot;</span>
+    <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;5512857ab22121c7cbd0af46&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;d-pac&quot;</span>,
+    <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;organizations&quot;</span>,
+    <span class="hljs-string">&quot;links&quot;</span>: {
+        <span class="hljs-string">&quot;self&quot;</span>: <span class="hljs-string">&quot;/api/organizations/5512857ab22121c7cbd0af46&quot;</span>
+    }
+}
+</code></pre>
+<h4 id="update-organization">update organization</h4>
+<h5 id="request">Request</h5>
+<pre><code>PATCH /api/organizations/:id
+</code></pre><pre><code class="lang-json">{
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;d-pac&quot;</span>
+}
+</code></pre>
+<h5 id="response">Response</h5>
+<pre><code>200 OK
+</code></pre><pre><code class="lang-json">{
+    <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;5512857ab22121c7cbd0af46&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;d-pac&quot;</span>,
+    <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;organizations&quot;</span>,
+    <span class="hljs-string">&quot;links&quot;</span>: {
+        <span class="hljs-string">&quot;self&quot;</span>: <span class="hljs-string">&quot;/api/organizations/5512857ab22121c7cbd0af46&quot;</span>
+    }
+}
+</code></pre>
+<h4 id="remove-organization">remove organization</h4>
+<h5 id="request">Request</h5>
+<pre><code>DELETE /api/organizations/:id
+</code></pre><h5 id="response">Response</h5>
+<pre><code>200 OK
+</code></pre><pre><code class="lang-json">{
+    <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;5512857ab22121c7cbd0af46&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;d-pac&quot;</span>,
+    <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;organizations&quot;</span>,
+    <span class="hljs-string">&quot;links&quot;</span>: {
+        <span class="hljs-string">&quot;self&quot;</span>: <span class="hljs-string">&quot;/api/organizations/5512857ab22121c7cbd0af46&quot;</span>
+    }
 }
 </code></pre>
 
