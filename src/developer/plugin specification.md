@@ -34,22 +34,38 @@ Your `package.json` manifest file **must** include:
 Your selection algorithm **must** expose a function called `select` (or provide the correct name as a value for `entry` in the manifest:
 
 ```js
-function select(representations, comparisons, assessment){
+function select(representations, comparisons, assessment, assessor){
 	//here be magical stuff
 	return selection;
 }
 ```
 
-* `representations` will receive an Array of objects with following (minimal) structure:
+* `representations` an Array of objects with following (minimal) structure:
 
 	* `_id`: {`String`} unique object identifier
 	* `compared`: {`String[]`} Array of `_id`s
+	* `comparedNum`: {`Number`} Number of times compared (might deviate from `compared.length` if `compared` stores unique id's only and a representation is compared to another specific representation multiple times)
 
-* `comparisons` TBD
+* `comparisons` an Array of objects with following (minimal) structure:
+	
+	* `_id`: {`String`} unique object identifier
+	* `assessor`: {`String`} user id
+	* `assessment`: {`String`} assessment id
+	* `representations`: 
+		* `a`: {`String`} representation id
+		* `b`: {`String`} representation id
+	* `data`: 
+		* `selection`: {`String`} representation id, selected representation
 
-* `assessment` TBD
+* `assessment` an object with structure:
+	* `comparisonsNum`
+		* `total`: {`Number`} total allowed number of comparisons for the assessment
+		* `stage`: {`Number[]`} an array of Numbers, with the allowed number of comparisons per stage
+	* `stage`: {`Number`} the current stage the algorithm is in
 
-* `selection` should contain a selection of `representations` in a range of `[0;n]`, where `n` is defined by your algorithm.
+* `assessor`: {`String`} user id, the assessor for the current comparison
+
+The algorithm should return a selection of `representations` in a range of `[0;n]`, where `n` is defined by your algorithm.
 
 ##### Example
 
