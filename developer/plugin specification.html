@@ -36,7 +36,7 @@
     
 
         
-    <div class="book" data-level="2.5.1" data-basepath=".." data-revision="Thu May 07 2015 10:58:47 GMT+0200 (CEST)">
+    <div class="book" data-level="2.5.1" data-basepath=".." data-revision="Thu May 07 2015 11:12:10 GMT+0200 (CEST)">
     
 
 <div class="book-summary">
@@ -397,25 +397,49 @@
 <h3 id="selection-algorithms">Selection algorithms</h3>
 <h4 id="-select"><code>select</code></h4>
 <p>Your selection algorithm <strong>must</strong> expose a function called <code>select</code> (or provide the correct name as a value for <code>entry</code> in the manifest:</p>
-<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">select</span><span class="hljs-params">(representations, comparisons, assessment)</span></span>{
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">select</span><span class="hljs-params">(representations, comparisons, assessment, assessor)</span></span>{
     <span class="hljs-comment">//here be magical stuff</span>
     <span class="hljs-keyword">return</span> selection;
 }
 </code></pre>
 <ul>
-<li><p><code>representations</code> will receive an Array of objects with following (minimal) structure:</p>
+<li><p><code>representations</code> an Array of objects with following (minimal) structure:</p>
 <ul>
 <li><code>_id</code>: {<code>String</code>} unique object identifier</li>
 <li><code>compared</code>: {<code>String[]</code>} Array of <code>_id</code>s</li>
+<li><code>comparedNum</code>: {<code>Number</code>} Number of times compared (might deviate from <code>compared.length</code> if <code>compared</code> stores unique id&apos;s only and a representation is compared to another specific representation multiple times)</li>
 </ul>
 </li>
-<li><p><code>comparisons</code> TBD</p>
+<li><p><code>comparisons</code> an Array of objects with following (minimal) structure:</p>
+<ul>
+<li><code>_id</code>: {<code>String</code>} unique object identifier</li>
+<li><code>assessor</code>: {<code>String</code>} user id</li>
+<li><code>assessment</code>: {<code>String</code>} assessment id</li>
+<li><code>representations</code>: <ul>
+<li><code>a</code>: {<code>String</code>} representation id</li>
+<li><code>b</code>: {<code>String</code>} representation id</li>
+</ul>
 </li>
-<li><p><code>assessment</code> TBD</p>
-</li>
-<li><p><code>selection</code> should contain a selection of <code>representations</code> in a range of <code>[0;n]</code>, where <code>n</code> is defined by your algorithm.</p>
+<li><code>data</code>: <ul>
+<li><code>selection</code>: {<code>String</code>} representation id, selected representation</li>
+</ul>
 </li>
 </ul>
+</li>
+<li><p><code>assessment</code> an object with structure:</p>
+<ul>
+<li><code>comparisonsNum</code><ul>
+<li><code>total</code>: {<code>Number</code>} total allowed number of comparisons for the assessment</li>
+<li><code>stage</code>: {<code>Number[]</code>} an array of Numbers, with the allowed number of comparisons per stage</li>
+</ul>
+</li>
+<li><code>stage</code>: {<code>Number</code>} the current stage the algorithm is in</li>
+</ul>
+</li>
+<li><p><code>assessor</code>: {<code>String</code>} user id, the assessor for the current comparison</p>
+</li>
+</ul>
+<p>The algorithm should return a selection of <code>representations</code> in a range of <code>[0;n]</code>, where <code>n</code> is defined by your algorithm.</p>
 <h5 id="example">Example</h5>
 <pre><code class="lang-js"><span class="hljs-comment">//index.js</span>
 <span class="hljs-keyword">var</span> _ = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;underscore&quot;</span>);
