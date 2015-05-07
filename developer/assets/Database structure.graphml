@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:y="http://www.yworks.com/xml/graphml" xmlns:yed="http://www.yworks.com/xml/yed/3" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://www.yworks.com/xml/schema/graphml/1.1/ygraphml.xsd">
-  <!--Created by yEd 3.13-->
-  <key for="graphml" id="d0" yfiles.type="resources"/>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:java="http://www.yworks.com/xml/yfiles-common/1.0/java" xmlns:sys="http://www.yworks.com/xml/yfiles-common/markup/primitives/2.0" xmlns:x="http://www.yworks.com/xml/yfiles-common/markup/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:y="http://www.yworks.com/xml/graphml" xmlns:yed="http://www.yworks.com/xml/yed/3" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://www.yworks.com/xml/schema/graphml/1.1/ygraphml.xsd">
+  <!--Created by yEd 3.14.1-->
+  <key attr.name="Description" attr.type="string" for="graph" id="d0"/>
   <key for="port" id="d1" yfiles.type="portgraphics"/>
   <key for="port" id="d2" yfiles.type="portgeometry"/>
   <key for="port" id="d3" yfiles.type="portuserdata"/>
   <key attr.name="url" attr.type="string" for="node" id="d4"/>
   <key attr.name="description" attr.type="string" for="node" id="d5"/>
   <key for="node" id="d6" yfiles.type="nodegraphics"/>
-  <key attr.name="Description" attr.type="string" for="graph" id="d7"/>
+  <key for="graphml" id="d7" yfiles.type="resources"/>
   <key attr.name="url" attr.type="string" for="edge" id="d8"/>
   <key attr.name="description" attr.type="string" for="edge" id="d9"/>
   <key for="edge" id="d10" yfiles.type="edgegraphics"/>
   <graph edgedefault="directed" id="G">
-    <data key="d7"/>
+    <data key="d0"/>
     <node id="n0">
       <data key="d4"/>
       <data key="d6">
@@ -115,7 +115,7 @@ data : {
       <data key="d4"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="236.97685417221845" width="255.0" x="318.5" y="48.09446839080459"/>
+          <y:Geometry height="276.98018128034306" width="255.0" x="318.5" y="48.09446839080459"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.310546875" modelName="custom" textColor="#000000" visible="true" width="84.62158203125" x="85.189208984375" y="3.0">Assessment<y:LabelModel>
@@ -134,7 +134,10 @@ assignments: {
   assessee: &lt;String&gt;
 }
 phases: &lt;Phase[]&gt;
-comparisonsNum: &lt;Number&gt;
+comparisonsNum: {
+  total: &lt;Number&gt;,
+  stage: &lt;Number[]&gt;
+}
 state: &lt;"draft" | "published" | "archived"&gt;
 order: &lt;Number&gt;
 stage: &lt;Number&gt;
@@ -228,7 +231,7 @@ closeTo: &lt;Representation&gt;</y:AttributeLabel>
     <edge id="e0" source="n3" target="n1">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="118.4884270861092" tx="0.0" ty="-7.057521852731161">
+          <y:Path sx="0.0" sy="138.49009064017153" tx="0.0" ty="-7.057521852731161">
             <y:Point x="446.0" y="360.15922727981837"/>
             <y:Point x="425.0" y="360.15922727981837"/>
           </y:Path>
@@ -264,7 +267,7 @@ closeTo: &lt;Representation&gt;</y:AttributeLabel>
     <edge id="e3" source="n2" target="n3">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="120.0" sy="-87.04401570363336" tx="0.0" ty="-118.4884270861092">
+          <y:Path sx="120.0" sy="-87.04401570363336" tx="0.0" ty="-138.4900906401715">
             <y:Point x="1260.0" y="0.0"/>
             <y:Point x="446.0" y="0.0"/>
           </y:Path>
@@ -299,7 +302,10 @@ closeTo: &lt;Representation&gt;</y:AttributeLabel>
     <edge id="e6" source="n3" target="n5">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="118.5" sy="-41.58289547691382" tx="-127.5" ty="0.0"/>
+          <y:Path sx="118.5" sy="-48.60237497703857" tx="-127.5" ty="0.0">
+            <y:Point x="611.0" y="137.98218405393754"/>
+            <y:Point x="611.0" y="125.0"/>
+          </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="crows_foot_many_optional" target="crows_foot_many_optional"/>
           <y:BendStyle smoothed="false"/>
@@ -329,7 +335,10 @@ closeTo: &lt;Representation&gt;</y:AttributeLabel>
     <edge id="e9" source="n6" target="n3">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="98.42517694641049" sy="-5.061934397728493" tx="-127.49999999999997" ty="0.0"/>
+          <y:Path sx="98.42517694641049" sy="-5.061934397728493" tx="-127.49999999999997" ty="0.0">
+            <y:Point x="268.46258847320524" y="166.58289547691382"/>
+            <y:Point x="268.46258847320524" y="186.58455903097612"/>
+          </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="crows_foot_many_optional" target="crows_foot_one_mandatory"/>
           <y:BendStyle smoothed="false"/>
@@ -365,7 +374,7 @@ closeTo: &lt;Representation&gt;</y:AttributeLabel>
       </data>
     </edge>
   </graph>
-  <data key="d0">
+  <data key="d7">
     <y:Resources/>
   </data>
 </graphml>
