@@ -139,7 +139,7 @@ comparisonsNum: {
   stage: &lt;Number[]&gt;
 }
 state: &lt;"draft" | "published" | "archived"&gt;
-order: &lt;Number&gt;
+parent: &lt;Assessment&gt;
 stage: &lt;Number&gt;
 UI texts: &lt;JSON&gt;
 allowTimeLogging: &lt;Boolean&gt;</y:AttributeLabel>
