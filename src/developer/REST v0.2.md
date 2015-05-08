@@ -243,12 +243,12 @@ GET /api/user/assessments
 }
 ```
 
-#### list mementos for user
+#### list comparisons for user
 
 ##### Request
 
 ```
-GET /api/user/mementos
+GET /api/user/comparisons
 ```
 
 ##### Response
@@ -259,163 +259,31 @@ GET /api/user/mementos
 ```json
 [
     {
-        "assessor": "55113f1742ff1a0877242a39",
-        "assessment": {
-            "_id": "5511410927f4401a785dff0b",
-            "algorithm": "comparative-selection",
-            "title": "Test Assessment",
-            "description": "",
-            "order": 0,
-            "state": "published",
-            "comparisonsNum": 20,
-            "phases": [
-                "5423f87677177065a0887b99"
-            ]
-        },
-        "comparison": {
-            "_id": "55114689eeaee2b17c331b2b",
-            "_rid": 1,
-            "assessor": "55113f1742ff1a0877242a39",
-            "assessment": "5511410927f4401a785dff0b",
-            "phase": "5423f87677177065a0887b99",
-            "completed": false,
-            "representations": [
-                "551141561d13789d78fff006",
-                "5511417f494157b8783984c5"
-            ]
-        },
-        "representations": [
-            {
-                "_id": "551141561d13789d78fff006",
-                "document": "55113f4642ff1a0877242a3f",
-                "assessment": "5511410927f4401a785dff0b",
-                "type": "to rank",
-                "ability": null,
-                "compared": [
-                    "5511417f494157b8783984c5",
-                    "5511417f494157b8783984c5",
-                    "5511417f494157b8783984c5"
-                ],
-                "comparedNum": 3,
-                "name": "Test Assessment - D-pac logo"
+        "_id": "551d1028f95f2d0465cb1b43",
+        "_rid": 13,
+        "phase": "551d1e1c2266922f78daf485",
+        "assessor": "551d3152d7590713148eae0d",
+        "assessment": "5511410927f4401a785dff0b",
+        "data": {
+            "comparative": "Feedback",
+            "passfail": {
+                "a": true,
+                "b": true
             },
-            {
-                "_id": "5511417f494157b8783984c5",
-                "document": "55113f2c42ff1a0877242a3e",
-                "assessment": "5511410927f4401a785dff0b",
-                "type": "to rank",
-                "ability": null,
-                "compared": [
-                    "551141561d13789d78fff006",
-                    "551141561d13789d78fff006",
-                    "551141561d13789d78fff006"
-                ],
-                "comparedNum": 3,
-                "name": "Test Assessment - Screen shot 2011-05-04 at 10.59.13.png"
-            }
-        ],
-        "progress": {
-            "completedNum": 0,
-            "comparisonsNum": 20
+            "selection": "551141561d13789d78fff006"
         },
-        "phases": [
-            {
-                "_id": "5423f87677177065a0887b99",
-                "type": "select",
-                "label": "Select best"
-            }
-        ]
+        "representations": {
+            "a": "551141561d13789d78fff006",
+            "b": "5511417f494157b8783984c5"
+        },
+        "completed": false,
+        "type": "comparisons",
+        "links": {
+            "self": "/api/comparisons/551d1028f95f2d0465cb1b43"
+        }
     }
 ]
 ```
-
-### mementos
-
-#### create memento
-
-##### Request
-
-```
-POST /api/mementos
-```
-```json
-{
-	"assessment": "5511410927f4401a785dff0b"
-}
-```
-
-##### Response
-
-```
-200 OK
-```
-```json
-{
-    "assessor": "55113f1742ff1a0877242a39",
-    "assessment": {
-        "_id": "5511410927f4401a785dff0b",
-        "algorithm": "comparative-selection",
-        "title": "Test Assessment",
-        "description": "",
-        "order": 0,
-        "state": "published",
-        "comparisonsNum": 20,
-        "phases": [
-            "5423f87677177065a0887b99"
-        ]
-    },
-    "comparison": {
-        "_id": "55114689eeaee2b17c331b2b",
-        "_rid": 1,
-        "assessor": "55113f1742ff1a0877242a39",
-        "assessment": "5511410927f4401a785dff0b",
-        "phase": "5423f87677177065a0887b99",
-        "completed": false,
-        "representations": [
-            "551141561d13789d78fff006",
-            "5511417f494157b8783984c5"
-        ]
-    },
-    "representations": [
-        {
-            "_id": "551141561d13789d78fff006",
-            "document": "55113f4642ff1a0877242a3f",
-            "assessment": "5511410927f4401a785dff0b",
-            "type": "to rank",
-            "ability": null,
-            "compared": [
-                "5511417f494157b8783984c5"
-            ],
-            "comparedNum": 3,
-            "name": "Test Assessment - D-pac logo"
-        },
-        {
-            "_id": "5511417f494157b8783984c5",
-            "document": "55113f2c42ff1a0877242a3e",
-            "assessment": "5511410927f4401a785dff0b",
-            "type": "to rank",
-            "ability": null,
-            "compared": [
-                "551141561d13789d78fff006"
-            ],
-            "comparedNum": 3,
-            "name": "Test Assessment - Screen shot 2011-05-04 at 10.59.13.png"
-        }
-    ],
-    "progress": {
-        "completedNum": 0,
-        "comparisonsNum": 20
-    },
-    "phases": [
-        {
-            "_id": "5423f87677177065a0887b99",
-            "type": "select",
-            "label": "Select best"
-        }
-    ]
-}
-```
-
 
 ### phases
 
