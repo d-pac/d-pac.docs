@@ -19,14 +19,7 @@ e.g.
          "last": "User",
          "full": "Admin User"
      },
-     "organization": {
-         "_id": "5512857ab22121c7cbd0af46",
-         "name": "d-pac",
-         "type": "organizations",
-         "links": {
-           "self": "/api/organizations/5512857ab22121c7cbd0af46"
-         }
-     },
+     "organization": "5512857ab22121c7cbd0af46",
      "email": "user@keystonejs.com",
      "assessments": [
          "5511410927f4401a785dff0b"
@@ -63,10 +56,7 @@ GET 	/api/session
         "last": "User",
         "full": "Admin User"
     },
-    "organization": {
-        "_id": "5512857ab22121c7cbd0af46",
-        "name": "d-pac"
-    },
+    "organization": "5512857ab22121c7cbd0af46",
     "email": "user@keystonejs.com",
     "assessments": [
         "5511410927f4401a785dff0b"
@@ -102,10 +92,7 @@ POST 	/api/session
         "last": "User",
         "full": "Admin User"
     },
-    "organization": {
-        "_id": "5512857ab22121c7cbd0af46",
-        "name": "d-pac"
-    },
+    "organization": "5512857ab22121c7cbd0af46",
     "email": "user@keystonejs.com",
     "assessments": [
         "5511410927f4401a785dff0b"
@@ -150,10 +137,7 @@ GET 	/api/user
         "last": "User",
         "full": "Admin User"
     },
-    "organization": {
-        "_id": "5512857ab22121c7cbd0af46",
-        "name": "d-pac"
-    },
+    "organization": "5512857ab22121c7cbd0af46",
     "email": "user@keystonejs.com",
     "assessments": [
         "5511410927f4401a785dff0b"
@@ -184,6 +168,27 @@ PATCH /api/user
 }
 ```
 
+##### Response
+
+```
+200 OK
+```
+```json
+{
+    "_id": "55113f1742ff1a0877242a39",
+    "name": {
+        "first": "Admin",
+        "last": "User",
+        "full": "Admin User"
+    },
+    "organization": "5512857ab22121c7cbd0af46",
+    "email": "user@keystonejs.com",
+    "assessments": [
+        "5511410927f4401a785dff0b"
+    ]
+}
+```
+
 #### list assessments for user
 
 ##### Request
@@ -203,10 +208,18 @@ GET /api/user/assessments
         "_id": "5511410927f4401a785dff0b",
         "algorithm": "comparative-selection",
         "title": "Test Assessment",
-        "description": "",
-        "order": 0,
+        "assignments": {
+            "assessor": "The assignment description directed to the assessor",
+            "assessee": "The assignment as it was given to the assessee"
+        },
+        "parent": "5511410927f4401a785dff0a",
         "state": "published",
-        "comparisonsNum": 20,
+        "comparisonsNum": {
+            "stage": [5],
+            "total": 20 
+        },
+        "stage": 0,
+        "enableTimeLogging": true,
         "phases": [
             {
                 "_id": "5423f87677177065a0887b99",
@@ -214,34 +227,13 @@ GET /api/user/assessments
                 "label": "Select best",
                 "__v": 0
             }
-        ]
+        ],
+        "uiCopy": {}
     }
 ]
 ```
 
-##### Response
-
-```
-200 OK
-```
-```json
-{
-    "_id": "55113f1742ff1a0877242a39",
-    "name": {
-        "first": "Admin",
-        "last": "User",
-        "full": "Admin User"
-    },
-    "organization": {
-        "_id": "5512857ab22121c7cbd0af46",
-        "name": "d-pac"
-    },
-    "email": "user@keystonejs.com",
-    "assessments": [
-        "5511410927f4401a785dff0b"
-    ]
-}
-```
+`uiCopy` is truncated in the examples due to its length.
 
 #### list comparisons for user
 
