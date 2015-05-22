@@ -36,7 +36,7 @@
     
 
         
-    <div class="book" data-level="2.3" data-basepath=".." data-revision="Thu May 07 2015 12:42:23 GMT+0200 (CEST)">
+    <div class="book" data-level="2.3" data-basepath=".." data-revision="Fri May 22 2015 15:58:06 GMT+0200 (CEST)">
     
 
 <div class="book-summary">
@@ -382,11 +382,7 @@
 <li><a href="#retrieve-user-details">retrieve user details</a></li>
 <li><a href="#update-user-details">update user details</a></li>
 <li><a href="#list-assessments-for-user">list assessments for user</a></li>
-<li><a href="#list-mementos-for-user">list mementos for user</a></li>
-</ul>
-</li>
-<li><a href="#mementos">mementos</a><ul>
-<li><a href="#create-memento">create memento</a></li>
+<li><a href="#list-comparisons-for-user">list comparisons for user</a></li>
 </ul>
 </li>
 <li><a href="#phases">phases</a><ul>
@@ -459,14 +455,7 @@
          <span class="hljs-string">&quot;last&quot;</span>: <span class="hljs-string">&quot;User&quot;</span>,
          <span class="hljs-string">&quot;full&quot;</span>: <span class="hljs-string">&quot;Admin User&quot;</span>
      },
-     <span class="hljs-string">&quot;organization&quot;</span>: {
-         <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;5512857ab22121c7cbd0af46&quot;</span>,
-         <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;d-pac&quot;</span>,
-         <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;organizations&quot;</span>,
-         <span class="hljs-string">&quot;links&quot;</span>: {
-           <span class="hljs-string">&quot;self&quot;</span>: <span class="hljs-string">&quot;/api/organizations/5512857ab22121c7cbd0af46&quot;</span>
-         }
-     },
+     <span class="hljs-string">&quot;organization&quot;</span>: <span class="hljs-string">&quot;5512857ab22121c7cbd0af46&quot;</span>,
      <span class="hljs-string">&quot;email&quot;</span>: <span class="hljs-string">&quot;user@keystonejs.com&quot;</span>,
      <span class="hljs-string">&quot;assessments&quot;</span>: [
          <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>
@@ -491,10 +480,7 @@
         <span class="hljs-string">&quot;last&quot;</span>: <span class="hljs-string">&quot;User&quot;</span>,
         <span class="hljs-string">&quot;full&quot;</span>: <span class="hljs-string">&quot;Admin User&quot;</span>
     },
-    <span class="hljs-string">&quot;organization&quot;</span>: {
-        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;5512857ab22121c7cbd0af46&quot;</span>,
-        <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;d-pac&quot;</span>
-    },
+    <span class="hljs-string">&quot;organization&quot;</span>: <span class="hljs-string">&quot;5512857ab22121c7cbd0af46&quot;</span>,
     <span class="hljs-string">&quot;email&quot;</span>: <span class="hljs-string">&quot;user@keystonejs.com&quot;</span>,
     <span class="hljs-string">&quot;assessments&quot;</span>: [
         <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>
@@ -519,10 +505,7 @@
         <span class="hljs-string">&quot;last&quot;</span>: <span class="hljs-string">&quot;User&quot;</span>,
         <span class="hljs-string">&quot;full&quot;</span>: <span class="hljs-string">&quot;Admin User&quot;</span>
     },
-    <span class="hljs-string">&quot;organization&quot;</span>: {
-        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;5512857ab22121c7cbd0af46&quot;</span>,
-        <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;d-pac&quot;</span>
-    },
+    <span class="hljs-string">&quot;organization&quot;</span>: <span class="hljs-string">&quot;5512857ab22121c7cbd0af46&quot;</span>,
     <span class="hljs-string">&quot;email&quot;</span>: <span class="hljs-string">&quot;user@keystonejs.com&quot;</span>,
     <span class="hljs-string">&quot;assessments&quot;</span>: [
         <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>
@@ -547,10 +530,7 @@
         <span class="hljs-string">&quot;last&quot;</span>: <span class="hljs-string">&quot;User&quot;</span>,
         <span class="hljs-string">&quot;full&quot;</span>: <span class="hljs-string">&quot;Admin User&quot;</span>
     },
-    <span class="hljs-string">&quot;organization&quot;</span>: {
-        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;5512857ab22121c7cbd0af46&quot;</span>,
-        <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;d-pac&quot;</span>
-    },
+    <span class="hljs-string">&quot;organization&quot;</span>: <span class="hljs-string">&quot;5512857ab22121c7cbd0af46&quot;</span>,
     <span class="hljs-string">&quot;email&quot;</span>: <span class="hljs-string">&quot;user@keystonejs.com&quot;</span>,
     <span class="hljs-string">&quot;assessments&quot;</span>: [
         <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>
@@ -574,6 +554,22 @@
     <span class="hljs-string">&quot;password_confirm&quot;</span>: <span class="hljs-string">&quot;test&quot;</span>
 }
 </code></pre>
+<h5 id="response">Response</h5>
+<pre><code>200 OK
+</code></pre><pre><code class="lang-json">{
+    <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;55113f1742ff1a0877242a39&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: {
+        <span class="hljs-string">&quot;first&quot;</span>: <span class="hljs-string">&quot;Admin&quot;</span>,
+        <span class="hljs-string">&quot;last&quot;</span>: <span class="hljs-string">&quot;User&quot;</span>,
+        <span class="hljs-string">&quot;full&quot;</span>: <span class="hljs-string">&quot;Admin User&quot;</span>
+    },
+    <span class="hljs-string">&quot;organization&quot;</span>: <span class="hljs-string">&quot;5512857ab22121c7cbd0af46&quot;</span>,
+    <span class="hljs-string">&quot;email&quot;</span>: <span class="hljs-string">&quot;user@keystonejs.com&quot;</span>,
+    <span class="hljs-string">&quot;assessments&quot;</span>: [
+        <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>
+    ]
+}
+</code></pre>
 <h4 id="list-assessments-for-user">list assessments for user</h4>
 <h5 id="request">Request</h5>
 <pre><code>GET /api/user/assessments
@@ -584,10 +580,18 @@
         <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>,
         <span class="hljs-string">&quot;algorithm&quot;</span>: <span class="hljs-string">&quot;comparative-selection&quot;</span>,
         <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;Test Assessment&quot;</span>,
-        <span class="hljs-string">&quot;description&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
-        <span class="hljs-string">&quot;order&quot;</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-string">&quot;assignments&quot;</span>: {
+            <span class="hljs-string">&quot;assessor&quot;</span>: <span class="hljs-string">&quot;The assignment description directed to the assessor&quot;</span>,
+            <span class="hljs-string">&quot;assessee&quot;</span>: <span class="hljs-string">&quot;The assignment as it was given to the assessee&quot;</span>
+        },
+        <span class="hljs-string">&quot;parent&quot;</span>: <span class="hljs-string">&quot;5511410927f4401a785dff0a&quot;</span>,
         <span class="hljs-string">&quot;state&quot;</span>: <span class="hljs-string">&quot;published&quot;</span>,
-        <span class="hljs-string">&quot;comparisonsNum&quot;</span>: <span class="hljs-number">20</span>,
+        <span class="hljs-string">&quot;comparisonsNum&quot;</span>: {
+            <span class="hljs-string">&quot;stage&quot;</span>: [<span class="hljs-number">5</span>],
+            <span class="hljs-string">&quot;total&quot;</span>: <span class="hljs-number">20</span> 
+        },
+        <span class="hljs-string">&quot;stage&quot;</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-string">&quot;enableTimeLogging&quot;</span>: <span class="hljs-literal">true</span>,
         <span class="hljs-string">&quot;phases&quot;</span>: [
             {
                 <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;5423f87677177065a0887b99&quot;</span>,
@@ -595,179 +599,43 @@
                 <span class="hljs-string">&quot;label&quot;</span>: <span class="hljs-string">&quot;Select best&quot;</span>,
                 <span class="hljs-string">&quot;__v&quot;</span>: <span class="hljs-number">0</span>
             }
-        ]
+        ],
+        <span class="hljs-string">&quot;uiCopy&quot;</span>: {}
     }
 ]
 </code></pre>
-<h5 id="response">Response</h5>
-<pre><code>200 OK
-</code></pre><pre><code class="lang-json">{
-    <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;55113f1742ff1a0877242a39&quot;</span>,
-    <span class="hljs-string">&quot;name&quot;</span>: {
-        <span class="hljs-string">&quot;first&quot;</span>: <span class="hljs-string">&quot;Admin&quot;</span>,
-        <span class="hljs-string">&quot;last&quot;</span>: <span class="hljs-string">&quot;User&quot;</span>,
-        <span class="hljs-string">&quot;full&quot;</span>: <span class="hljs-string">&quot;Admin User&quot;</span>
-    },
-    <span class="hljs-string">&quot;organization&quot;</span>: {
-        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;5512857ab22121c7cbd0af46&quot;</span>,
-        <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;d-pac&quot;</span>
-    },
-    <span class="hljs-string">&quot;email&quot;</span>: <span class="hljs-string">&quot;user@keystonejs.com&quot;</span>,
-    <span class="hljs-string">&quot;assessments&quot;</span>: [
-        <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>
-    ]
-}
-</code></pre>
-<h4 id="list-mementos-for-user">list mementos for user</h4>
+<p><code>uiCopy</code> is truncated in the examples due to its length.</p>
+<h4 id="list-comparisons-for-user">list comparisons for user</h4>
 <h5 id="request">Request</h5>
-<pre><code>GET /api/user/mementos
+<pre><code>GET /api/user/comparisons
 </code></pre><h5 id="response">Response</h5>
 <pre><code>200 OK
 </code></pre><pre><code class="lang-json">[
     {
-        <span class="hljs-string">&quot;assessor&quot;</span>: <span class="hljs-string">&quot;55113f1742ff1a0877242a39&quot;</span>,
-        <span class="hljs-string">&quot;assessment&quot;</span>: {
-            <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>,
-            <span class="hljs-string">&quot;algorithm&quot;</span>: <span class="hljs-string">&quot;comparative-selection&quot;</span>,
-            <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;Test Assessment&quot;</span>,
-            <span class="hljs-string">&quot;description&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
-            <span class="hljs-string">&quot;order&quot;</span>: <span class="hljs-number">0</span>,
-            <span class="hljs-string">&quot;state&quot;</span>: <span class="hljs-string">&quot;published&quot;</span>,
-            <span class="hljs-string">&quot;comparisonsNum&quot;</span>: <span class="hljs-number">20</span>,
-            <span class="hljs-string">&quot;phases&quot;</span>: [
-                <span class="hljs-string">&quot;5423f87677177065a0887b99&quot;</span>
-            ]
-        },
-        <span class="hljs-string">&quot;comparison&quot;</span>: {
-            <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;55114689eeaee2b17c331b2b&quot;</span>,
-            <span class="hljs-string">&quot;_rid&quot;</span>: <span class="hljs-number">1</span>,
-            <span class="hljs-string">&quot;assessor&quot;</span>: <span class="hljs-string">&quot;55113f1742ff1a0877242a39&quot;</span>,
-            <span class="hljs-string">&quot;assessment&quot;</span>: <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>,
-            <span class="hljs-string">&quot;phase&quot;</span>: <span class="hljs-string">&quot;5423f87677177065a0887b99&quot;</span>,
-            <span class="hljs-string">&quot;completed&quot;</span>: <span class="hljs-literal">false</span>,
-            <span class="hljs-string">&quot;representations&quot;</span>: [
-                <span class="hljs-string">&quot;551141561d13789d78fff006&quot;</span>,
-                <span class="hljs-string">&quot;5511417f494157b8783984c5&quot;</span>
-            ]
-        },
-        <span class="hljs-string">&quot;representations&quot;</span>: [
-            {
-                <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;551141561d13789d78fff006&quot;</span>,
-                <span class="hljs-string">&quot;document&quot;</span>: <span class="hljs-string">&quot;55113f4642ff1a0877242a3f&quot;</span>,
-                <span class="hljs-string">&quot;assessment&quot;</span>: <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>,
-                <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;to rank&quot;</span>,
-                <span class="hljs-string">&quot;ability&quot;</span>: <span class="hljs-literal">null</span>,
-                <span class="hljs-string">&quot;compared&quot;</span>: [
-                    <span class="hljs-string">&quot;5511417f494157b8783984c5&quot;</span>,
-                    <span class="hljs-string">&quot;5511417f494157b8783984c5&quot;</span>,
-                    <span class="hljs-string">&quot;5511417f494157b8783984c5&quot;</span>
-                ],
-                <span class="hljs-string">&quot;comparedNum&quot;</span>: <span class="hljs-number">3</span>,
-                <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Test Assessment - D-pac logo&quot;</span>
+        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;551d1028f95f2d0465cb1b43&quot;</span>,
+        <span class="hljs-string">&quot;_rid&quot;</span>: <span class="hljs-number">13</span>,
+        <span class="hljs-string">&quot;phase&quot;</span>: <span class="hljs-string">&quot;551d1e1c2266922f78daf485&quot;</span>,
+        <span class="hljs-string">&quot;assessor&quot;</span>: <span class="hljs-string">&quot;551d3152d7590713148eae0d&quot;</span>,
+        <span class="hljs-string">&quot;assessment&quot;</span>: <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>,
+        <span class="hljs-string">&quot;data&quot;</span>: {
+            <span class="hljs-string">&quot;comparative&quot;</span>: <span class="hljs-string">&quot;Feedback&quot;</span>,
+            <span class="hljs-string">&quot;passfail&quot;</span>: {
+                <span class="hljs-string">&quot;a&quot;</span>: <span class="hljs-literal">true</span>,
+                <span class="hljs-string">&quot;b&quot;</span>: <span class="hljs-literal">true</span>
             },
-            {
-                <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;5511417f494157b8783984c5&quot;</span>,
-                <span class="hljs-string">&quot;document&quot;</span>: <span class="hljs-string">&quot;55113f2c42ff1a0877242a3e&quot;</span>,
-                <span class="hljs-string">&quot;assessment&quot;</span>: <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>,
-                <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;to rank&quot;</span>,
-                <span class="hljs-string">&quot;ability&quot;</span>: <span class="hljs-literal">null</span>,
-                <span class="hljs-string">&quot;compared&quot;</span>: [
-                    <span class="hljs-string">&quot;551141561d13789d78fff006&quot;</span>,
-                    <span class="hljs-string">&quot;551141561d13789d78fff006&quot;</span>,
-                    <span class="hljs-string">&quot;551141561d13789d78fff006&quot;</span>
-                ],
-                <span class="hljs-string">&quot;comparedNum&quot;</span>: <span class="hljs-number">3</span>,
-                <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Test Assessment - Screen shot 2011-05-04 at 10.59.13.png&quot;</span>
-            }
-        ],
-        <span class="hljs-string">&quot;progress&quot;</span>: {
-            <span class="hljs-string">&quot;completedNum&quot;</span>: <span class="hljs-number">0</span>,
-            <span class="hljs-string">&quot;comparisonsNum&quot;</span>: <span class="hljs-number">20</span>
+            <span class="hljs-string">&quot;selection&quot;</span>: <span class="hljs-string">&quot;551141561d13789d78fff006&quot;</span>
         },
-        <span class="hljs-string">&quot;phases&quot;</span>: [
-            {
-                <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;5423f87677177065a0887b99&quot;</span>,
-                <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;select&quot;</span>,
-                <span class="hljs-string">&quot;label&quot;</span>: <span class="hljs-string">&quot;Select best&quot;</span>
-            }
-        ]
+        <span class="hljs-string">&quot;representations&quot;</span>: {
+            <span class="hljs-string">&quot;a&quot;</span>: <span class="hljs-string">&quot;551141561d13789d78fff006&quot;</span>,
+            <span class="hljs-string">&quot;b&quot;</span>: <span class="hljs-string">&quot;5511417f494157b8783984c5&quot;</span>
+        },
+        <span class="hljs-string">&quot;completed&quot;</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;comparisons&quot;</span>,
+        <span class="hljs-string">&quot;links&quot;</span>: {
+            <span class="hljs-string">&quot;self&quot;</span>: <span class="hljs-string">&quot;/api/comparisons/551d1028f95f2d0465cb1b43&quot;</span>
+        }
     }
 ]
-</code></pre>
-<h3 id="mementos">mementos</h3>
-<h4 id="create-memento">create memento</h4>
-<h5 id="request">Request</h5>
-<pre><code>POST /api/mementos
-</code></pre><pre><code class="lang-json">{
-    <span class="hljs-string">&quot;assessment&quot;</span>: <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>
-}
-</code></pre>
-<h5 id="response">Response</h5>
-<pre><code>200 OK
-</code></pre><pre><code class="lang-json">{
-    <span class="hljs-string">&quot;assessor&quot;</span>: <span class="hljs-string">&quot;55113f1742ff1a0877242a39&quot;</span>,
-    <span class="hljs-string">&quot;assessment&quot;</span>: {
-        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>,
-        <span class="hljs-string">&quot;algorithm&quot;</span>: <span class="hljs-string">&quot;comparative-selection&quot;</span>,
-        <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;Test Assessment&quot;</span>,
-        <span class="hljs-string">&quot;description&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
-        <span class="hljs-string">&quot;order&quot;</span>: <span class="hljs-number">0</span>,
-        <span class="hljs-string">&quot;state&quot;</span>: <span class="hljs-string">&quot;published&quot;</span>,
-        <span class="hljs-string">&quot;comparisonsNum&quot;</span>: <span class="hljs-number">20</span>,
-        <span class="hljs-string">&quot;phases&quot;</span>: [
-            <span class="hljs-string">&quot;5423f87677177065a0887b99&quot;</span>
-        ]
-    },
-    <span class="hljs-string">&quot;comparison&quot;</span>: {
-        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;55114689eeaee2b17c331b2b&quot;</span>,
-        <span class="hljs-string">&quot;_rid&quot;</span>: <span class="hljs-number">1</span>,
-        <span class="hljs-string">&quot;assessor&quot;</span>: <span class="hljs-string">&quot;55113f1742ff1a0877242a39&quot;</span>,
-        <span class="hljs-string">&quot;assessment&quot;</span>: <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>,
-        <span class="hljs-string">&quot;phase&quot;</span>: <span class="hljs-string">&quot;5423f87677177065a0887b99&quot;</span>,
-        <span class="hljs-string">&quot;completed&quot;</span>: <span class="hljs-literal">false</span>,
-        <span class="hljs-string">&quot;representations&quot;</span>: [
-            <span class="hljs-string">&quot;551141561d13789d78fff006&quot;</span>,
-            <span class="hljs-string">&quot;5511417f494157b8783984c5&quot;</span>
-        ]
-    },
-    <span class="hljs-string">&quot;representations&quot;</span>: [
-        {
-            <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;551141561d13789d78fff006&quot;</span>,
-            <span class="hljs-string">&quot;document&quot;</span>: <span class="hljs-string">&quot;55113f4642ff1a0877242a3f&quot;</span>,
-            <span class="hljs-string">&quot;assessment&quot;</span>: <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>,
-            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;to rank&quot;</span>,
-            <span class="hljs-string">&quot;ability&quot;</span>: <span class="hljs-literal">null</span>,
-            <span class="hljs-string">&quot;compared&quot;</span>: [
-                <span class="hljs-string">&quot;5511417f494157b8783984c5&quot;</span>
-            ],
-            <span class="hljs-string">&quot;comparedNum&quot;</span>: <span class="hljs-number">3</span>,
-            <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Test Assessment - D-pac logo&quot;</span>
-        },
-        {
-            <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;5511417f494157b8783984c5&quot;</span>,
-            <span class="hljs-string">&quot;document&quot;</span>: <span class="hljs-string">&quot;55113f2c42ff1a0877242a3e&quot;</span>,
-            <span class="hljs-string">&quot;assessment&quot;</span>: <span class="hljs-string">&quot;5511410927f4401a785dff0b&quot;</span>,
-            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;to rank&quot;</span>,
-            <span class="hljs-string">&quot;ability&quot;</span>: <span class="hljs-literal">null</span>,
-            <span class="hljs-string">&quot;compared&quot;</span>: [
-                <span class="hljs-string">&quot;551141561d13789d78fff006&quot;</span>
-            ],
-            <span class="hljs-string">&quot;comparedNum&quot;</span>: <span class="hljs-number">3</span>,
-            <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Test Assessment - Screen shot 2011-05-04 at 10.59.13.png&quot;</span>
-        }
-    ],
-    <span class="hljs-string">&quot;progress&quot;</span>: {
-        <span class="hljs-string">&quot;completedNum&quot;</span>: <span class="hljs-number">0</span>,
-        <span class="hljs-string">&quot;comparisonsNum&quot;</span>: <span class="hljs-number">20</span>
-    },
-    <span class="hljs-string">&quot;phases&quot;</span>: [
-        {
-            <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;5423f87677177065a0887b99&quot;</span>,
-            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;select&quot;</span>,
-            <span class="hljs-string">&quot;label&quot;</span>: <span class="hljs-string">&quot;Select best&quot;</span>
-        }
-    ]
-}
 </code></pre>
 <h3 id="phases">phases</h3>
 <h4 id="list-phases">list phases</h4>
