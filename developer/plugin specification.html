@@ -36,7 +36,7 @@
     
 
         
-    <div class="book" data-level="2.5.1" data-basepath=".." data-revision="Fri May 22 2015 16:09:20 GMT+0200 (CEST)">
+    <div class="book" data-level="2.5.1" data-basepath=".." data-revision="Wed May 27 2015 12:01:51 GMT+0200 (CEST)">
     
 
 <div class="book-summary">
@@ -439,8 +439,8 @@
 <li><p><code>assessor</code>: {<code>String</code>} user id, the assessor for the current comparison</p>
 </li>
 </ul>
-<p>The algorithm should return a selection of <code>representations</code> in a range of <code>[0;n]</code>, where <code>n</code> is defined by your algorithm.</p>
-<h5 id="example">Example</h5>
+<p>The algorithm should return a selection of <code>representations</code> in a range of <code>[0;n]</code>, where <code>n</code> is defined by your algorithm; wrapped in an object with a <code>result</code> field:</p>
+<p>E.g.</p>
 <pre><code class="lang-js"><span class="hljs-comment">//index.js</span>
 <span class="hljs-keyword">var</span> _ = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;underscore&quot;</span>);
 <span class="hljs-built_in">module</span>.exports = {
@@ -452,9 +452,15 @@
         }
     }],
     select : <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(items)</span></span>{
-        <span class="hljs-keyword">return</span> _.first(items);
+        <span class="hljs-keyword">return</span> { result: _.first(items)};
     }
 }
+</code></pre>
+<p>If no representations could be selected an object with <code>messages</code> field is to be returned:</p>
+<p>E.g.</p>
+<pre><code class="lang-js"><span class="hljs-keyword">return</span> {
+    messages: [<span class="hljs-string">&quot;Could not select representations&quot;</span>]
+};
 </code></pre>
 
                     
