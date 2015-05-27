@@ -65,9 +65,9 @@ function select(representations, comparisons, assessment, assessor){
 
 * `assessor`: {`String`} user id, the assessor for the current comparison
 
-The algorithm should return a selection of `representations` in a range of `[0;n]`, where `n` is defined by your algorithm.
+The algorithm should return a selection of `representations` in a range of `[0;n]`, where `n` is defined by your algorithm; wrapped in an object with a `result` field:
 
-##### Example
+E.g.
 
 ```js
 //index.js
@@ -81,7 +81,17 @@ module.exports = {
 		}
 	}],
 	select : function(items){
-		return _.first(items);
+		return { result: _.first(items)};
 	}
 }
+```
+
+If no representations could be selected an object with `messages` field is to be returned:
+
+E.g.
+
+```js
+return {
+	messages: ["Could not select representations"]
+};
 ```
