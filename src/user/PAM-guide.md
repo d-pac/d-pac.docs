@@ -6,7 +6,7 @@ Guide for assessment and user management through the backend.
 
 ### Overview
 
-* Clicking any of the secondary menu items will take you to an overview page of the selected item type. E.g. clicking `Assessments`>`Assessments`
+* Clicking any of the secondary menu items will take you to an overview page of the selected item type. E.g. clicking `Tool`>`Assessments`
 
   ![Menu](assets/menu.png)
 
@@ -41,7 +41,7 @@ Most interface elements are common in both outlook and behaviour, however there'
 
 ### Create Assessments
 
-1. Click on `Assessments`>`Assessments`>`Create Assessment`
+1. Click on `Tool`>`Assessments`>`Create Assessment`
 
   ![Creating assessments](assets/creating-assessments.png)
 
@@ -52,106 +52,113 @@ Most interface elements are common in both outlook and behaviour, however there'
 1. However, it's not over yet. This simply created the `Assessment`, but if you wish to fill in more of its fields, you'll have to do this in the `Assessment` editor:
 
   ![Assessment Editor](assets/assessment-editor.png)
+
+  * __Title__: This is the title as it will appear in the tool in various places:
+
+  	![Assessment title in tool](assets/assessment-tool-title.png)
+
+  * __Selection algorithm__: Please select which selection algorithm you wish to use.
   
-  * __Description__: Please fill out a clear and concise description of the assessment. This will appear in the tool as:
+  * __Assessor assignment__: Please fill out a clear and concise description of the assessor assignment. This will appear in the tool as:
     
-    ![Assessment description](assets/assessment-editor.png)  
+    ![Assessor assignment in tool](assets/assessment-tool-assessor-assignment.png)  
 
-  * __Phases__: These define the various steps the assessor will need to perform in one comparison. At the moment, all phases should be included, **in the exact same order as below**:
-  
-    ![Assessment phases](assets/assessment-phases.png)
+  * __Assessee assignment__: Please fill out a clear and concise description of the assessee assignment. This will appear in the tool as:
 
-  * __Comparisons Num__: Define the number of comparisons each assessor needs to make in an assessment.
+    ![Assessee assignment in tool](assets/assessment-tool-assessee-assignment.png)  
+
+  * __Workflow__: These define the various steps the assessor will need to perform in one comparison. 
+
+  * __Total number of comparisons__: Define the maximum number of comparisons.
+
+  * __Number of comparisons wanted per stage__: Define the maximum number of comparisons, per assessor, per stage.
+
   * __State__: By default an `Assessment` is in a "draft" state. This means that assessors **will not** be able to select this assessment for comparisons. It is useful to allow the PAM to create an assessment up-front and fill in the details over a period of time, without showing up in the assessment selection screen of the tool. **Select "published" once you're done with an assessment and want to enable it in the tool**:
+
+  * __After__: Allows you to setup a hierarchy of assessments. If you select another assessment in this field, the current assessment will only be shown to the assessors _after_ the selected assessment has been completed.
   
-    ![Assessesment states](assets/assessment-states.png)
+  * __Algorithm stage__: Specific algorithms need to maintain what stage they're in. Modify at your own risk!
 
-## Adding Assessees and their representations
+  * __Enable time logging__: toggles time logging for this assessment.
 
-### Create Organisations
+  * __UI Texts__: allos you to modify the texts as presented in the tool.
+
+
+## Adding Organisations
 
 First of all we need to make sure the necessary `Organisation`s are added:
 
-1. Click on `Users`>`Organisations`>`Create Organization`
+1. Click on `Tool`>`Organisations`>`Create Organization`
 
-  ![Creating organisations](assets/creating-organizations.png)
 
-1. This will allow you to create the organisation in-place
+1. Fill out the details
   
-  ![Creating an organisation: fill out details](assets/creating-organizations-details.png)
-
-1. Clicking the `Create`-button will take you to the `Organisation` editor. To create another `Organisation`, use the shortcut:
   
-### Creating Users
 
-Next we need to **create a `user` for _each_ assessee**:
+## Adding Assessors
 
-1. Click on `Users`>`Users`>`Create User`
+Next we need to **create a `user` for each assessor**:
 
-  ![Creating users](assets/creating-users.png)
-  
-1. Again, creating a `User` happens in-place:
+1. Click on `Tool`>`Users`>`Create User`
+
+1. Fill out the details:
  
-  ![Creating users: fill out details](assets/creating-users-details.png)
+  * __Name__: First and last name
 
-  All fields are mandatory, except for `Organization`. The e-mail address **has to be unique** in the database.
+  * __Organisation__: Select an organisation from the list or leave it blank.
+
+  * __Email__: Must be a valid e-mail address (but not necessarily an existing one)
+
+  * __Password__: Click 'Change password' and fill out the new password twice.
+
+  * __Assessments__: Add a user as an assessor to specific assessments; select any number of assessments you want from the list
+
+  * __Can access keystone__: This will grant the user administrative rights. **Do not tick this unless for team members!**
   
-1. Clicking the `Create`-button will take you to the `User` editor. To create another `User`, use the shortcut:
-
-  ![Create another user](assets/create-another-user.png)
-
-### Creating Personas
-
-Next we need to define what `role` a `user` has in an `assessment`. Any user can perform different roles in different assessments, hence we need to explicitly declare this.
-
-**Create a `persona` for _each_ assessee`**
-
-1. Click on `Users`>`Personas`>`Create Persona`
-
-  ![Creating personas](assets/creating-personas.png)
-  
-1. In-place provide the details:
-  
-  ![Creating Personas: fill out details](assets/creating-personas-details.png)
-
-  **All fields are mandatory**
-  
-1. Clicking the `Create`-button will take you to the `Persona` editor. To create another `Persona`, use the shortcut:
-
-  ![Create another Persona](assets/persona-editor.png)
-  
-### Creating Representations
+## Adding Representations
 
 Creating a `representation` for an assessee is a two-phased process:
 
-#### Create the `representation`
+### Create the `document`
 
-1. Click on `Users`>`Representations`>`Create Representation`
+1. Click on `Tool`>`Documents`>`Create Document`
  
-  ![Creating representations](assets/creating-representations.png)
-
-1. In-place link it to a `User` and `Assessment`:
+1. This opens a modal form :
  
-  ![Creating representations: fill out details](assets/creating-representations-details.png)
+  ![Creating documents](assets/documents-modal.png)
 
-#### Upload the file
+  * __Title__: Optional, you can give it a title, otherwise the filename will be used.
 
-> **PLEASE DO NOT FORGET THIS STEP**
+  * __Owner__: Optional, select the user that created the document or leave blank.
 
-1. Clicking the `Create`-button will take you to the `Representation` editor. Here we need to upload the representation file:
+  Clicking 'Create' creates the document, next you need to upload the file.
 
-  ![Upload the representation file](assets/upload-representation.png)
-  
-  Clicking `Upload` will open an operating system specific file browse dialog. E.g. on Mac OS X:
-  
-  ![OS-specific file browser](assets/file-browser.png)
+1. Documents can be 'local' (residing on "our" server) or 'remote' (residing some place else), click "upload file" to select a file from your hard disk.
 
-1. Select the file on your file system you wish to upload and click `open` (or a similar button, depending on your operating system)
+1. Or, paste a URL in "External file" to use a "remote" file.
 
-1. This will take you back to the `Representation` editor. **We still need to confirm the upload of the file by clicking the `Save`-button!!**:
+### Create the `representation`
 
-  ![Upload the file](assets/save-representation.png)
-  
-1. To create another `Representation`, use the shortcut:
+A representation is the link between a document and an assessment. (I.e. a single document can be used in multiple assessments.)
 
-  ![Create another representation](assets/create-another-representation.png)
+1. Click on `Tool`>`Representations`>`Create Representation`
+ 
+1. This opens a modal form :
+ 
+  ![Creating representations](assets/representations-modal.png)
+
+  * __Assessment__: Select the assessment you want to link the document to.
+
+  * __Document__: Select the document you want to use in the assessment.
+
+  Clicking 'Create' creates the representation.
+
+1. Next you might need to fill out some details, depending on the algorithm you chose:
+
+  * __Ability value__
+
+  * __Ability SE__
+
+  * __Rank type__
+
+  * __Close to__
