@@ -4,11 +4,11 @@
     <head>
         
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <title>User guide | d-pac.docs</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.0.1">
+        <meta name="generator" content="GitBook 2.1.0">
         
         
         <meta name="HandheldFriendly" content="true"/>
@@ -17,6 +17,11 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
         <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+    
+
         
     
     
@@ -31,12 +36,7 @@
     <body>
         
         
-    <link rel="stylesheet" href="../gitbook/style.css">
-    
-    
-
-        
-    <div class="book" data-level="1" data-basepath=".." data-revision="Wed May 27 2015 12:01:51 GMT+0200 (CEST)">
+    <div class="book" data-level="1" data-basepath=".." data-revision="Thu Jun 25 2015 12:50:10 GMT+0200 (CEST)">
     
 
 <div class="book-summary">
@@ -354,6 +354,8 @@
     <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
     
     
+    
+
 
     <!-- Title -->
     <h1>
@@ -373,7 +375,7 @@
 <h2 id="in-general">In general</h2>
 <h3 id="overview">Overview</h3>
 <ul>
-<li><p>Clicking any of the secondary menu items will take you to an overview page of the selected item type. E.g. clicking <code>Assessments</code>&gt;<code>Assessments</code></p>
+<li><p>Clicking any of the secondary menu items will take you to an overview page of the selected item type. E.g. clicking <code>Tool</code>&gt;<code>Assessments</code></p>
 <p><img src="assets/menu.png" alt="Menu"></p>
 <p>Will show you an overview of all existing assessments.</p>
 <p><img src="assets/assessment-overview.png" alt="Assessment overview"></p>
@@ -400,7 +402,7 @@
 <h2 id="adding-assessments">Adding Assessments</h2>
 <h3 id="create-assessments">Create Assessments</h3>
 <ol>
-<li><p>Click on <code>Assessments</code>&gt;<code>Assessments</code>&gt;<code>Create Assessment</code></p>
+<li><p>Click on <code>Tool</code>&gt;<code>Assessments</code>&gt;<code>Create Assessment</code></p>
 <p><img src="assets/creating-assessments.png" alt="Creating assessments"></p>
 </li>
 <li><p>This will allow you to create the assessment and add essential details in-place:</p>
@@ -409,90 +411,113 @@
 <li><p>However, it&apos;s not over yet. This simply created the <code>Assessment</code>, but if you wish to fill in more of its fields, you&apos;ll have to do this in the <code>Assessment</code> editor:</p>
 <p><img src="assets/assessment-editor.png" alt="Assessment Editor"></p>
 <ul>
-<li><p><strong>Description</strong>: Please fill out a clear and concise description of the assessment. This will appear in the tool as:</p>
-<p><img src="assets/assessment-editor.png" alt="Assessment description">  </p>
+<li><p><strong>Title</strong>: This is the title as it will appear in the tool in various places:</p>
+<p> <img src="assets/assessment-tool-title.png" alt="Assessment title in tool"></p>
 </li>
-<li><p><strong>Phases</strong>: These define the various steps the assessor will need to perform in one comparison. At the moment, all phases should be included, <strong>in the exact same order as below</strong>:</p>
-<p><img src="assets/assessment-phases.png" alt="Assessment phases"></p>
+<li><p><strong>Selection algorithm</strong>: Please select which selection algorithm you wish to use.</p>
 </li>
-<li><p><strong>Comparisons Num</strong>: Define the number of comparisons each assessor needs to make in an assessment.</p>
+<li><p><strong>Assessor assignment</strong>: Please fill out a clear and concise description of the assessor assignment. This will appear in the tool as:</p>
+<p><img src="assets/assessment-tool-assessor-assignment.png" alt="Assessor assignment in tool">  </p>
+</li>
+<li><p><strong>Assessee assignment</strong>: Please fill out a clear and concise description of the assessee assignment. This will appear in the tool as:</p>
+<p><img src="assets/assessment-tool-assessee-assignment.png" alt="Assessee assignment in tool">  </p>
+</li>
+<li><p><strong>Workflow</strong>: These define the various steps the assessor will need to perform in one comparison. </p>
+</li>
+<li><p><strong>Total number of comparisons</strong>: Define the maximum number of comparisons.</p>
+</li>
+<li><p><strong>Number of comparisons wanted per stage</strong>: Define the maximum number of comparisons, per assessor, per stage.</p>
 </li>
 <li><p><strong>State</strong>: By default an <code>Assessment</code> is in a &quot;draft&quot; state. This means that assessors <strong>will not</strong> be able to select this assessment for comparisons. It is useful to allow the PAM to create an assessment up-front and fill in the details over a period of time, without showing up in the assessment selection screen of the tool. <strong>Select &quot;published&quot; once you&apos;re done with an assessment and want to enable it in the tool</strong>:</p>
-<p><img src="assets/assessment-states.png" alt="Assessesment states"></p>
+</li>
+<li><p><strong>After</strong>: Allows you to setup a hierarchy of assessments. If you select another assessment in this field, the current assessment will only be shown to the assessors <em>after</em> the selected assessment has been completed.</p>
+</li>
+<li><p><strong>Algorithm stage</strong>: Specific algorithms need to maintain what stage they&apos;re in. Modify at your own risk!</p>
+</li>
+<li><p><strong>Enable time logging</strong>: toggles time logging for this assessment.</p>
+</li>
+<li><p><strong>UI Texts</strong>: allos you to modify the texts as presented in the tool.</p>
 </li>
 </ul>
 </li>
 </ol>
-<h2 id="adding-assessees-and-their-representations">Adding Assessees and their representations</h2>
-<h3 id="create-organisations">Create Organisations</h3>
+<h2 id="adding-organisations">Adding Organisations</h2>
 <p>First of all we need to make sure the necessary <code>Organisation</code>s are added:</p>
 <ol>
-<li><p>Click on <code>Users</code>&gt;<code>Organisations</code>&gt;<code>Create Organization</code></p>
-<p><img src="assets/creating-organizations.png" alt="Creating organisations"></p>
-</li>
-<li><p>This will allow you to create the organisation in-place</p>
-<p><img src="assets/creating-organizations-details.png" alt="Creating an organisation: fill out details"></p>
-</li>
-<li><p>Clicking the <code>Create</code>-button will take you to the <code>Organisation</code> editor. To create another <code>Organisation</code>, use the shortcut:</p>
-</li>
+<li>Click on <code>Tool</code>&gt;<code>Organisations</code>&gt;<code>Create Organization</code></li>
 </ol>
-<h3 id="creating-users">Creating Users</h3>
-<p>Next we need to <strong>create a <code>user</code> for <em>each</em> assessee</strong>:</p>
 <ol>
-<li><p>Click on <code>Users</code>&gt;<code>Users</code>&gt;<code>Create User</code></p>
-<p><img src="assets/creating-users.png" alt="Creating users"></p>
-</li>
-<li><p>Again, creating a <code>User</code> happens in-place:</p>
-<p><img src="assets/creating-users-details.png" alt="Creating users: fill out details"></p>
-<p>All fields are mandatory, except for <code>Organization</code>. The e-mail address <strong>has to be unique</strong> in the database.</p>
-</li>
-<li><p>Clicking the <code>Create</code>-button will take you to the <code>User</code> editor. To create another <code>User</code>, use the shortcut:</p>
-<p><img src="assets/create-another-user.png" alt="Create another user"></p>
-</li>
+<li>Fill out the details</li>
 </ol>
-<h3 id="creating-personas">Creating Personas</h3>
-<p>Next we need to define what <code>role</code> a <code>user</code> has in an <code>assessment</code>. Any user can perform different roles in different assessments, hence we need to explicitly declare this.</p>
-<p><strong>Create a <code>persona</code> for <em>each</em> assessee`</strong></p>
+<h2 id="adding-assessors">Adding Assessors</h2>
+<p>Next we need to <strong>create a <code>user</code> for each assessor</strong>:</p>
 <ol>
-<li><p>Click on <code>Users</code>&gt;<code>Personas</code>&gt;<code>Create Persona</code></p>
-<p><img src="assets/creating-personas.png" alt="Creating personas"></p>
+<li><p>Click on <code>Tool</code>&gt;<code>Users</code>&gt;<code>Create User</code></p>
 </li>
-<li><p>In-place provide the details:</p>
-<p><img src="assets/creating-personas-details.png" alt="Creating Personas: fill out details"></p>
-<p><strong>All fields are mandatory</strong></p>
+<li><p>Fill out the details:</p>
+<ul>
+<li><p><strong>Name</strong>: First and last name</p>
 </li>
-<li><p>Clicking the <code>Create</code>-button will take you to the <code>Persona</code> editor. To create another <code>Persona</code>, use the shortcut:</p>
-<p><img src="assets/persona-editor.png" alt="Create another Persona"></p>
+<li><p><strong>Organisation</strong>: Select an organisation from the list or leave it blank.</p>
+</li>
+<li><p><strong>Email</strong>: Must be a valid e-mail address (but not necessarily an existing one)</p>
+</li>
+<li><p><strong>Password</strong>: Click &apos;Change password&apos; and fill out the new password twice.</p>
+</li>
+<li><p><strong>Assessments</strong>: Add a user as an assessor to specific assessments; select any number of assessments you want from the list</p>
+</li>
+<li><p><strong>Can access keystone</strong>: This will grant the user administrative rights. <strong>Do not tick this unless for team members!</strong></p>
+</li>
+</ul>
 </li>
 </ol>
-<h3 id="creating-representations">Creating Representations</h3>
+<h2 id="adding-representations">Adding Representations</h2>
 <p>Creating a <code>representation</code> for an assessee is a two-phased process:</p>
-<h4 id="create-the-representation">Create the <code>representation</code></h4>
+<h3 id="create-the-document">Create the <code>document</code></h3>
 <ol>
-<li><p>Click on <code>Users</code>&gt;<code>Representations</code>&gt;<code>Create Representation</code></p>
-<p><img src="assets/creating-representations.png" alt="Creating representations"></p>
+<li><p>Click on <code>Tool</code>&gt;<code>Documents</code>&gt;<code>Create Document</code></p>
 </li>
-<li><p>In-place link it to a <code>User</code> and <code>Assessment</code>:</p>
-<p><img src="assets/creating-representations-details.png" alt="Creating representations: fill out details"></p>
+<li><p>This opens a modal form :</p>
+<p><img src="assets/documents-modal.png" alt="Creating documents"></p>
+<ul>
+<li><p><strong>Title</strong>: Optional, you can give it a title, otherwise the filename will be used.</p>
+</li>
+<li><p><strong>Owner</strong>: Optional, select the user that created the document or leave blank.</p>
+</li>
+</ul>
+<p>Clicking &apos;Create&apos; creates the document, next you need to upload the file.</p>
+</li>
+<li><p>Documents can be &apos;local&apos; (residing on &quot;our&quot; server) or &apos;remote&apos; (residing some place else), click &quot;upload file&quot; to select a file from your hard disk.</p>
+</li>
+<li><p>Or, paste a URL in &quot;External file&quot; to use a &quot;remote&quot; file.</p>
 </li>
 </ol>
-<h4 id="upload-the-file">Upload the file</h4>
-<blockquote>
-<p><strong>PLEASE DO NOT FORGET THIS STEP</strong></p>
-</blockquote>
+<h3 id="create-the-representation">Create the <code>representation</code></h3>
+<p>A representation is the link between a document and an assessment. (I.e. a single document can be used in multiple assessments.)</p>
 <ol>
-<li><p>Clicking the <code>Create</code>-button will take you to the <code>Representation</code> editor. Here we need to upload the representation file:</p>
-<p><img src="assets/upload-representation.png" alt="Upload the representation file"></p>
-<p>Clicking <code>Upload</code> will open an operating system specific file browse dialog. E.g. on Mac OS X:</p>
-<p><img src="assets/file-browser.png" alt="OS-specific file browser"></p>
+<li><p>Click on <code>Tool</code>&gt;<code>Representations</code>&gt;<code>Create Representation</code></p>
 </li>
-<li><p>Select the file on your file system you wish to upload and click <code>open</code> (or a similar button, depending on your operating system)</p>
+<li><p>This opens a modal form :</p>
+<p><img src="assets/representations-modal.png" alt="Creating representations"></p>
+<ul>
+<li><p><strong>Assessment</strong>: Select the assessment you want to link the document to.</p>
 </li>
-<li><p>This will take you back to the <code>Representation</code> editor. <strong>We still need to confirm the upload of the file by clicking the <code>Save</code>-button!!</strong>:</p>
-<p><img src="assets/save-representation.png" alt="Upload the file"></p>
+<li><p><strong>Document</strong>: Select the document you want to use in the assessment.</p>
 </li>
-<li><p>To create another <code>Representation</code>, use the shortcut:</p>
-<p><img src="assets/create-another-representation.png" alt="Create another representation"></p>
+</ul>
+<p>Clicking &apos;Create&apos; creates the representation.</p>
+</li>
+<li><p>Next you might need to fill out some details, depending on the algorithm you chose:</p>
+<ul>
+<li><p><strong>Ability value</strong></p>
+</li>
+<li><p><strong>Ability SE</strong></p>
+</li>
+<li><p><strong>Rank type</strong></p>
+</li>
+<li><p><strong>Close to</strong></p>
+</li>
+</ul>
 </li>
 </ol>
 
