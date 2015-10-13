@@ -4,7 +4,7 @@
 * [Developer guide](developer/README.md)
     * [CMS](developer/cms.md)
     * [Webclient](developer/webclient.md)
-	* [REST API](developer/REST v0.2.md)
+	* [REST API](developer/REST.md)
 	* [restful-keystone](developer/restful keystone.md)
 	* Plugins
     	* [Specification](developer/plugin specification.md)
