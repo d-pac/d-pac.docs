@@ -36,7 +36,7 @@
     
 
         
-    <div class="book" data-level="2.5.1" data-basepath=".." data-revision="Tue Oct 13 2015 10:54:17 GMT+0200 (CEST)">
+    <div class="book" data-level="2.5.1" data-basepath=".." data-revision="Tue Oct 13 2015 11:06:17 GMT+0200 (CEST)">
     
 
 <div class="book-summary">
@@ -368,7 +368,7 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="plugin-spec-v0-3-0">Plugin spec v0.3.0</h1>
+                        <h1 id="plugin-spec-v0-3-1">Plugin spec v0.3.1</h1>
 <h2 id="mandatory-configuration">Mandatory configuration</h2>
 <p>Your <code>package.json</code> manifest file <strong>must</strong> include:</p>
 <ol>
@@ -380,7 +380,7 @@
          <span class="hljs-string">&quot;description&quot;</span> : <span class="hljs-string">&quot;Description of the plugin&quot;</span>,
          <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;select&quot;</span>,
          <span class="hljs-string">&quot;entry&quot;</span> : <span class="hljs-string">&quot;select&quot;</span>,
-         <span class="hljs-string">&quot;compatibility&quot;</span>:<span class="hljs-string">&quot;*&quot;</span>
+         <span class="hljs-string">&quot;satisfies&quot;</span>:<span class="hljs-string">&quot;^0.3.1&quot;</span>
      } ]
  }
 </code></pre>
@@ -389,7 +389,8 @@
 <li><code>description</code>: {<code>String</code>} <em><strong>(required)</strong></em> A description of the algorithm.</li>
 <li><code>type</code>: {<code>String</code>} <em><strong>(required)</strong></em> The type of the algorithm.</li>
 <li><code>entry</code>: {<code>String</code>} <em>(optional)</em> The main access point to your algorithm, by default the same value as <code>type</code> is assumed.</li>
-<li><code>compatibility</code>: {<code>String</code>|<code>Array</code>} <em>(optional)</em> <a href="http://semver.org" target="_blank">Semver</a> version specification of d-pac.cms versions this plugin is compatible with.</li>
+<li><code>satisfies</code>: {<code>String</code>|<code>Array</code>} <em><strong>required</strong></em> (v0.3.1 and up) <a href="http://semver.org" target="_blank">Semver</a> version specification of the <strong>d-pac plugin specification</strong> (i.e. this document) the plugin is compatible with. E.g. <code>&quot;^0.3.1&quot;</code></li>
+<li><code>compatibility</code>: {<code>String</code>|<code>Array</code>} <em>(optional)</em> <strong>DEPRECATED in v0.3.1</strong> <a href="http://semver.org" target="_blank">Semver</a> version specification of d-pac.cms versions this plugin is compatible with.</li>
 </ul>
 </li>
 </ol>
