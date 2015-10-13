@@ -4,11 +4,11 @@
     <head>
         
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
         <title>REST API | d-pac.docs</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.1.0">
+        <meta name="generator" content="GitBook 2.0.1">
         
         
         <meta name="HandheldFriendly" content="true"/>
@@ -17,11 +17,6 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
         <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
-        
-    <link rel="stylesheet" href="../gitbook/style.css">
-    
-    
-
         
     
     
@@ -36,7 +31,12 @@
     <body>
         
         
-    <div class="book" data-level="2.3" data-basepath=".." data-revision="Thu Jun 25 2015 12:50:10 GMT+0200 (CEST)">
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+    
+
+        
+    <div class="book" data-level="2.3" data-basepath=".." data-revision="Tue Oct 13 2015 10:34:51 GMT+0200 (CEST)">
     
 
 <div class="book-summary">
@@ -127,10 +127,10 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.3" data-path="developer/REST v0.2.html">
+        <li class="chapter active" data-level="2.3" data-path="developer/REST.html">
             
                 
-                    <a href="../developer/REST v0.2.html">
+                    <a href="../developer/REST.html">
                         <i class="fa fa-check"></i>
                         
                             <b>2.3.</b>
@@ -354,8 +354,6 @@
     <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
     
     
-    
-
 
     <!-- Title -->
     <h1>
@@ -370,81 +368,10 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h2 id="rest-api">REST API</h2>
+                        <h2 id="rest-api-v0-2">REST API v0.2</h2>
 <!-- toc -->
-<ul>
-<li><a href="#intro">Intro</a></li>
-<li><a href="#authorization">authorization</a><ul>
-<li><a href="#retrieve-session">retrieve session</a></li>
-<li><a href="#create-session">create session</a></li>
-<li><a href="#remove-session">remove session</a></li>
-</ul>
-</li>
-<li><a href="#current-ie-logged-in-user">current (i.e. logged-in) user</a><ul>
-<li><a href="#retrieve-user-details">retrieve user details</a></li>
-<li><a href="#update-user-details">update user details</a></li>
-<li><a href="#list-assessments-for-user">list assessments for user</a></li>
-<li><a href="#list-comparisons-for-user">list comparisons for user</a></li>
-</ul>
-</li>
-<li><a href="#phases">phases</a><ul>
-<li><a href="#list-phases">list phases</a></li>
-</ul>
-</li>
-<li><a href="#pages">pages</a><ul>
-<li><a href="#list-pages">list pages</a></li>
-<li><a href="#retrieve-pages">retrieve pages</a></li>
-</ul>
-</li>
-<li><a href="#representations">representations</a><ul>
-<li><a href="#list-representations">list representations</a></li>
-<li><a href="#retrieve-representation">retrieve representation</a></li>
-</ul>
-</li>
-<li><a href="#assessments">assessments</a><ul>
-<li><a href="#list-assessments">list assessments</a></li>
-<li><a href="#create-assessment">create assessment</a></li>
-<li><a href="#retrieve-assessment">retrieve assessment</a></li>
-<li><a href="#update-assessment">update assessment</a></li>
-<li><a href="#remove-assessment">remove assessment</a></li>
-</ul>
-</li>
-<li><a href="#users">users</a><ul>
-<li><a href="#list-users">list users</a></li>
-<li><a href="#create-user">create user</a></li>
-<li><a href="#retrieve-user">retrieve user</a></li>
-<li><a href="#update-user">update user</a></li>
-<li><a href="#remove-user">remove user</a></li>
-</ul>
-</li>
-<li><a href="#comparisons">comparisons</a><ul>
-<li><a href="#list-comparisons">list comparisons</a></li>
-<li><a href="#create-comparison">create comparison</a></li>
-<li><a href="#retrieve-comparison">retrieve comparison</a></li>
-<li><a href="#update-comparison">update comparison</a></li>
-<li><a href="#remove-comparison">remove comparison</a></li>
-</ul>
-</li>
-<li><a href="#timelogs">timelogs</a><ul>
-<li><a href="#list-timelogs">list timelogs</a></li>
-<li><a href="#create-timelog">create timelog</a></li>
-<li><a href="#retrieve-timelog">retrieve timelog</a></li>
-<li><a href="#update-timelog">update timelog</a></li>
-<li><a href="#remove-timelog">remove timelog</a></li>
-</ul>
-</li>
-<li><a href="#organizations">organizations</a><ul>
-<li><a href="#list-organizations">list organizations</a></li>
-<li><a href="#create-organization">create organization</a></li>
-<li><a href="#retrieve-organization">retrieve organization</a></li>
-<li><a href="#update-organization">update organization</a></li>
-<li><a href="#remove-organization">remove organization</a></li>
-</ul>
-</li>
-</ul>
-<!-- toc stop -->
 <h3 id="intro">Intro</h3>
-<p>All resources contain a </p>
+<p>All resources contain a</p>
 <ul>
 <li><code>type</code> field with the name of the collection they&apos;re a part of</li>
 <li><code>links.self</code> field with a relative URL of the resource</li>
@@ -590,7 +517,7 @@
         <span class="hljs-string">&quot;state&quot;</span>: <span class="hljs-string">&quot;published&quot;</span>,
         <span class="hljs-string">&quot;comparisonsNum&quot;</span>: {
             <span class="hljs-string">&quot;stage&quot;</span>: [<span class="hljs-number">5</span>],
-            <span class="hljs-string">&quot;total&quot;</span>: <span class="hljs-number">20</span> 
+            <span class="hljs-string">&quot;total&quot;</span>: <span class="hljs-number">20</span>
         },
         <span class="hljs-string">&quot;stage&quot;</span>: <span class="hljs-number">0</span>,
         <span class="hljs-string">&quot;enableTimeLogging&quot;</span>: <span class="hljs-literal">true</span>,
