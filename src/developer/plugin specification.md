@@ -1,1 +1,1 @@
-{% include "git+https://github.com/d-pac/d-pac.cms.git/docs/plugin-spec v0.3.md" %}
+{% include "git+https://github.com/d-pac/d-pac.plugins-spec.git/README.md" %}
