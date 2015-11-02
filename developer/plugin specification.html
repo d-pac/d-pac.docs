@@ -36,7 +36,7 @@
     
 
         
-    <div class="book" data-level="2.5.1" data-basepath=".." data-revision="Tue Oct 13 2015 11:06:17 GMT+0200 (CEST)">
+    <div class="book" data-level="2.5.1" data-basepath=".." data-revision="Mon Nov 02 2015 16:19:30 GMT+0100 (CET)">
     
 
 <div class="book-summary">
@@ -368,100 +368,131 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="plugin-spec-v0-3-1">Plugin spec v0.3.1</h1>
-<h2 id="mandatory-configuration">Mandatory configuration</h2>
-<p>Your <code>package.json</code> manifest file <strong>must</strong> include:</p>
-<ol>
-<li><p>a <code>d-pac</code> object as follows:</p>
-<pre><code class="lang-json"> <span class="hljs-comment">//file: package.json</span>
- {
-     <span class="hljs-string">&quot;d-pac&quot;</span>: [ {
-         <span class="hljs-string">&quot;name&quot;</span> : <span class="hljs-string">&quot;Name of the plugin&quot;</span>,
-         <span class="hljs-string">&quot;description&quot;</span> : <span class="hljs-string">&quot;Description of the plugin&quot;</span>,
-         <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;select&quot;</span>,
-         <span class="hljs-string">&quot;entry&quot;</span> : <span class="hljs-string">&quot;select&quot;</span>,
-         <span class="hljs-string">&quot;satisfies&quot;</span>:<span class="hljs-string">&quot;^0.3.1&quot;</span>
-     } ]
- }
+                        <h1 id="d-pac-plugins-spec-v0-4">d-pac.plugins-spec v0.4</h1>
+<p><a href="https://npmjs.org/package/d-pac.plugins-spec" target="_blank"><img src="https://badge.fury.io/js/d-pac.plugins-spec.svg" alt="Npm package"></a> <a href="https://travis-ci.org/d-pac/d-pac.plugins-spec" target="_blank"><img src="https://travis-ci.org/d-pac/d-pac.plugins-spec.svg?branch=master" alt="Build Status"></a> <a href="https://david-dm.org/d-pac/d-pac.plugins-spec" target="_blank"><img src="https://david-dm.org/d-pac/d-pac.plugins-spec.svg?theme=shields.io" alt="Dependency Status"></a></p>
+<p>This module formally defines the plugins specification for d-pac. It uses <a href="http://json-schema.org/" target="_blank">json-schema</a> to describe the mandatory plugin declaration and the data it accepts.</p>
+<h2 id="plugin-manifest">Plugin manifest</h2>
+<p>A d-pac plugin <strong>must</strong> declare an object in its <code>package.json</code> which adheres to <a href="https://github.com/d-pac/d-pac.plugins-spec/blob/master/schemas/pluginmanifest.json" target="_blank">schemas/pluginmanifest.json</a>
+To verify your plugin fullfils all requirements:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> spec = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;d-pac.plugins-spec&apos;</span>);
+<span class="hljs-keyword">var</span> pkg = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./package.json&apos;</span>); <span class="hljs-comment">// retrieve your plugin&apos;s package manifest</span>
+
+<span class="hljs-keyword">var</span> result = spec.validatePluginmanifest(pkg);
+<span class="hljs-built_in">console</span>.log(result.isValid);
 </code></pre>
-<ul>
-<li><code>name</code>: {<code>String</code>} <em><strong>(required)</strong></em> The name of the algorithm.</li>
-<li><code>description</code>: {<code>String</code>} <em><strong>(required)</strong></em> A description of the algorithm.</li>
-<li><code>type</code>: {<code>String</code>} <em><strong>(required)</strong></em> The type of the algorithm.</li>
-<li><code>entry</code>: {<code>String</code>} <em>(optional)</em> The main access point to your algorithm, by default the same value as <code>type</code> is assumed.</li>
-<li><code>satisfies</code>: {<code>String</code>|<code>Array</code>} <em><strong>required</strong></em> (v0.3.1 and up) <a href="http://semver.org" target="_blank">Semver</a> version specification of the <strong>d-pac plugin specification</strong> (i.e. this document) the plugin is compatible with. E.g. <code>&quot;^0.3.1&quot;</code></li>
-<li><code>compatibility</code>: {<code>String</code>|<code>Array</code>} <em>(optional)</em> <strong>DEPRECATED in v0.3.1</strong> <a href="http://semver.org" target="_blank">Semver</a> version specification of d-pac.cms versions this plugin is compatible with.</li>
-</ul>
-</li>
-</ol>
-<h2 id="mandatory-api">Mandatory API</h2>
-<h3 id="selection-algorithms">Selection algorithms</h3>
-<h4 id="-select"><code>select</code></h4>
-<p>Your selection algorithm <strong>must</strong> expose a function called <code>select</code> (or provide the correct name as a value for <code>entry</code> in the manifest:</p>
-<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">select</span><span class="hljs-params">(representations, comparisons, assessment, assessor)</span></span>{
-    <span class="hljs-comment">//here be magical stuff</span>
-    <span class="hljs-keyword">return</span> selection;
-}
-</code></pre>
-<ul>
-<li><p><code>representations</code> an Array of objects with following (minimal) structure:</p>
-<ul>
-<li><code>_id</code>: {<code>String</code>} unique object identifier</li>
-<li><code>compared</code>: {<code>String[]</code>} Array of <code>_id</code>s</li>
-<li><code>comparedNum</code>: {<code>Number</code>} Number of times compared (might deviate from <code>compared.length</code> if <code>compared</code> stores unique id&apos;s only and a representation is compared to another specific representation multiple times)</li>
-</ul>
-</li>
-<li><p><code>comparisons</code> an Array of objects with following (minimal) structure:</p>
-<ul>
-<li><code>_id</code>: {<code>String</code>} unique object identifier</li>
-<li><code>assessor</code>: {<code>String</code>} user id</li>
-<li><code>assessment</code>: {<code>String</code>} assessment id</li>
-<li><code>representations</code>:<ul>
-<li><code>a</code>: {<code>String</code>} representation id</li>
-<li><code>b</code>: {<code>String</code>} representation id</li>
-</ul>
-</li>
-<li><code>data</code>:<ul>
-<li><code>selection</code>: {<code>String</code>} representation id, selected representation</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><code>assessment</code> an object with structure:</p>
-<ul>
-<li><code>comparisonsNum</code><ul>
-<li><code>total</code>: {<code>Number</code>} total allowed number of comparisons for the assessment</li>
-<li><code>stage</code>: {<code>Number[]</code>} an array of Numbers, with the allowed number of comparisons per stage</li>
-</ul>
-</li>
-<li><code>stage</code>: {<code>Number</code>} the current stage the algorithm is in</li>
-</ul>
-</li>
-<li><p><code>assessor</code>: {<code>String</code>} user id, the assessor for the current comparison</p>
-</li>
-</ul>
-<p>The algorithm should return a selection of <code>representations</code> in a range of <code>[0;n]</code>, where <code>n</code> is defined by your algorithm; wrapped in an object with a <code>result</code> field:</p>
-<p>E.g.</p>
-<pre><code class="lang-js"><span class="hljs-comment">//index.js</span>
-<span class="hljs-keyword">var</span> _ = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;underscore&quot;</span>);
-<span class="hljs-built_in">module</span>.exports = {
-    manifest: [{
-        name : <span class="hljs-string">&quot;Name of the plugin&quot;</span>,
-        description : <span class="hljs-string">&quot;Description of the plugin&quot;</span>,
-        options : {
-            type: <span class="hljs-string">&quot;select&quot;</span>
-        }
-    }],
-    select : <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(items)</span></span>{
-        <span class="hljs-keyword">return</span> { result: _.first(items)};
-    }
-}
-</code></pre>
-<p>If no representations could be selected an object with <code>messages</code> field is to be returned:</p>
-<p>E.g.</p>
-<pre><code class="lang-js"><span class="hljs-keyword">return</span> {
-    messages: [<span class="hljs-string">&quot;Could not select representations&quot;</span>]
+<h2 id="plugin-api">Plugin API</h2>
+<p>A d-pac plugin <strong>must</strong> expose a method conform to its <code>type</code> declaration in the manifest. ATM a single type is accepted: <code>select</code>.</p>
+<p>Example:</p>
+<pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports.select = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">select</span><span class="hljs-params">(selectionpayload)</span></span>{
+    <span class="hljs-comment">//do your stuff</span>
 };
+</code></pre>
+<p>This method should accept exactly one parameter which adheres to  <a href="https://github.com/d-pac/d-pac.plugins-spec/blob/master/schemas/selectionpayload.json" target="_blank">schemas/selectionpayload.json</a>
+A plugin is allowed to override the payload schema in case it requires/ignores any of the fields.</p>
+<p>References:</p>
+<ul>
+<li><a href="https://github.com/d-pac/d-pac.plugins-spec/blob/master/schemas/assessment.json" target="_blank">schemas/assessment.json</a></li>
+<li><a href="https://github.com/d-pac/d-pac.plugins-spec/blob/master/schemas/comparison.json" target="_blank">schemas/comparison.json</a></li>
+<li><a href="https://github.com/d-pac/d-pac.plugins-spec/blob/master/schemas/representation.json" target="_blank">schemas/representation.json</a></li>
+<li><a href="https://github.com/d-pac/d-pac.plugins-spec/blob/master/schemas/selectionpayload.json" target="_blank">schemas/selectionpayload.json</a></li>
+</ul>
+<h2 id="module-api">Module API</h2>
+<h3 id="schemas">Schemas</h3>
+<p>This module exposes a mapping of schema declarations to schema names as <code>schemas</code>:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> spec = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;d-pac.plugins-spec&apos;</span>);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Object</span>.keys(spec.schemas));
+</code></pre>
+<pre><code>#output
+[ &apos;pluginmanifest&apos;,
+  &apos;assessment&apos;,
+  &apos;comparison&apos;,
+  &apos;representation&apos;,
+  &apos;selectionpayload&apos; ]
+</code></pre><h3 id="default-validators">Default Validators</h3>
+<p>It also exposes validators for each of the schemas:</p>
+<pre><code class="lang-js"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Object</span>.keys(spec));
+</code></pre>
+<pre><code>#output
+[ &apos;validatePluginmanifest&apos;,
+  &apos;validateAssessment&apos;,
+  &apos;validateComparison&apos;,
+  &apos;validateRepresentation&apos;,
+  &apos;validateSelectionpayload&apos;,
+  &apos;schemas&apos;,
+  &apos;createValidator&apos;,
+  &apos;VERSION&apos; ]
+</code></pre><p><strong>Usage</strong>:</p>
+<p><code>validate&lt;SchemaType&gt;(data) : Object</code></p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> result = spec.validateComparison(comparison);
+</code></pre>
+<p>The result is an object with <code>isValid: Boolean</code> and in case the data&apos;s not valid an <code>errors</code> array with all errors.</p>
+<h3 id="custom-validators">Custom Validators</h3>
+<p>You can create validators of your own, either based on one of the d-pac schemas, or completely new.</p>
+<pre><code class="lang-js"><span class="hljs-comment">//new schema</span>
+<span class="hljs-keyword">var</span> validator = subject.createValidator( {
+    <span class="hljs-string">&quot;$schema&quot;</span>: <span class="hljs-string">&quot;http://json-schema.org/draft-04/schema#&quot;</span>,
+    <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;Test createValidator&quot;</span>,
+    <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+    <span class="hljs-string">&quot;properties&quot;</span>: {
+      <span class="hljs-string">&quot;foo&quot;</span>: {
+        <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;number&quot;</span>,
+        <span class="hljs-string">&quot;required&quot;</span>: <span class="hljs-literal">true</span>
+      }
+    }
+} );
+<span class="hljs-built_in">console</span>.log(validator( { foo: <span class="hljs-string">&quot;foo&quot;</span> } ).isValid); <span class="hljs-comment">//outputs: false</span>
+<span class="hljs-built_in">console</span>.log(validator( { foo: <span class="hljs-number">9</span> } ).isValid); <span class="hljs-comment">//outputs: true</span>
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-comment">//based on existing</span>
+<span class="hljs-keyword">var</span> validator = subject.createValidator( <span class="hljs-string">&quot;selectionpayload&quot;</span>, {
+    <span class="hljs-string">&quot;selectionpayload&quot;</span>: {
+      <span class="hljs-string">&quot;properties&quot;</span>: {
+        <span class="hljs-string">&quot;assessment&quot;</span>: {
+          <span class="hljs-string">&quot;required&quot;</span>: <span class="hljs-literal">true</span>
+        }
+      }
+    },
+    <span class="hljs-string">&quot;comparison&quot;</span>: {
+      <span class="hljs-string">&quot;properties&quot;</span>: {
+        <span class="hljs-string">&quot;updatedAt&quot;</span>: {
+          <span class="hljs-string">&quot;required&quot;</span>: <span class="hljs-literal">true</span>
+        }
+      }
+    }
+} );
+</code></pre>
+<p>The above example creates a validator based on <a href="https://github.com/d-pac/d-pac.plugins-spec/blob/master/schemas/selectionpayload.json" target="_blank">schemas/selectionpayload.json</a> by passing the <code>&quot;selectionpayload&quot;</code> as a first argument.
+You can override the rules of the original schema, by passing extra rules as objects mapped to the schema names.
+E.g. the <code>assessment</code> property of <code>selectionpayload</code> is made mandatory in the above example. </p>
+<p>Since the <code>selectionpayload</code> schema references several other schemas, you can override these too. E.g. all comparison objects passed to <code>selectionpayload.comparisons</code> are required to have a <code>updatedAt</code> property.</p>
+<p>The structure of the overriding object must be <strong>exactly</strong> the same as that of the base schema, i.e. make sure you adhere to it strictly.</p>
+<h3 id="plugin-declaration-retrieval-from-package-manifests">Plugin declaration retrieval from package manifests</h3>
+<p>You can use <code>getPlugins</code> to retrieve plugin declarations from package manifests:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> plugins = subject.getPlugins({
+  <span class="hljs-string">&quot;d-pac&quot;</span>: [
+    {
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;test&quot;</span>,
+      <span class="hljs-string">&quot;description&quot;</span>: <span class="hljs-string">&quot;test&quot;</span>,
+      <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;select&quot;</span>
+    }
+  ],
+  dependencies: {
+    <span class="hljs-string">&apos;d-pac.plugins-spec&apos;</span>: <span class="hljs-string">&apos;^0.4.0&apos;</span>
+  }
+});
+</code></pre>
+<p>To allow backwards compatibility to plugins that do not declare a dependency on this module, pass an options object with <code>allowIndependents:true</code>:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> plugins = subject.getPlugins({
+  <span class="hljs-string">&quot;d-pac&quot;</span>: [
+    {
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;test&quot;</span>,
+      <span class="hljs-string">&quot;description&quot;</span>: <span class="hljs-string">&quot;test&quot;</span>,
+      <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;select&quot;</span>
+    }
+  ]
+}, {
+  allowIndependents: <span class="hljs-literal">true</span>
+);
 </code></pre>
 
                     
