@@ -36,7 +36,7 @@
     
 
         
-    <div class="book" data-level="2.3" data-basepath=".." data-revision="Mon Nov 02 2015 16:19:30 GMT+0100 (CET)">
+    <div class="book" data-level="2.3" data-basepath=".." data-revision="Thu Nov 12 2015 13:52:48 GMT+0100 (CET)">
     
 
 <div class="book-summary">
@@ -368,7 +368,7 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h2 id="rest-api-v0-2">REST API v0.2</h2>
+                        <h2 id="rest-api-v0-2-1">REST API v0.2.1</h2>
 <!-- toc -->
 <h3 id="intro">Intro</h3>
 <p>All resources contain a</p>
@@ -396,7 +396,13 @@
  }
 </code></pre>
 <p>These fields are sometimes omitted from the examples.</p>
-<h3 id="authorization">authorization</h3>
+<h3 id="system-status">system status</h3>
+<h4 id="ping">ping</h4>
+<h5 id="request">Request</h5>
+<pre><code>GET /api/system/ping
+</code></pre><h5 id="response">Response</h5>
+<pre><code>200 OK
+</code></pre><h3 id="authorization">authorization</h3>
 <h4 id="retrieve-session">retrieve session</h4>
 <h5 id="request">Request</h5>
 <pre><code>GET     /api/session
@@ -1419,6 +1425,32 @@
     <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;organizations&quot;</span>,
     <span class="hljs-string">&quot;links&quot;</span>: {
         <span class="hljs-string">&quot;self&quot;</span>: <span class="hljs-string">&quot;/api/organizations/5512857ab22121c7cbd0af46&quot;</span>
+    }
+}
+</code></pre>
+<h4 id="create-message">create message</h4>
+<h5 id="request">Request</h5>
+<pre><code>POST /api/messages
+</code></pre><pre><code class="lang-json">{
+  <span class="hljs-string">&quot;assessment&quot;</span>:<span class="hljs-string">&quot;56274576d8441e060a5649b9&quot;</span>,
+  <span class="hljs-string">&quot;subject&quot;</span>: <span class="hljs-string">&quot;Message sent by REST API&quot;</span>,
+  <span class="hljs-string">&quot;body&quot;</span>: <span class="hljs-string">&quot;Lorem ipsum&quot;</span>
+}
+</code></pre>
+<h5 id="response">Response</h5>
+<pre><code>200 OK
+</code></pre><pre><code class="lang-json">{
+    <span class="hljs-string">&quot;_rid&quot;</span>: <span class="hljs-number">20</span>,
+    <span class="hljs-string">&quot;updatedAt&quot;</span>: <span class="hljs-string">&quot;2015-11-12T11:58:06.523Z&quot;</span>,
+    <span class="hljs-string">&quot;createdAt&quot;</span>: <span class="hljs-string">&quot;2015-11-12T11:58:06.523Z&quot;</span>,
+    <span class="hljs-string">&quot;createdBy&quot;</span>: <span class="hljs-string">&quot;56121c4d85bcf1308178d0c2&quot;</span>,
+    <span class="hljs-string">&quot;assessment&quot;</span>: <span class="hljs-string">&quot;56274576d8441e060a5649b9&quot;</span>,
+    <span class="hljs-string">&quot;state&quot;</span>: <span class="hljs-string">&quot;handled&quot;</span>,
+    <span class="hljs-string">&quot;subject&quot;</span>: <span class="hljs-string">&quot;Message sent by REST API&quot;</span>,
+    <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;56447ece2db881bb473dc504&quot;</span>,
+    <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;messages&quot;</span>,
+    <span class="hljs-string">&quot;links&quot;</span>: {
+        <span class="hljs-string">&quot;self&quot;</span>: <span class="hljs-string">&quot;/api/messages/56447ece2db881bb473dc504&quot;</span>
     }
 }
 </code></pre>

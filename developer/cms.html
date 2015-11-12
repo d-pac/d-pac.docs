@@ -36,7 +36,7 @@
     
 
         
-    <div class="book" data-level="2.1" data-basepath=".." data-revision="Mon Nov 02 2015 16:19:30 GMT+0100 (CET)">
+    <div class="book" data-level="2.1" data-basepath=".." data-revision="Thu Nov 12 2015 13:52:48 GMT+0100 (CET)">
     
 
 <div class="book-summary">
@@ -369,94 +369,15 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="-cms-https-github-com-d-pac-d-pac-cms"><a href="https://github.com/d-pac/d-pac.cms" target="_blank">CMS</a></h1>
-<h1 id="d-pac-dependency-status-https-david-dm-org-d-pac-d-pac-cms-png-style-flat-https-david-dm-org-d-pac-d-pac-cms-devdependency-status-https-david-dm-org-d-pac-d-pac-cms-dev-status-png-style-flat-https-david-dm-org-d-pac-d-pac-cms-info-devdependencies">d-pac <a href="https://david-dm.org/d-pac/d-pac.cms" target="_blank"><img src="https://david-dm.org/d-pac/d-pac.cms.png?style=flat" alt="Dependency Status"></a><a href="https://david-dm.org/d-pac/d-pac.cms#info=devDependencies" target="_blank"><img src="https://david-dm.org/d-pac/d-pac.cms/dev-status.png?style=flat" alt="devDependency Status"></a></h1>
+<h1 id="d-pac">d-pac</h1>
+<p><a href="https://david-dm.org/d-pac/d-pac.cms" target="_blank"><img src="https://david-dm.org/d-pac/d-pac.cms.png?style=flat" alt="Dependency Status"></a><a href="https://david-dm.org/d-pac/d-pac.cms#info=devDependencies" target="_blank"><img src="https://david-dm.org/d-pac/d-pac.cms/dev-status.png?style=flat" alt="devDependency Status"></a></p>
 <blockquote>
 <p>Digitaal platform voor het assessment van competenties</p>
 </blockquote>
 <p><strong>NOT PRODUCTION READY</strong></p>
 <p>Not by a long shot.</p>
-<h2 id="getting-started">Getting started</h2>
-<h3 id="installation">Installation</h3>
-<pre><code class="lang-shell">$ npm install
-</code></pre>
-<h3 id="configuration">Configuration</h3>
-<p>d-pac.cms uses .env files to configure your environment. At the very least a single <code>.env</code> file should be present, but it&apos;s advisable to use separate files for each environment. The <code>.env</code> files are excluded from git, since they contain sensitive information, but a  <code>.EXAMPLE.env</code> file is provided which contains sample settings. You can copy this file and rename it to <code>.env</code> and modify the settings as needed.</p>
-<h4 id="settings">Settings</h4>
-<p>E.g.</p>
-<pre><code class="lang-sh">CLOUDINARY_URL=cloudinary://aaaaaaaaaaaaaaaaaaaaaaaaaaaa@keystone-demo
-MONGO_URI=mongodb://localhost/d-pac-tool
-PORT = <span class="hljs-number">3020</span>
-LOGGER = [:date] - :remote-addr - :method :url HTTP/:http-version :status :res[content-length] - :response-time ms
-DEBUG = dpac:*
-CORS_ALLOWED_ORIGINS = http://localhost:<span class="hljs-number">9000</span>
-CORS_ALLOWED_METHODS = GET,POST,PATCH,OPTIONS,DELETE,PUT
-CORS_ALLOWED_HEADERS = X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-Type, Date, Request-UUID, Accept-Encoding
-CORS_EXPOSED_HEADERS = Request-UUID
-CORS_DISABLED = <span class="hljs-literal">true</span>
-</code></pre>
-<p>A large number of settings are necessary to allow a proper functioning of the underlying KeystoneJS framework, see <a href="https://github.com/JedWatson/keystone-demo" target="_blank">Keystone demo documentation</a> for an explanation of <code>CLOUDINARY_URL</code>, <code>MANDRILL_APIKEY</code>, <code>MANDRILL_USERNAME</code>, <code>EMBEDLY_APIKEY</code>, <code>COOKIE_SECRET</code>, <code>MONGO_URI</code>, <code>GA_DOMAIN</code>, <code>GA_PROPERTY</code>, <code>PORT</code></p>
-<p>However, a number of custom settings are optionally set as well:</p>
-<ul>
-<li><code>LOGGER</code>: Configures the <a href="https://www.npmjs.com/package/morgan" target="_blank">Morgan logger instance, see documentation</a> for logger formats.</li>
-<li><code>DEBUG</code>: Configures the <a href="https://www.npmjs.com/package/debug" target="_blank">debug instance, see documentation</a> on usage.</li>
-<li><code>CORS_DISABLED</code>: Enables/disables <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS" target="_blank">CORS</a> for your d-pac.csm instance.</li>
-<li><code>CORS_ALLOWED_ORIGINS</code>: Provide a <strong>space-delimited</strong> list of URL&apos;s that are allowed to execute CORS requests.</li>
-<li><code>CORS_ALLOWED_METHODS</code>: Restrict which methods are allowed in CORS requests.</li>
-<li><code>CORS_ALLOWED_HEADERS</code>: Restrict which headers are allowed in CORS requests.</li>
-<li><code>CORS_EXPOSED_HEADERS</code>: Restrict which headers will be exposed in CORS request responses.</li>
-</ul>
-<h4 id="multiple-environments">Multiple Environments</h4>
-<p>As mentioned before generally it&apos;s a good idea to have a <code>.env</code> file for each environment d-pac.cms will be running on.
-Set all default options in your plain <code>.env file</code> and provide environment-specific settings in the various other env files.</p>
-<p>E.g.</p>
-<pre><code class="lang-sh"><span class="hljs-comment"># file: .env</span>
-CLOUDINARY_URL=cloudinary://aaaaaaaaaaaaaaaaaaaaaaaaaaaa@keystone-demo
-PORT = <span class="hljs-number">3020</span>
-</code></pre>
-<pre><code class="lang-sh"><span class="hljs-comment"># file: .env.staging</span>
-MONGO_URI=mongodb://localhost/d-pac-tool-staging
-</code></pre>
-<pre><code class="lang-sh"><span class="hljs-comment"># file: .env.production</span>
-MONGO_URI=mongodb://localhost/d-pac-tool
-</code></pre>
-<p>Use the <code>NODE_ENV</code> environment variable to define which settings will be used. This can be done in a number of ways, either:</p>
-<ol>
-<li><p>Export the <code>NODE_ENV</code> variable in your <code>.bashrc</code> (or <code>.profile</code> or...) file, e.g.</p>
-<pre><code class="lang-sh"><span class="hljs-comment"># file: .bashrc (or similar)</span>
-<span class="hljs-built_in">export</span> NODE_ENV=production
-</code></pre>
-</li>
-<li><p>Set it on the CLI when starting d-pac.cms</p>
-<pre><code class="lang-sh">$ NODE_ENV=production node server.js
-</code></pre>
-</li>
-<li><p>Pass it as a flag to grunt, when using grunt to run the various tasks:</p>
-<pre><code class="lang-sh">$ grunt deploy --env=staging
-</code></pre>
-</li>
-</ol>
-<h3 id="deployment">Deployment</h3>
-<p>D-pac uses <a href="https://github.com/pstadler/flightplan" target="_blank">flightplan</a> to separate deployment automation from other automated tasks, see documentation for a detailed explanation.</p>
-<h4 id="configuration">Configuration</h4>
-<p>Flight manifests are automatically loaded from a <code>flights</code> directory. A <code>flights/example.js</code> file is provided to show how to set it up. You need a flight manifest file for each deployment target.</p>
-<p>E.g. let&apos;s say we have a &quot;staging&quot; and &quot;production&quot; server we want to deploy to, then the <code>flights</code> directory needs to contain a file for each: <code>staging.js</code> and <code>production.js</code>.</p>
-<h4 id="usage">Usage</h4>
-<pre><code class="lang-shell">$ fly staging
-</code></pre>
-<p>Will do a full deployment to whatever server you configured in <code>staging.js</code>.</p>
-<p>Sub-targets:</p>
-<pre><code class="lang-shell">$ fly qa:staging
-</code></pre>
-<p>Runs some quality assurance tools</p>
-<h3 id="contributing">Contributing</h3>
-<h4 id="testing">Testing</h4>
-<p>TBD</p>
-<h4 id="previewing">Previewing</h4>
-<pre><code class="lang-shell">$ grunt serve
-</code></pre>
-<h4 id="publishing-the-docs">Publishing the docs</h4>
-<pre><code class="lang-shell">$ grunt publish
-</code></pre>
+<p>Please visit <a href="http://www.d-pac.be" target="_blank">http://www.d-pac.be</a> for more information.</p>
+<p>If you want to contribute you can <a href="http://d-pac.github.io/d-pac.docs/" target="_blank">start here</a></p>
 <p><a href="LICENSE">D-PAC  Copyright (C) 2014  d-pac</a>
 <a href="http://www.d-pac.be" target="_blank">http://www.d-pac.be</a></p>
 
