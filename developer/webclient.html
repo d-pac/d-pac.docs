@@ -36,7 +36,7 @@
     
 
         
-    <div class="book" data-level="2.2" data-basepath=".." data-revision="Thu Nov 12 2015 13:52:48 GMT+0100 (CET)">
+    <div class="book" data-level="2.2" data-basepath=".." data-revision="Fri Mar 04 2016 12:02:35 GMT+0100 (CET)">
     
 
 <div class="book-summary">
@@ -210,36 +210,6 @@
             
         </li>
     
-        <li class="chapter " data-level="2.5.4" data-path="developer/keystone dpac plugins.html">
-            
-                
-                    <a href="../developer/keystone dpac plugins.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.5.4.</b>
-                        
-                        keystone-dpac-plugins
-                    </a>
-                
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2.5.5" data-path="developer/plugins parser.html">
-            
-                
-                    <a href="../developer/plugins parser.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.5.5.</b>
-                        
-                        plugins-parser
-                    </a>
-                
-            
-            
-        </li>
-    
 
             </ul>
             
@@ -371,26 +341,26 @@
                         <h1 id="-webclient-https-github-com-d-pac-d-pac-client"><a href="https://github.com/d-pac/d-pac.client" target="_blank">Webclient</a></h1>
 <h1 id="d-pac-devdependency-status-https-david-dm-org-d-pac-d-pac-client-dev-status-png-style-flat-https-david-dm-org-d-pac-d-pac-client-info-devdependencies">d-pac <a href="https://david-dm.org/d-pac/d-pac.client#info=devDependencies" target="_blank"><img src="https://david-dm.org/d-pac/d-pac.client/dev-status.png?style=flat" alt="devDependency Status"></a></h1>
 <blockquote>
-<p>Digitaal platform voor het assessment van competenties</p>
+<p>Digital platform for assessment of competences</p>
 </blockquote>
 <p><strong>NOT PRODUCTION READY</strong></p>
 <p>Not by a long shot.</p>
 <h2 id="installation">Installation</h2>
-<pre><code class="lang-shell">$ npm install &amp;&amp; bower install
+<pre><code class="lang-shell">$ npm install &amp;&amp; npm run bowerInstall
 </code></pre>
+<h2 id="set-up">Set up</h2>
+<p>Copy <a href="d-pac/d-pac.client/blob/master/EXAMPLE.env"><code>EXAMPLE.env</code></a> and rename it to <code>.env</code>, adjust the settings in it as necessary.</p>
+<h2 id="development">Development</h2>
+<pre><code class="lang-sh">$ npm run preview
+</code></pre>
+<p>Will run the webpack-dev-server and serve the application on <a href="http://localhost:9000" target="_blank">http://localhost:9000</a></p>
 <h2 id="building">Building</h2>
-<pre><code class="lang-shell">$ grunt build
+<pre><code class="lang-sh">$ npm run build
 </code></pre>
-<h2 id="previewing">Previewing</h2>
-<pre><code class="lang-shell">$ grunt serve
-</code></pre>
-<h2 id="publishing-the-docs">Publishing the docs</h2>
-<pre><code class="lang-shell">$ grunt publish
-</code></pre>
-<h3 id="deployment">Deployment</h3>
-<pre><code class="lang-shell">$ grunt deploy
-</code></pre>
-<p><a href="LICENSE">D-PAC  Copyright (C) 2014  d-pac</a>
+<p>This will pack everything up and copy all relevant files to a <code>dist</code> directory.</p>
+<h2 id="deployment">Deployment</h2>
+<p>Serve the contents of the <code>dist</code> directory with <a href="http://expressjs.com/" target="_blank">express</a> or <a href="http://nginx.org/" target="_blank">nginx</a> for instance.</p>
+<p><a href="LICENSE">D-PAC  Copyright (C) 2014-2016  d-pac</a>
 <a href="http://www.d-pac.be" target="_blank">http://www.d-pac.be</a></p>
 
                     

@@ -36,7 +36,7 @@
     
 
         
-    <div class="book" data-level="2.1" data-basepath=".." data-revision="Thu Nov 12 2015 13:52:48 GMT+0100 (CET)">
+    <div class="book" data-level="2.1" data-basepath=".." data-revision="Fri Mar 04 2016 12:02:35 GMT+0100 (CET)">
     
 
 <div class="book-summary">
@@ -210,36 +210,6 @@
             
         </li>
     
-        <li class="chapter " data-level="2.5.4" data-path="developer/keystone dpac plugins.html">
-            
-                
-                    <a href="../developer/keystone dpac plugins.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.5.4.</b>
-                        
-                        keystone-dpac-plugins
-                    </a>
-                
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2.5.5" data-path="developer/plugins parser.html">
-            
-                
-                    <a href="../developer/plugins parser.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.5.5.</b>
-                        
-                        plugins-parser
-                    </a>
-                
-            
-            
-        </li>
-    
 
             </ul>
             
@@ -370,15 +340,38 @@
                     
                         <h1 id="-cms-https-github-com-d-pac-d-pac-cms"><a href="https://github.com/d-pac/d-pac.cms" target="_blank">CMS</a></h1>
 <h1 id="d-pac">d-pac</h1>
-<p><a href="https://david-dm.org/d-pac/d-pac.cms" target="_blank"><img src="https://david-dm.org/d-pac/d-pac.cms.png?style=flat" alt="Dependency Status"></a><a href="https://david-dm.org/d-pac/d-pac.cms#info=devDependencies" target="_blank"><img src="https://david-dm.org/d-pac/d-pac.cms/dev-status.png?style=flat" alt="devDependency Status"></a></p>
+<p><a href="https://david-dm.org/d-pac/d-pac.cms" target="_blank"><img src="https://david-dm.org/d-pac/d-pac.cms.png?style=flat" alt="Dependency Status"></a>
+<a href="https://david-dm.org/d-pac/d-pac.cms#info=devDependencies" target="_blank"><img src="https://david-dm.org/d-pac/d-pac.cms/dev-status.png?style=flat" alt="devDependency Status"></a></p>
 <blockquote>
-<p>Digitaal platform voor het assessment van competenties</p>
+<p>Digital platform for assessment of competences</p>
 </blockquote>
 <p><strong>NOT PRODUCTION READY</strong></p>
 <p>Not by a long shot.</p>
 <p>Please visit <a href="http://www.d-pac.be" target="_blank">http://www.d-pac.be</a> for more information.</p>
 <p>If you want to contribute you can <a href="http://d-pac.github.io/d-pac.docs/" target="_blank">start here</a></p>
-<p><a href="LICENSE">D-PAC  Copyright (C) 2014  d-pac</a>
+<h2 id="installation">Installation</h2>
+<p>You need <a href="https://nodejs.org/en/" target="_blank">node</a> and <a href="https://www.mongodb.org/" target="_blank">mongodb</a>, then go to the directory you cloned this repo to and run:</p>
+<pre><code class="lang-sh">$ npm install
+</code></pre>
+<h2 id="setup">Setup</h2>
+<p>You need to provide the system with some configuration details before it can run.</p>
+<p>All mandatory settings are listed in <a href="d-pac/d-pac.cms/blob/master/EXAMPLE.env"><code>EXAMPLE.env</code></a>
+Just copy the file, rename it to <code>.env</code> and fill in all necessary details.</p>
+<p>You&apos;ll have to <a href="http://keystonejs.com/docs/configuration/#services-cloudinary" target="_blank">setup an account with cloudinary</a> and <a href="http://keystonejs.com/docs/configuration/#services-mandrill" target="_blank">mandrill</a>, both provide free plans.</p>
+<h2 id="environment-specific-settings">Environment specific settings</h2>
+<p>If you want to run this in various environments you can override the base environment settings by providing environment specific <code>.env</code> files:</p>
+<pre><code># file: .env.staging
+MONGO_URI=mongodb://localhost/d-pac-staging
+PORT=3030
+</code></pre><pre><code># file: .env.production
+debug=none
+</code></pre><h2 id="starting-the-application">Starting the application</h2>
+<p>Run the application as any node app</p>
+<pre><code>$ node app/server.js
+</code></pre><p>Or in a specific environment (by default a &quot;development&quot; environment is assumed)</p>
+<pre><code>$ NODE_ENV=staging node app/server.js
+</code></pre><p>Obviously you can use process managers too e.g. <a href="https://www.npmjs.com/package/nodemon" target="_blank">nodemon</a> or <a href="https://www.npmjs.com/package/pm2" target="_blank">pm2</a></p>
+<p><a href="LICENSE">D-PAC  Copyright (C) 2014-2016  d-pac</a>
 <a href="http://www.d-pac.be" target="_blank">http://www.d-pac.be</a></p>
 
                     
