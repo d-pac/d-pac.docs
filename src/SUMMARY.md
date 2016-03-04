@@ -10,6 +10,4 @@
     	* [Specification](developer/plugin specification.md)
 	    * [comparative-selection](developer/comparative selection.md)
 	    * [benchmarked-comparative-selection](developer/benchmarked comparative selection.md)
-	    * [keystone-dpac-plugins](developer/keystone dpac plugins.md)
-	    * [plugins-parser](developer/plugins parser.md)
 * [Tester guide](tester/BETA-guide.md)
